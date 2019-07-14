@@ -1,0 +1,17 @@
+entity framework 的几种用法
+
+select 方法，与原生的方法相同
+
+insert 方法，可以采用封装的EFHelper,
+EFHelper.AddXXX<yyy>(yyy entity)（xxx为数据上下文的名称，本系统中为WeChat,User,Log,yyy为表对应的实体类，entity是需要被添加的实体）
+
+update 方法
+1、 先采用原生方法 select出需要修改的对象，修改字段之后调用EFHelper.UpdateXXX<YYY>(YYY ENTITY)进行更新
+2、 先建立entities,之后采用 db.entityName.Where(x=>x.id==id).update(x=>new entityName{aa=""})
+	其中db是entities的实体，entityName是实体名，也就是对应的表名 where是Lambda表达式的写法，也可以写作Linq模式，最后新建一个需要更新的实体，并赋值部分或全部字段。savingChange之后即可完成更新
+	
+delete 方法
+	db.entityName.Where(x=>x.id==id).Delete();
+	变量与update中的相同。
+	
+	在使用.Delete()或.Update()方法时，需要引用EntityFramework.Extensions命名空间

@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A881544-756F-4778-948D-1FA66402A397}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KDWechat.DAL</RootNamespace>
+    <AssemblyName>KDWechat.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXssLibrary">
+      <HintPath>..\packages\AntiXSS.4.3.0\lib\net40\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="EFHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\xiangmu-e\Documents\Visual Studio 2013\Projects\EFHelper\EFHelper\bin\Release\EFHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.121\lib\net40\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary">
+      <HintPath>..\packages\AntiXSS.4.3.0\lib\net40\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.2.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LINQKit.1.1.2\lib\net45\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DapperConnection.cs" />
+    <Compile Include="DapperHelper.cs" />
+    <Compile Include="DbAttach.cs" />
+    <Compile Include="EFHelper.cs" />
+    <Compile Include="EntityExample.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="p_graphi_statistics_Result.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="retrans_keyword_server_view.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="retrans_times_server_view.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SqlMapper.cs" />
+    <Compile Include="sysUser_WeChat_View.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_category.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_contact.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_draw_list.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_invitation.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_member_fans.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_member_info.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_messages.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_modules.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_module_menu.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_module_wechat.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_module_wx_switch.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_module_wx_user_role.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_parking.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_product.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_product_model.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_product_model_dic.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_product_type.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_qy_manager.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_retrans_keyword.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_retrans_server.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_retrans_times.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_st_diymenu_click.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_st_graohic_click.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_st_graphic_share.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_st_graphic_view.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_st_keyword_view.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_st_linnkout_view.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_sys_letter.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_sys_letter_receiver.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_sys_navigation.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_sys_tags.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_sys_users.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_sys_users_fans.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_sys_users_power.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_sys_user_manage_child_sys.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_tags_category.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_basic_reply.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_diy_menus.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_error_logs.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_fans.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_fans_chats.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_fans_groups.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_fans_hisactivity.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_fans_hislocation.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_fans_hisview.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_fans_tags.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_group_msgs.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_group_msg_key.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_group_msg_read_percent_statistics.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_group_tags.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_jsapi_ticket.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_lbs.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_logs.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_media_materials.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_news_materials.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_qrcode.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_qrcode_history.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_rules.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_rules_keywords.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_rule_reply.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_templates.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_templates_wechats.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_wx_wechats.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_zh_advert.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_zh_report.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_zh_user.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_all_history_list.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_dis_history_list.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_fans_actview.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_fans_hisview.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="view_project_category.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wechat.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wechat.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wechat.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wechat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wechat.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="wechat_groupmsg_view.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wx_tags_relation_View.cs">
+      <DependentUpon>wechat.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="wechat.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>wechat.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="wechat.edmx.diagram">
+      <DependentUpon>wechat.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KDWeChat.Common\KDWechat.Common.csproj">
+      <Project>{181CCC73-2099-4124-B464-DE53C84DDFF2}</Project>
+      <Name>KDWechat.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KDWechat.DBUtility\KDWechat.DBUtility.csproj">
+      <Project>{15d35d51-5c44-4dd7-b6cb-b1827105472c}</Project>
+      <Name>KDWechat.DBUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wechat.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>wechat.edmx</DependentUpon>
+      <LastGenOutput>wechat.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="wechat.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>wechat.edmx</DependentUpon>
+      <LastGenOutput>wechat.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xml>  <ToUserName><![CDATA[gh_24b28a35578b]]></ToUserName><FromUserName><![CDATA[oIyYMj7EmCExm4Nx5uvX47qBGgls]]></FromUserName><CreateTime>1423805753</CreateTime><MsgType><![CDATA[image]]></MsgType><PicUrl><![CDATA[http://mmbiz.qpic.cn/mmbiz/BKWFWaLb0icbxUWOy8HtXbVJWIrdDU5ehmQs6BMdjic2pQ2pYATwSS50KIEVlPXgSr6a7lsib8f0o7PpoAkhuIIGA/0]]></PicUrl><MsgId>6115199145194770063</MsgId><MediaId><![CDATA[pyH4oVr9c9Qq7u4cXIwafkDk-ESxvSxIlDcMfG_w1w1L1VuJgoAeDvykn7nglIAl]]></MediaId></xml>

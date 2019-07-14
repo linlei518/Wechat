@@ -1,0 +1,971 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_moduleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="t_activity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="200" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_ogid" Type="nvarchar" MaxLength="80" />
+    <Property Name="m_w_id" Type="int" />
+    <Property Name="info" Type="nvarchar" MaxLength="500" />
+    <Property Name="success_tip" Type="nvarchar" MaxLength="500" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="title_lock" Type="int" />
+    <Property Name="info_lock" Type="int" />
+    <Property Name="link_lock" Type="int" />
+    <Property Name="success_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="bg_color" Type="nvarchar" MaxLength="20" />
+    <Property Name="status" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+    <Property Name="end_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="end_description" Type="ntext" />
+    <Property Name="is_end_url" Type="int" />
+    <Property Name="is_link" Type="int" />
+  </EntityType>
+  <EntityType Name="t_activity_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="a_id" Type="int" />
+    <Property Name="t_id" Type="int" />
+    <Property Name="options_title" Type="nvarchar" MaxLength="200" />
+    <Property Name="options_img_url" Type="nvarchar" MaxLength="225" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_activity_statistics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="a_id" Type="int" />
+    <Property Name="t_id" Type="int" />
+    <Property Name="o_id" Type="int" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="80" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="u_ip" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_guid" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_ogid" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_area" Type="nvarchar" MaxLength="80" />
+    <Property Name="isOther" Type="int" />
+    <Property Name="OtherContent" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_join" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_activity_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="a_id" Type="int" />
+    <Property Name="radio_choice" Type="int" />
+    <Property Name="topic_title" Type="nvarchar" MaxLength="200" />
+    <Property Name="alter_meg" Type="nvarchar" MaxLength="200" />
+    <Property Name="isOther" Type="int" />
+    <Property Name="is_required" Type="int" />
+    <Property Name="is_lock" Type="int" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_activity_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="a_id" Type="int" />
+    <Property Name="t_id" Type="int" />
+    <Property Name="o_id" Type="int" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_ogid" Type="nvarchar" MaxLength="80" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="nationality" Type="nvarchar" MaxLength="50" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="mailbox" Type="nvarchar" MaxLength="100" />
+    <Property Name="blood" Type="nvarchar" MaxLength="20" />
+    <Property Name="is_Cade" Type="nvarchar" MaxLength="10" />
+    <Property Name="is_join" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_draw_activity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="time" Type="nvarchar" MaxLength="50" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="drawed" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_draw_award">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="500" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="act_id" Type="int" Nullable="false" />
+    <Property Name="show_count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_draw_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="telephone" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="total_count" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_draw_receipt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="price" Type="money" Nullable="false" />
+    <Property Name="receipt_no" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="order_no" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_draw_winner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cellphone" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="award_id" Type="int" Nullable="false" />
+    <Property Name="used" Type="int" Nullable="false" />
+    <Property Name="order_id" Type="int" Nullable="false" />
+    <Property Name="ID_NO" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="t_Lottery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="star_desction" Type="nvarchar(max)" />
+    <Property Name="end_desction" Type="nvarchar(max)" />
+    <Property Name="dj_information" Type="nvarchar" MaxLength="1000" />
+    <Property Name="theam" Type="nvarchar" MaxLength="1000" />
+    <Property Name="star_time" Type="datetime" />
+    <Property Name="end_time" Type="datetime" />
+    <Property Name="str_img" Type="nvarchar" MaxLength="255" />
+    <Property Name="end_img" Type="nvarchar" MaxLength="255" />
+    <Property Name="more_replies" Type="nvarchar" MaxLength="50" />
+    <Property Name="p_num" Type="int" />
+    <Property Name="lottery_num" Type="int" />
+    <Property Name="is_lock" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+    <Property Name="is_continue" Type="int" />
+    <Property Name="out_link" Type="nvarchar" MaxLength="255" />
+    <Property Name="is_out" Type="int" />
+    <Property Name="wx_ogid" Type="nvarchar" MaxLength="80" />
+    <Property Name="is_everyDay" Type="int" />
+  </EntityType>
+  <EntityType Name="t_md_360buid">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="introdution" Type="text" />
+    <Property Name="summary" Type="text" />
+    <Property Name="buidimg" Type="nvarchar" MaxLength="200" />
+    <Property Name="tranimg" Type="nvarchar" MaxLength="200" />
+    <Property Name="Lng" Type="varchar" MaxLength="50" />
+    <Property Name="Lat" Type="varchar" MaxLength="50" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="t_md_360view">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="imgpre" Type="nvarchar" MaxLength="200" />
+    <Property Name="imgright" Type="nvarchar" MaxLength="200" />
+    <Property Name="imgnext" Type="nvarchar" MaxLength="200" />
+    <Property Name="imgleft" Type="nvarchar" MaxLength="200" />
+    <Property Name="imgtop" Type="nvarchar" MaxLength="200" />
+    <Property Name="imgbottom" Type="nvarchar" MaxLength="200" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="100" />
+    <Property Name="showimg" Type="nvarchar" MaxLength="200" />
+    <Property Name="t_id" Type="int" />
+    <Property Name="p_id" Type="int" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="is_link" Type="int" />
+    <Property Name="linkAddress" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="t_md_360viewList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="himg" Type="nvarchar" MaxLength="200" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="100" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="pid" Type="int" />
+    <Property Name="sort_id" Type="int" />
+  </EntityType>
+  <EntityType Name="t_md_360viewtype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="200" />
+    <Property Name="summarize" Type="nvarchar" MaxLength="200" />
+    <Property Name="summary" Type="nvarchar" MaxLength="1000" />
+    <Property Name="showImgs" Type="nvarchar" MaxLength="1000" />
+    <Property Name="himg" Type="nvarchar" MaxLength="200" />
+    <Property Name="pid" Type="int" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="100" />
+    <Property Name="sort_id" Type="int" />
+  </EntityType>
+  <EntityType Name="t_md_abluminfo">
+    <Key>
+      <PropertyRef Name="abluminfo_id" />
+    </Key>
+    <Property Name="abluminfo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ablum_id" Type="int" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="55" />
+    <Property Name="wx_id" Type="nvarchar" MaxLength="55" />
+    <Property Name="sort" Type="int" />
+    <Property Name="createtime" Type="date" />
+    <Property Name="Reserve1" Type="nvarchar" MaxLength="55" />
+    <Property Name="Reserve2" Type="nvarchar" MaxLength="55" />
+    <Property Name="small_img" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="t_md_ablumlist">
+    <Key>
+      <PropertyRef Name="ablum_id" />
+    </Key>
+    <Property Name="ablum_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ablum_name" Type="varchar" MaxLength="50" />
+    <Property Name="ablumCover" Type="nvarchar" MaxLength="150" />
+    <Property Name="ablumRemark" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_open" Type="int" />
+    <Property Name="sort" Type="int" />
+    <Property Name="wx_og_id" Type="varchar" MaxLength="50" />
+    <Property Name="wx_id" Type="varchar" MaxLength="50" />
+    <Property Name="createtime" Type="date" />
+    <Property Name="updatetime" Type="date" />
+    <Property Name="BrowseMode" Type="int" />
+    <Property Name="Reserve2" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="t_md_GreetingCard_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="contents" Type="nvarchar" MaxLength="500" />
+    <Property Name="wx_id" Type="int" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="200" />
+    <Property Name="openId" Type="nvarchar" MaxLength="200" />
+    <Property Name="create_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_md_GreetingCard_views">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cardID" Type="int" />
+    <Property Name="From_openId" Type="nvarchar" MaxLength="200" />
+    <Property Name="View_openId" Type="nvarchar" MaxLength="200" />
+    <Property Name="create_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_md_GreetingCardNo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_massage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="p_id" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="contents" Type="nvarchar" MaxLength="500" />
+    <Property Name="wx_id" Type="int" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="themes" Type="nvarchar" MaxLength="100" />
+    <Property Name="constraction" Type="nvarchar" MaxLength="100" />
+    <Property Name="answers" Type="nvarchar" MaxLength="500" />
+    <Property Name="createtime" Type="date" />
+    <Property Name="massageboard_id" Type="int" />
+  </EntityType>
+  <EntityType Name="t_md_Messageboard_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageboardName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Messageboardprojects" Type="nvarchar" MaxLength="100" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="createtime" Type="date" />
+    <Property Name="updatetime" Type="date" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="isEmail" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsOpen" Type="int" />
+    <Property Name="themes" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="t_md_news_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type_id" Type="int" />
+    <Property Name="wx_id" Type="int" />
+    <Property Name="wx_og_id" Type="varchar" MaxLength="100" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="create_time" Type="date" />
+    <Property Name="news_ids" Type="int" />
+    <Property Name="Istop" Type="int" />
+  </EntityType>
+  <EntityType Name="t_md_news_themes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="themes" Type="varchar" MaxLength="50" />
+    <Property Name="wx_id" Type="int" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="t_md_news_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="200" />
+    <Property Name="isBook" Type="int" />
+    <Property Name="wx_id" Type="int" />
+    <Property Name="wx_og_id" Type="varchar" MaxLength="100" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="crteate_time" Type="date" />
+  </EntityType>
+  <EntityType Name="t_md_news_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type_ids" Type="nvarchar" MaxLength="50" />
+    <Property Name="openId" Type="nvarchar" MaxLength="200" />
+    <Property Name="wx_id" Type="int" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="200" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="update_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_md_reserve_house">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="50" />
+    <Property Name="SeeTime" Type="date" />
+    <Property Name="SeeSum" Type="int" />
+    <Property Name="buidid" Type="int" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="wx_id" Type="int" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="themes" Type="nvarchar" MaxLength="100" />
+    <Property Name="constraction" Type="nvarchar" MaxLength="100" />
+    <Property Name="p_id" Type="int" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="t_md_reserve_manage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="reservename" Type="nvarchar" MaxLength="50" />
+    <Property Name="reserveprojects" Type="nvarchar" MaxLength="100" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="createtime" Type="date" />
+    <Property Name="updatetime" Type="date" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="isEmail" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsOpen" Type="int" />
+    <Property Name="themes" Type="nvarchar" MaxLength="50" />
+    <Property Name="qy_manage_name" Type="nvarchar" MaxLength="200" />
+    <Property Name="qy_manage_nick" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="t_md_sale_chats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_openid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="seller_id" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="creat_time" Type="datetime" Nullable="false" />
+    <Property Name="is_read" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="message" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_sale_fans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fan_id" Type="int" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="opid" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="t_md_sale_project">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="p_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="creat_time" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+    <Property Name="manager_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_sale_user_project_relation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="seller_id" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_sale_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="realname" Type="nvarchar" MaxLength="50" />
+    <Property Name="introduce" Type="nvarchar" MaxLength="255" />
+    <Property Name="cellphone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="salt" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="creat_time" Type="datetime" Nullable="false" />
+    <Property Name="head_url" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_manager" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_sale_users_fans_relation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fans_open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_PazzRecord">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="openid" Type="nvarchar" MaxLength="50" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="lottery_id" Type="int" />
+    <Property Name="prize_t_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="prize_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="p_code" Type="nvarchar" MaxLength="20" />
+    <Property Name="is_award" Type="int" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_tel" Type="nvarchar" MaxLength="30" />
+    <Property Name="award_user" Type="int" />
+    <Property Name="award_time" Type="datetime" />
+    <Property Name="add_time" Type="datetime" />
+    <Property Name="Is_prized" Type="int" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="t_prizeinfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lottery_id" Type="int" />
+    <Property Name="prize_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="prize_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="probability" Type="float" />
+    <Property Name="prize_num" Type="int" />
+    <Property Name="pazz_num" Type="int" />
+    <Property Name="prize_url" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="t_questionnaire">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="200" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_ogid" Type="nvarchar" MaxLength="80" />
+    <Property Name="m_w_id" Type="int" />
+    <Property Name="start_time" Type="datetime" />
+    <Property Name="end_time" Type="datetime" />
+    <Property Name="is_look" Type="int" />
+    <Property Name="is_required" Type="int" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="end_description" Type="ntext" />
+    <Property Name="end_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="add_time" Type="datetime" />
+    <Property Name="is_end_url" Type="int" />
+    <Property Name="success_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="success_tip" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_link" Type="int" />
+  </EntityType>
+  <EntityType Name="t_questionnaire_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="q_id" Type="int" />
+    <Property Name="radio_choice" Type="int" />
+    <Property Name="topic_title" Type="nvarchar" MaxLength="200" />
+    <Property Name="isOther" Type="int" />
+    <Property Name="is_required" Type="int" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_rafflescity_activity_10">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="openid" Type="nvarchar" MaxLength="50" />
+    <Property Name="checked" Type="int" Nullable="false" />
+    <Property Name="check_time" Type="datetime" />
+    <Property Name="a_1" Type="nvarchar" MaxLength="500" />
+    <Property Name="a_2" Type="nvarchar" MaxLength="500" />
+    <Property Name="a_3" Type="nvarchar" MaxLength="500" />
+    <Property Name="a_4" Type="nvarchar" MaxLength="500" />
+    <Property Name="a_5" Type="nvarchar" MaxLength="500" />
+    <Property Name="a_6" Type="nvarchar" MaxLength="500" />
+    <Property Name="w_1" Type="int" Nullable="false" />
+    <Property Name="w_2" Type="int" Nullable="false" />
+    <Property Name="w_3" Type="int" Nullable="false" />
+    <Property Name="w_4" Type="int" Nullable="false" />
+    <Property Name="w_5" Type="int" Nullable="false" />
+    <Property Name="w_6" Type="int" Nullable="false" />
+    <Property Name="win" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="qr_code" Type="int" />
+  </EntityType>
+  <EntityType Name="t_statistics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="q_id" Type="int" />
+    <Property Name="t_id" Type="int" />
+    <Property Name="o_id" Type="int" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="80" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="u_ip" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_guid" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_ogid" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_area" Type="nvarchar" MaxLength="80" />
+    <Property Name="isOther" Type="int" />
+    <Property Name="OtherContent" Type="nvarchar" MaxLength="500" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_subject_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="q_id" Type="int" />
+    <Property Name="t_id" Type="int" />
+    <Property Name="options_title" Type="nvarchar" MaxLength="200" />
+    <Property Name="options_img_url" Type="nvarchar" MaxLength="225" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_v_invite_detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="v_id" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="channel_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="display_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="app_id" Type="nvarchar" MaxLength="150" />
+    <Property Name="app_link_url" Type="nvarchar" MaxLength="150" />
+    <Property Name="app_html" Type="nvarchar(max)" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="250" />
+    <Property Name="is_multi_page" Type="int" Nullable="false" />
+    <Property Name="contents" Type="nvarchar(max)" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="250" />
+    <Property Name="raffic" Type="nvarchar" MaxLength="350" />
+    <Property Name="address" Type="nvarchar" MaxLength="250" />
+    <Property Name="lat" Type="nvarchar" MaxLength="50" />
+    <Property Name="lng" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_v_invite_images">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="v_id" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="channel_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="category_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="img_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="150" />
+    <Property Name="img_remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="t_v_invite_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="activity_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="activity_timie" Type="nvarchar" MaxLength="50" />
+    <Property Name="activity_place" Type="nvarchar" MaxLength="150" />
+    <Property Name="activity_address" Type="nvarchar" MaxLength="150" />
+    <Property Name="activity_tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="home_title" Type="nvarchar" MaxLength="100" />
+    <Property Name="home_title_style" Type="nvarchar" MaxLength="50" />
+    <Property Name="home_sub_title" Type="nvarchar" MaxLength="100" />
+    <Property Name="home_sub_title_style" Type="nvarchar" MaxLength="50" />
+    <Property Name="home_font" Type="nvarchar" MaxLength="50" />
+    <Property Name="home_background_muisc" Type="nvarchar" MaxLength="150" />
+    <Property Name="home_background_muisc_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="home_image" Type="nvarchar" MaxLength="150" />
+    <Property Name="home_logo" Type="nvarchar" MaxLength="150" />
+    <Property Name="template_id" Type="int" />
+    <Property Name="template_path" Type="nvarchar" MaxLength="150" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="add_uid" Type="int" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="last_modify_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_module.dbo.t_award_winner_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_award_winner_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="cellphone" />
+      <PropertyRef Name="create_time" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="award_id" />
+      <PropertyRef Name="used" />
+      <PropertyRef Name="order_id" />
+      <PropertyRef Name="a_name" />
+      <PropertyRef Name="act_id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cellphone" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="award_id" Type="int" Nullable="false" />
+    <Property Name="used" Type="int" Nullable="false" />
+    <Property Name="order_id" Type="int" Nullable="false" />
+    <Property Name="ID_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="a_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="act_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_module.dbo.t_md_sale_chats_fans_seller_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_md_sale_chats_fans_seller_view">
+    <Key>
+      <PropertyRef Name="p_name" />
+      <PropertyRef Name="msg_id" />
+      <PropertyRef Name="user_openid" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="seller_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="creat_time" />
+      <PropertyRef Name="is_read" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="message" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="project_id" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="p_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="realname" Type="nvarchar" MaxLength="50" />
+    <Property Name="msg_id" Type="int" Nullable="false" />
+    <Property Name="user_openid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="seller_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="creat_time" Type="datetime" Nullable="false" />
+    <Property Name="is_read" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="message" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="80" />
+    <Property Name="headimgurl" Type="nvarchar" MaxLength="500" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_module.dbo.t_md_sale_chats_fans_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_md_sale_chats_fans_view">
+    <Key>
+      <PropertyRef Name="msg_id" />
+      <PropertyRef Name="user_openid" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="seller_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="creat_time" />
+      <PropertyRef Name="is_read" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="message" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="project_id" />
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="msg_id" Type="int" Nullable="false" />
+    <Property Name="user_openid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="seller_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="creat_time" Type="datetime" Nullable="false" />
+    <Property Name="is_read" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="message" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="80" />
+    <Property Name="headimgurl" Type="nvarchar" MaxLength="500" />
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_module.dbo.t_md_sale_chats_project_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_md_sale_chats_project_view">
+    <Key>
+      <PropertyRef Name="p_name" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="user_openid" />
+      <PropertyRef Name="seller_id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="creat_time" />
+      <PropertyRef Name="is_read" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="message" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="p_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="user_openid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="seller_id" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="creat_time" Type="datetime" Nullable="false" />
+    <Property Name="is_read" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="message" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_module.dbo.t_md_sale_users_project_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_md_sale_users_project_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="seller_id" />
+      <PropertyRef Name="project_id" />
+      <PropertyRef Name="create_time" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="p_name" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="seller_id" Type="int" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="p_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="kd_moduleModelStoreContainer">
+    <EntitySet Name="t_activity" EntityType="Self.t_activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_activity_options" EntityType="Self.t_activity_options" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_activity_statistics" EntityType="Self.t_activity_statistics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_activity_topic" EntityType="Self.t_activity_topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_activity_user" EntityType="Self.t_activity_user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_draw_activity" EntityType="Self.t_draw_activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_draw_award" EntityType="Self.t_draw_award" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_draw_order" EntityType="Self.t_draw_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_draw_receipt" EntityType="Self.t_draw_receipt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_draw_winner" EntityType="Self.t_draw_winner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_Lottery" EntityType="Self.t_Lottery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_360buid" EntityType="Self.t_md_360buid" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_360view" EntityType="Self.t_md_360view" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_360viewList" EntityType="Self.t_md_360viewList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_360viewtype" EntityType="Self.t_md_360viewtype" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_abluminfo" EntityType="Self.t_md_abluminfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_ablumlist" EntityType="Self.t_md_ablumlist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_GreetingCard_info" EntityType="Self.t_md_GreetingCard_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_GreetingCard_views" EntityType="Self.t_md_GreetingCard_views" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_GreetingCardNo" EntityType="Self.t_md_GreetingCardNo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_massage" EntityType="Self.t_md_massage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_Messageboard_info" EntityType="Self.t_md_Messageboard_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_news_info" EntityType="Self.t_md_news_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_news_themes" EntityType="Self.t_md_news_themes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_news_type" EntityType="Self.t_md_news_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_news_users" EntityType="Self.t_md_news_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_reserve_house" EntityType="Self.t_md_reserve_house" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_reserve_manage" EntityType="Self.t_md_reserve_manage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_sale_chats" EntityType="Self.t_md_sale_chats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_sale_fans" EntityType="Self.t_md_sale_fans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_sale_project" EntityType="Self.t_md_sale_project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_sale_user_project_relation" EntityType="Self.t_md_sale_user_project_relation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_sale_users" EntityType="Self.t_md_sale_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_md_sale_users_fans_relation" EntityType="Self.t_md_sale_users_fans_relation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_PazzRecord" EntityType="Self.t_PazzRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_prizeinfo" EntityType="Self.t_prizeinfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_questionnaire" EntityType="Self.t_questionnaire" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_questionnaire_topic" EntityType="Self.t_questionnaire_topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_rafflescity_activity_10" EntityType="Self.t_rafflescity_activity_10" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_statistics" EntityType="Self.t_statistics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_subject_options" EntityType="Self.t_subject_options" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_v_invite_detail" EntityType="Self.t_v_invite_detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_v_invite_images" EntityType="Self.t_v_invite_images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_v_invite_info" EntityType="Self.t_v_invite_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_award_winner_view" EntityType="Self.t_award_winner_view" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_award_winner_view].[id] AS [id], 
+    [t_award_winner_view].[name] AS [name], 
+    [t_award_winner_view].[cellphone] AS [cellphone], 
+    [t_award_winner_view].[create_time] AS [create_time], 
+    [t_award_winner_view].[wx_id] AS [wx_id], 
+    [t_award_winner_view].[wx_og_id] AS [wx_og_id], 
+    [t_award_winner_view].[award_id] AS [award_id], 
+    [t_award_winner_view].[used] AS [used], 
+    [t_award_winner_view].[order_id] AS [order_id], 
+    [t_award_winner_view].[ID_NO] AS [ID_NO], 
+    [t_award_winner_view].[a_name] AS [a_name], 
+    [t_award_winner_view].[act_id] AS [act_id]
+    FROM [dbo].[t_award_winner_view] AS [t_award_winner_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="t_md_sale_chats_fans_seller_view" EntityType="Self.t_md_sale_chats_fans_seller_view" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_md_sale_chats_fans_seller_view].[p_name] AS [p_name], 
+    [t_md_sale_chats_fans_seller_view].[realname] AS [realname], 
+    [t_md_sale_chats_fans_seller_view].[msg_id] AS [msg_id], 
+    [t_md_sale_chats_fans_seller_view].[user_openid] AS [user_openid], 
+    [t_md_sale_chats_fans_seller_view].[wx_id] AS [wx_id], 
+    [t_md_sale_chats_fans_seller_view].[seller_id] AS [seller_id], 
+    [t_md_sale_chats_fans_seller_view].[wx_og_id] AS [wx_og_id], 
+    [t_md_sale_chats_fans_seller_view].[creat_time] AS [creat_time], 
+    [t_md_sale_chats_fans_seller_view].[is_read] AS [is_read], 
+    [t_md_sale_chats_fans_seller_view].[status] AS [status], 
+    [t_md_sale_chats_fans_seller_view].[message] AS [message], 
+    [t_md_sale_chats_fans_seller_view].[type] AS [type], 
+    [t_md_sale_chats_fans_seller_view].[project_id] AS [project_id], 
+    [t_md_sale_chats_fans_seller_view].[nick_name] AS [nick_name], 
+    [t_md_sale_chats_fans_seller_view].[headimgurl] AS [headimgurl], 
+    [t_md_sale_chats_fans_seller_view].[id] AS [id]
+    FROM [dbo].[t_md_sale_chats_fans_seller_view] AS [t_md_sale_chats_fans_seller_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="t_md_sale_chats_fans_view" EntityType="Self.t_md_sale_chats_fans_view" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_md_sale_chats_fans_view].[msg_id] AS [msg_id], 
+    [t_md_sale_chats_fans_view].[user_openid] AS [user_openid], 
+    [t_md_sale_chats_fans_view].[wx_id] AS [wx_id], 
+    [t_md_sale_chats_fans_view].[seller_id] AS [seller_id], 
+    [t_md_sale_chats_fans_view].[wx_og_id] AS [wx_og_id], 
+    [t_md_sale_chats_fans_view].[creat_time] AS [creat_time], 
+    [t_md_sale_chats_fans_view].[is_read] AS [is_read], 
+    [t_md_sale_chats_fans_view].[status] AS [status], 
+    [t_md_sale_chats_fans_view].[message] AS [message], 
+    [t_md_sale_chats_fans_view].[type] AS [type], 
+    [t_md_sale_chats_fans_view].[project_id] AS [project_id], 
+    [t_md_sale_chats_fans_view].[nick_name] AS [nick_name], 
+    [t_md_sale_chats_fans_view].[headimgurl] AS [headimgurl], 
+    [t_md_sale_chats_fans_view].[id] AS [id]
+    FROM [dbo].[t_md_sale_chats_fans_view] AS [t_md_sale_chats_fans_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="t_md_sale_chats_project_view" EntityType="Self.t_md_sale_chats_project_view" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_md_sale_chats_project_view].[p_name] AS [p_name], 
+    [t_md_sale_chats_project_view].[id] AS [id], 
+    [t_md_sale_chats_project_view].[user_openid] AS [user_openid], 
+    [t_md_sale_chats_project_view].[seller_id] AS [seller_id], 
+    [t_md_sale_chats_project_view].[wx_id] AS [wx_id], 
+    [t_md_sale_chats_project_view].[wx_og_id] AS [wx_og_id], 
+    [t_md_sale_chats_project_view].[creat_time] AS [creat_time], 
+    [t_md_sale_chats_project_view].[is_read] AS [is_read], 
+    [t_md_sale_chats_project_view].[status] AS [status], 
+    [t_md_sale_chats_project_view].[message] AS [message], 
+    [t_md_sale_chats_project_view].[type] AS [type], 
+    [t_md_sale_chats_project_view].[project_id] AS [project_id]
+    FROM [dbo].[t_md_sale_chats_project_view] AS [t_md_sale_chats_project_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="t_md_sale_users_project_view" EntityType="Self.t_md_sale_users_project_view" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_md_sale_users_project_view].[id] AS [id], 
+    [t_md_sale_users_project_view].[seller_id] AS [seller_id], 
+    [t_md_sale_users_project_view].[project_id] AS [project_id], 
+    [t_md_sale_users_project_view].[create_time] AS [create_time], 
+    [t_md_sale_users_project_view].[wx_id] AS [wx_id], 
+    [t_md_sale_users_project_view].[wx_og_id] AS [wx_og_id], 
+    [t_md_sale_users_project_view].[p_name] AS [p_name]
+    FROM [dbo].[t_md_sale_users_project_view] AS [t_md_sale_users_project_view]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

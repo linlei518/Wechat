@@ -1,0 +1,312 @@
+@charset "utf-8";
+/*全局样式*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, span, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td, section, nav, header, footer{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;text-align:inherit;line-height:inherit;}
+html{ width:100%;}
+input{ font-size:inherit;}
+body{ font-size:20px; color:#666; line-height:1.4em; background:#f6f6f6; position:relative;-webkit-touch-callout: none;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none; font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;}
+strong{ font-weight:bold;}
+a{ text-decoration:none; text-transform:none; color:#000;}
+a:hover{ }
+a span{ cursor:pointer;}
+em{ text-transform:none; color:#000; font-weight:bold; font-style:normal;}
+img{ position:relative}
+.clear{ width:0; height:0; display:block; clear:both; overflow:hidden;}
+.noFloat:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+textarea{ resize:none;}
+input:focus,textarea:focus{ outline:none;}
+ul, ol, dl{ list-style:none; display:block;}
+dd, dt, li{ display:block;}
+
+
+@media only screen and (max-width: 2060px) {body{ font-size:128.75px; } input{ font-size:128.75px;}}
+@media only screen and (max-width: 2040px) {body{ font-size:127.5px;} input{ font-size:127.5px;}}
+@media only screen and (max-width: 2020px) {body{ font-size:126.25px;} input{ font-size:126.25px;}}
+@media only screen and (max-width: 2000px) {body{ font-size:125px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1980px) {body{ font-size:123.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1960px) {body{ font-size:122.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1940px) {body{ font-size:121.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1920px) {body{ font-size:120px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1900px) {body{ font-size:118.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1880px) {body{ font-size:117.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1860px) {body{ font-size:116.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1840px) {body{ font-size:115px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1820px) {body{ font-size:113.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1800px) {body{ font-size:112.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1780px) {body{ font-size:111.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1760px) {body{ font-size:110px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1740px) {body{ font-size:108.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1720px) {body{ font-size:107.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1700px) {body{ font-size:106.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1680px) {body{ font-size:105px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1660px) {body{ font-size:103.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1640px) {body{ font-size:102.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1620px) {body{ font-size:101.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1600px) {body{ font-size:100px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1580px) {body{ font-size:98.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1560px) {body{ font-size:97.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1540px) {body{ font-size:96.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1520px) {body{ font-size:95px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1500px) {body{ font-size:93.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1480px) {body{ font-size:92.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1460px) {body{ font-size:91.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1440px) {body{ font-size:90px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1420px) {body{ font-size:88.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1400px) {body{ font-size:87.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1380px) {body{ font-size:86.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1360px) {body{ font-size:85px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1340px) {body{ font-size:83.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1320px) {body{ font-size:82.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1300px) {body{ font-size:81.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1280px) {body{ font-size:80px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1260px) {body{ font-size:78.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1240px) {body{ font-size:77.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1220px) {body{ font-size:76.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1200px) {body{ font-size:75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1180px) {body{ font-size:73.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1160px) {body{ font-size:72.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1140px) {body{ font-size:71.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1120px) {body{ font-size:70px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1100px) {body{ font-size:68.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1080px) {body{ font-size:67.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1060px) {body{ font-size:66.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1040px) {body{ font-size:65px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1020px) {body{ font-size:63.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 1000px) {body{ font-size:62.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 980px) {body{ font-size:61.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 960px) {body{ font-size:60px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 940px) {body{ font-size:58.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 920px) {body{ font-size:57.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 900px) {body{ font-size:56.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 880px) {body{ font-size:55px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 860px) {body{ font-size:53.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 840px) {body{ font-size:52.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 820px) {body{ font-size:51.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 800px) {body{ font-size:50px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 780px) {body{ font-size:48.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 760px) {body{ font-size:47.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 740px) {body{ font-size:46.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 720px) {body{ font-size:45px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 700px) {body{ font-size:43.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 680px) {body{ font-size:42.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 660px) {body{ font-size:41.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 640px) {body{ font-size:40px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 620px) {body{ font-size:38.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 600px) {body{ font-size:37.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 580px) {body{ font-size:36.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 560px) {body{ font-size:35px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 540px) {body{ font-size:33.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 520px) {body{ font-size:32.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 500px) {body{ font-size:31.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 480px) {body{ font-size:30px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 460px) {body{ font-size:28.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 440px) {body{ font-size:27.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 420px) {body{ font-size:26.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 400px) {body{ font-size:25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 380px) {body{ font-size:23.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 360px) {body{ font-size:22.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 340px) {body{ font-size:21.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 320px) {body{ font-size:20px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 300px) {body{ font-size:18.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 280px) {body{ font-size:17.5px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 260px) {body{ font-size:16.25px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 240px) {body{ font-size:15px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 220px) {body{ font-size:13.75px;} input{ font-size:inherit;}}
+@media only screen and (max-width: 200px) {body{ font-size:12.5px;} input{ font-size:inherit;}}
+
+
+
+#header{ background:#fff; height:2.4em; box-shadow:0 0 0.5em rgba(0,0,0,0.3); position:relative; z-index:10;}
+#header .logoFiend{ width:2em; height:2em; float:left; padding:0.2em;}
+#header .logoFiend span{ display:block; width:100%; height:100%; position:relative;}
+/*#header .logoFiend span::after{ content:''; display:block; position:absolute; left:0; top:0; right:0; bottom:0; box-shadow:inset 0 0 10px rgba(0,102,204,0.3);}*/
+#header .logoFiend img{ display:block; width:100%; height:100%;}
+#header .titleField{ margin-left:2.6em; padding:0.5em 0 0;}
+#header .titleField h1{ font-size:1em; color:#195a9a;}
+#header .btnField{ position:absolute; width:2.4em; height:2.4em; right:0; top:0;}
+#header .btnField .btn{ display:block; width:100%; height:100%; position:absolute; left:0; top:0;}
+#header .btnField .btn svg{ display:block; width:56%; height:56%; position:absolute; top:22%; left:22%;}
+#header .btnField .btn svg path{ fill:#195a9a;}
+#header .btnField .btnClose{ display:none; width:100%; height:100%; position:absolute; left:0; top:0; background:#195a9a;}
+#header .btnField .btnClose svg{ display:block; width:56%; height:56%; position:absolute; left:22%; top:22%;}
+#header .btnField .btnClose svg path{ fill:#fff;}
+
+#header .shareListField{ display:none; width:60%; position:absolute; top:2.4em; right:0; background:#195a9a; padding:1em 0; opacity:0; z-index:10;}
+#header .shareListField li{ padding:0 1em;}
+#header .shareListField li a{ display:block; line-height:2.6em; height:2.6em; color:#fff; border-bottom:1px solid rgba(255,255,255,0.3); font-size:0.8em;}
+#header .shareListField li a i{ display:inline-block; vertical-align:middle; width:1em; height:1em; padding:0 0.4em 0 0;}
+#header .shareListField li a i svg{ display:block; width:100%; height:100%;}
+#header .shareListField li a i svg path{  fill:#fff;}
+
+
+#header.shareShow .btnField .btnClose{
+	display:block;
+	-webkit-animation: show 0.5s ease-out;
+	-moz-animation: show 0.5s ease-out;
+	-ms-animation: show 0.5s ease-out;
+	-o-animation: show 0.5s ease-out;
+	animation: show 0.5s ease-out;
+	
+	-webkit-animation-fill-mode:both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+}
+
+#header.shareShow .shareListField{ display:block;
+	-webkit-animation: show 0.5s ease-out;
+	-moz-animation: show 0.5s ease-out;
+	-ms-animation: show 0.5s ease-out;
+	-o-animation: show 0.5s ease-out;
+	animation: show 0.5s ease-out;
+	
+	-webkit-animation-fill-mode:both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+}
+
+#header.shareShow .shareListField li{
+	-webkit-animation: menu1 0.5s ease-out;
+	-moz-animation: menu1 0.5s ease-out;
+	-ms-animation: menu1 0.5s ease-out;
+	-o-animation: menu1 0.5s ease-out;
+	animation: menu1 0.5s ease-out;
+	
+	-webkit-animation-fill-mode:both;
+	-moz-animation-fill-mode:both;
+	-ms-animation-fill-mode:both;
+	-o-animation-fill-mode:both;
+	animation-fill-mode:both;
+}
+
+#header.shareShow .shareListField li:nth-child(2){
+	-webkit-animation-delay:0.1s;
+	-moz-animation-delay:0.1s;
+	-ms-animation-delay:0.1s;
+	-o-animation-delay:0.1s;
+	animation-delay:0.1s;
+}
+#header.shareShow .shareListField li:nth-child(3){
+	-webkit-animation-delay:0.2s;
+	-moz-animation-delay:0.2s;
+	-ms-animation-delay:0.2s;
+	-o-animation-delay:0.2s;
+	animation-delay:0.2s;
+}
+#header.shareShow .shareListField li:nth-child(4){
+	-webkit-animation-delay:0.3s;
+	-moz-animation-delay:0.3s;
+	-ms-animation-delay:0.3s;
+	-o-animation-delay:0.3s;
+	animation-delay:0.3s;
+}
+#header.shareShow .shareListField li:nth-child(5){
+	-webkit-animation-delay:0.4s;
+	-moz-animation-delay:0.4s;
+	-ms-animation-delay:0.4s;
+	-o-animation-delay:0.4s;
+	animation-delay:0.4s;
+}
+#header.shareShow .shareListField li:nth-child(6){
+	-webkit-animation-delay:0.5s;
+	-moz-animation-delay:0.5s;
+	-ms-animation-delay:0.5s;
+	-o-animation-delay:0.5s;
+	animation-delay:0.5s;
+}
+#header.shareShow .shareListField li:nth-child(7){
+	-webkit-animation-delay:0.6s;
+	-moz-animation-delay:0.6s;
+	-ms-animation-delay:0.6s;
+	-o-animation-delay:0.6s;
+	animation-delay:0.6s;
+}
+#header.shareShow .shareListField li:nth-child(8){
+	-webkit-animation-delay:0.7s;
+	-moz-animation-delay:0.7s;
+	-ms-animation-delay:0.7s;
+	-o-animation-delay:0.7s;
+	animation-delay:0.7s;
+}
+
+#main{}
+.articlePanel_01{ padding:0.5em;}
+.articlePanel_01 .titleField{ padding:0.3em 0 0.5em; border-bottom:1px solid #ccc;}
+.articlePanel_01 .titleField h1{ color:#000; line-height:1.2em; }
+.articlePanel_01 .titleField h2{ color:#999; font-size:0.7em; line-height:1.4em; margin:0.5em 0 0;}
+.articlePanel_01 .textField{ padding:1em 0 0; font-size:0.7em; line-height:1.6em; text-align:justify;}
+.articlePanel_01 .textField img{ display:block; margin:1em 0; width:100%; height:auto;}
+
+.articlePanel_01 .questionnaireField{ padding:1em 0 0; font-size:0.6em; line-height:1.6em;}
+.articlePanel_01 .questionnaireField ul{}
+.articlePanel_01 .questionnaireField ul li{ padding:0 0 1em; margin:0 0 1em; border-bottom:1px solid #e5e5e5;}
+.articlePanel_01 .questionnaireField ul li h2{ font-size:1.1em; color:#000; padding:0 0 0.4em;}
+.articlePanel_01 .questionnaireField ul li label{ display:inline-block; vertical-align:top; width:38%; padding:0 0 0.6em 1.6em; position:relative; line-height:1.2em;}
+.articlePanel_01 .questionnaireField ul li label input{ display:block; width:1em; height:1em; position:absolute; left:0.1em; top:0;}
+
+.articlePanel_01 .btns{ padding:1em 0; text-align:center;}
+.articlePanel_01 .btns .btn{ width:80%; height:2em; background:#195a9a; color:#fff; line-height:2em; padding:0;}
+
+
+
+
+
+
+
+.videoPanel_01{ padding:0.5em;}
+.videoPanel_01 .titleField{ padding:0.3em 0 0.5em;}
+.videoPanel_01 .titleField h1{ color:#000; line-height:1.2em; }
+.videoPanel_01 .videoField{}
+.videoPanel_01 .videoField video{ width:100%; height:auto; display:block;}
+
+.audioPanel_01{ padding:0.5em;}
+.audioPanel_01 .titleField{ padding:0.3em 0 0.5em;}
+.audioPanel_01 .titleField h1{ color:#000; line-height:1.2em; }
+.audioPanel_01 .audioField{ width:100%; height:8em; background:rgba(0,0,0,0.3); position:relative;}
+.audioPanel_01 .audioField .btn{ display:block; width:5em; height:5em; position:absolute; left:50%; top:50%; margin:-2.5em 0 0 -2.5em; border-radius:5em; background:rgba(0,0,0,0.6); padding:0;}
+.audioPanel_01 .audioField .btn i{ display:block; width:40%; height:40%; margin:0 auto;}
+.audioPanel_01 .audioField .btn i svg{ display:block; width:100%; height:100%;}
+.audioPanel_01 .audioField .btn i svg polygon,.audioPanel_01 .audioField .btn i svg path{ fill:rgba(255,255,255,1);}
+.audioPanel_01 .audioField .btn i.stopIcon{ padding:0 0 0 0.5em;}
+.audioPanel_01 .audioField .btn i.playingIcon{ display:none;}
+.audioPanel_01 .audioField .btn.playing i.stopIcon{ display:none;}
+.audioPanel_01 .audioField .btn.playing i.playingIcon{ display:block;}
+
+
+
+
+
+@-webkit-keyframes menu1{
+	from { opacity:0; -webkit-transform:translate(0,1em)}to { opacity:1; -webkit-transform:translate(0,0)}
+}
+@-moz-keyframes menu1{
+	from { opacity:0; -moz-transform:translate(0,1em)}to { opacity:1; -moz-transform:translate(0,0)}
+}
+@-ms-keyframes menu1{
+	from { opacity:0; -ms-transform:translate(0,1em)}to { opacity:1; -ms-transform:translate(0,0)}
+}
+@-o-keyframes menu1{
+	from { opacity:0; -o-transform:translate(0,1em)}to { opacity:1; -o-transform:translate(0,0)}
+}
+@keyframes menu1{
+	from { opacity:0; transform:translate(0,1em)}to { opacity:1; transform:translate(0,0)}
+}
+
+
+@-webkit-keyframes show{
+	from { opacity:0;}to { opacity:1;}
+}
+@-moz-keyframes show{
+	from { opacity:0;}to { opacity:1;}
+}
+@-ms-keyframes show{
+	from { opacity:0;}to { opacity:1;}
+}
+@-o-keyframes show{
+	from { opacity:0;}to { opacity:1;}
+}
+@keyframes show{
+	from { opacity:0;}to { opacity:1;}
+}

@@ -1,0 +1,768 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kd_wechatsModelStoreContainer" CdmEntityContainer="kd_wechatsEntities">
+    <EntitySetMapping Name="t_messages">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_messages">
+        <MappingFragment StoreEntitySet="t_messages">
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="msg_type" ColumnName="msg_type" />
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_modules">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_modules">
+        <MappingFragment StoreEntitySet="t_modules">
+          <ScalarProperty Name="is_push" ColumnName="is_push" />
+          <ScalarProperty Name="allow_wechats" ColumnName="allow_wechats" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="check_url" ColumnName="check_url" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_sys" ColumnName="is_sys" />
+          <ScalarProperty Name="manage_url" ColumnName="manage_url" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="call_name" ColumnName="call_name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_basic_reply">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_basic_reply">
+        <MappingFragment StoreEntitySet="t_wx_basic_reply">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="reply_type" ColumnName="reply_type" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_diy_menus">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_diy_menus">
+        <MappingFragment StoreEntitySet="t_wx_diy_menus">
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="soucre_id" ColumnName="soucre_id" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="reply_type" ColumnName="reply_type" />
+          <ScalarProperty Name="menu_url" ColumnName="menu_url" />
+          <ScalarProperty Name="menu_key" ColumnName="menu_key" />
+          <ScalarProperty Name="menu_type" ColumnName="menu_type" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="menu_name" ColumnName="menu_name" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_group_msgs">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_group_msgs">
+        <MappingFragment StoreEntitySet="t_wx_group_msgs">
+          <ScalarProperty Name="is_send_all" ColumnName="is_send_all" />
+          <ScalarProperty Name="msgID_to_SouceID" ColumnName="msgID_to_SouceID" />
+          <ScalarProperty Name="msg_id" ColumnName="msg_id" />
+          <ScalarProperty Name="is_check" ColumnName="is_check" />
+          <ScalarProperty Name="openIDs" ColumnName="openIDs" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="is_timer" ColumnName="is_timer" />
+          <ScalarProperty Name="send_time" ColumnName="send_time" />
+          <ScalarProperty Name="is_send" ColumnName="is_send" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="err_msg" ColumnName="err_msg" />
+          <ScalarProperty Name="err_code" ColumnName="err_code" />
+          <ScalarProperty Name="send_num" ColumnName="send_num" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="msg_type" ColumnName="msg_type" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_media_materials">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_media_materials">
+        <MappingFragment StoreEntitySet="t_wx_media_materials">
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="upload_time" ColumnName="upload_time" />
+          <ScalarProperty Name="is_public" ColumnName="is_public" />
+          <ScalarProperty Name="hq_music_url" ColumnName="hq_music_url" />
+          <ScalarProperty Name="media_id" ColumnName="media_id" />
+          <ScalarProperty Name="video_type" ColumnName="video_type" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="file_size" ColumnName="file_size" />
+          <ScalarProperty Name="file_ext" ColumnName="file_ext" />
+          <ScalarProperty Name="file_url" ColumnName="file_url" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_news_materials">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_news_materials">
+        <MappingFragment StoreEntitySet="t_wx_news_materials">
+          <ScalarProperty Name="share_count" ColumnName="share_count" />
+          <ScalarProperty Name="click_count" ColumnName="click_count" />
+          <ScalarProperty Name="view_count" ColumnName="view_count" />
+          <ScalarProperty Name="img_list" ColumnName="img_list" />
+          <ScalarProperty Name="content_html" ColumnName="content_html" />
+          <ScalarProperty Name="multi_html" ColumnName="multi_html" />
+          <ScalarProperty Name="app_table_name" ColumnName="app_table_name" />
+          <ScalarProperty Name="app_type_img" ColumnName="app_type_img" />
+          <ScalarProperty Name="app_type_name" ColumnName="app_type_name" />
+          <ScalarProperty Name="app_link" ColumnName="app_link" />
+          <ScalarProperty Name="app_name" ColumnName="app_name" />
+          <ScalarProperty Name="app_id" ColumnName="app_id" />
+          <ScalarProperty Name="push_type" ColumnName="push_type" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="is_public" ColumnName="is_public" />
+          <ScalarProperty Name="par_id" ColumnName="par_id" />
+          <ScalarProperty Name="template_id" ColumnName="template_id" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="source_url" ColumnName="source_url" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="cover_img" ColumnName="cover_img" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_rule_reply">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_rule_reply">
+        <MappingFragment StoreEntitySet="t_wx_rule_reply">
+          <ScalarProperty Name="reply_type" ColumnName="reply_type" />
+          <ScalarProperty Name="source_id" ColumnName="source_id" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="r_id" ColumnName="r_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_rules">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_rules">
+        <MappingFragment StoreEntitySet="t_wx_rules">
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="reply_type" ColumnName="reply_type" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="rule_name" ColumnName="rule_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_rules_keywords">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_rules_keywords">
+        <MappingFragment StoreEntitySet="t_wx_rules_keywords">
+          <ScalarProperty Name="eq_type" ColumnName="eq_type" />
+          <ScalarProperty Name="key_words" ColumnName="key_words" />
+          <ScalarProperty Name="reply_type" ColumnName="reply_type" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="r_id" ColumnName="r_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_templates">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_templates">
+        <MappingFragment StoreEntitySet="t_wx_templates">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="cate_id" ColumnName="cate_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_txt_materials">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_txt_materials">
+        <MappingFragment StoreEntitySet="t_wx_txt_materials">
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_public" ColumnName="is_public" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_lbs">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_lbs">
+        <MappingFragment StoreEntitySet="t_wx_lbs">
+          <ScalarProperty Name="is_top" ColumnName="is_top" />
+          <ScalarProperty Name="w_url" ColumnName="w_url" />
+          <ScalarProperty Name="baidu_id" ColumnName="baidu_id" />
+          <ScalarProperty Name="lng" ColumnName="lng" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="poi_id" ColumnName="poi_id" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wechat_groupmsg_view">
+      <EntityTypeMapping TypeName="kd_wechatsModel.wechat_groupmsg_view">
+        <MappingFragment StoreEntitySet="wechat_groupmsg_view">
+          <ScalarProperty Name="wx_name" ColumnName="wx_name" />
+          <ScalarProperty Name="is_send" ColumnName="is_send" />
+          <ScalarProperty Name="send_time" ColumnName="send_time" />
+          <ScalarProperty Name="send_num" ColumnName="send_num" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="msg_type" ColumnName="msg_type" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_emotion">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_emotion">
+        <MappingFragment StoreEntitySet="t_wx_emotion">
+          <ScalarProperty Name="emo" ColumnName="emo" />
+          <ScalarProperty Name="img" ColumnName="img" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_module_menu">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_module_menu">
+        <MappingFragment StoreEntitySet="t_module_menu">
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_module_wx_switch">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_module_wx_switch">
+        <MappingFragment StoreEntitySet="t_module_wx_switch">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_templates_wechats">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_templates_wechats">
+        <MappingFragment StoreEntitySet="t_wx_templates_wechats">
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="is_default" ColumnName="is_default" />
+          <ScalarProperty Name="template_id" ColumnName="template_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_qrcode">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_qrcode">
+        <MappingFragment StoreEntitySet="t_wx_qrcode">
+          <ScalarProperty Name="q_type" ColumnName="q_type" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="ticket" ColumnName="ticket" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="q_name" ColumnName="q_name" />
+          <ScalarProperty Name="souce_id" ColumnName="souce_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_module_wechat">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_module_wechat">
+        <MappingFragment StoreEntitySet="t_module_wechat">
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="app_remark" ColumnName="app_remark" />
+          <ScalarProperty Name="app_link_url" ColumnName="app_link_url" />
+          <ScalarProperty Name="app_img_url" ColumnName="app_img_url" />
+          <ScalarProperty Name="app_name" ColumnName="app_name" />
+          <ScalarProperty Name="app_table" ColumnName="app_table" />
+          <ScalarProperty Name="app_parent_id" ColumnName="app_parent_id" />
+          <ScalarProperty Name="app_id" ColumnName="app_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_category">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_category">
+        <MappingFragment StoreEntitySet="t_category">
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="seo_keywords" ColumnName="seo_keywords" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="class_layer" ColumnName="class_layer" />
+          <ScalarProperty Name="class_list" ColumnName="class_list" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="call_index" ColumnName="call_index" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_helper">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_helper">
+        <MappingFragment StoreEntitySet="t_helper">
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_module_wx_user_role">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_module_wx_user_role">
+        <MappingFragment StoreEntitySet="t_module_wx_user_role">
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="module_id" ColumnName="module_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_qy_manager">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_qy_manager">
+        <MappingFragment StoreEntitySet="t_qy_manager">
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="wechat_no" ColumnName="wechat_no" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_group_msg_key">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_group_msg_key">
+        <MappingFragment StoreEntitySet="t_wx_group_msg_key">
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="group_msg_id" ColumnName="group_msg_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="accessKey" ColumnName="accessKey" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_group_msg_read_percent_statistics">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_group_msg_read_percent_statistics">
+        <MappingFragment StoreEntitySet="t_wx_group_msg_read_percent_statistics">
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="read_persent" ColumnName="read_persent" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_project_contents">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_project_contents">
+        <MappingFragment StoreEntitySet="t_project_contents">
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="traffic" ColumnName="traffic" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="img_list" ColumnName="img_list" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lng" ColumnName="lng" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="display_name" ColumnName="display_name" />
+          <ScalarProperty Name="app_html" ColumnName="app_html" />
+          <ScalarProperty Name="app_link_url" ColumnName="app_link_url" />
+          <ScalarProperty Name="app_id" ColumnName="app_id" />
+          <ScalarProperty Name="channel_name" ColumnName="channel_name" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_project_groups">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_project_groups">
+        <MappingFragment StoreEntitySet="t_project_groups">
+          <ScalarProperty Name="filter_type" ColumnName="filter_type" />
+          <ScalarProperty Name="template_type" ColumnName="template_type" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="show_title" ColumnName="show_title" />
+          <ScalarProperty Name="show_open" ColumnName="show_open" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="type_name" ColumnName="type_name" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="region_name" ColumnName="region_name" />
+          <ScalarProperty Name="region_id" ColumnName="region_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_project_imgage">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_project_imgage">
+        <MappingFragment StoreEntitySet="t_project_imgage">
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="img_name" ColumnName="img_name" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_project_recommend">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_project_recommend">
+        <MappingFragment StoreEntitySet="t_project_recommend">
+          <ScalarProperty Name="is_addscore" ColumnName="is_addscore" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="buy_date" ColumnName="buy_date" />
+          <ScalarProperty Name="raise_date" ColumnName="raise_date" />
+          <ScalarProperty Name="visit_date" ColumnName="visit_date" />
+          <ScalarProperty Name="phone_return" ColumnName="phone_return" />
+          <ScalarProperty Name="confirm_date" ColumnName="confirm_date" />
+          <ScalarProperty Name="project_name" ColumnName="project_name" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="user_phone" ColumnName="user_phone" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_retrans_keyword">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_retrans_keyword">
+        <MappingFragment StoreEntitySet="t_retrans_keyword">
+          <ScalarProperty Name="retrans_times" ColumnName="retrans_times" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="retrans_id" ColumnName="retrans_id" />
+          <ScalarProperty Name="keyword" ColumnName="keyword" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_retrans_server">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_retrans_server">
+        <MappingFragment StoreEntitySet="t_retrans_server">
+          <ScalarProperty Name="image_retrans_times" ColumnName="image_retrans_times" />
+          <ScalarProperty Name="is_image_server" ColumnName="is_image_server" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_retrans_times">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_retrans_times">
+        <MappingFragment StoreEntitySet="t_retrans_times">
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="times" ColumnName="times" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="retrans_times_server_view">
+      <EntityTypeMapping TypeName="kd_wechatsModel.retrans_times_server_view">
+        <MappingFragment StoreEntitySet="retrans_times_server_view">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="times" ColumnName="times" />
+          <ScalarProperty Name="server_id" ColumnName="server_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="retrans_keyword_server_view">
+      <EntityTypeMapping TypeName="kd_wechatsModel.retrans_keyword_server_view">
+        <MappingFragment StoreEntitySet="retrans_keyword_server_view">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="retrans_id" ColumnName="retrans_id" />
+          <ScalarProperty Name="keyword" ColumnName="keyword" />
+          <ScalarProperty Name="retrans_times" ColumnName="retrans_times" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_projects_new">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_projects_new">
+        <MappingFragment StoreEntitySet="t_projects_new">
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="seo_keyword" ColumnName="seo_keyword" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+          <ScalarProperty Name="is_rec" ColumnName="is_rec" />
+          <ScalarProperty Name="promotion_title" ColumnName="promotion_title" />
+          <ScalarProperty Name="promotion_link_url" ColumnName="promotion_link_url" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="reamrk" ColumnName="reamrk" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="template_id" ColumnName="template_id" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="edit_user_id" ColumnName="edit_user_id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="series_id" ColumnName="series_id" />
+          <ScalarProperty Name="price_id" ColumnName="price_id" />
+          <ScalarProperty Name="room_type_id" ColumnName="room_type_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="region_id" ColumnName="region_id" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_projects">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_projects">
+        <MappingFragment StoreEntitySet="t_projects">
+          <ScalarProperty Name="series_name" ColumnName="series_name" />
+          <ScalarProperty Name="series_id" ColumnName="series_id" />
+          <ScalarProperty Name="price_name" ColumnName="price_name" />
+          <ScalarProperty Name="price_id" ColumnName="price_id" />
+          <ScalarProperty Name="room_type_name" ColumnName="room_type_name" />
+          <ScalarProperty Name="room_type_id" ColumnName="room_type_id" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="template_id" ColumnName="template_id" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="edit_wx_id" ColumnName="edit_wx_id" />
+          <ScalarProperty Name="wx_ids" ColumnName="wx_ids" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="type_name" ColumnName="type_name" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="region_name" ColumnName="region_name" />
+          <ScalarProperty Name="region_id" ColumnName="region_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_project_list">
+      <EntityTypeMapping TypeName="kd_wechatsModel.view_project_list">
+        <MappingFragment StoreEntitySet="view_project_list">
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lng" ColumnName="lng" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="series_name" ColumnName="series_name" />
+          <ScalarProperty Name="series_id" ColumnName="series_id" />
+          <ScalarProperty Name="price_name" ColumnName="price_name" />
+          <ScalarProperty Name="price_id" ColumnName="price_id" />
+          <ScalarProperty Name="room_type_name" ColumnName="room_type_name" />
+          <ScalarProperty Name="room_type_id" ColumnName="room_type_id" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="template_id" ColumnName="template_id" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="edit_wx_id" ColumnName="edit_wx_id" />
+          <ScalarProperty Name="wx_ids" ColumnName="wx_ids" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="type_name" ColumnName="type_name" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="region_name" ColumnName="region_name" />
+          <ScalarProperty Name="region_id" ColumnName="region_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_jsapi_ticket">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_jsapi_ticket">
+        <MappingFragment StoreEntitySet="t_wx_jsapi_ticket">
+          <ScalarProperty Name="appid" ColumnName="appid" />
+          <ScalarProperty Name="expire_time" ColumnName="expire_time" />
+          <ScalarProperty Name="jsapi_ticket" ColumnName="jsapi_ticket" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_qrcode_history">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_qrcode_history">
+        <MappingFragment StoreEntitySet="t_wx_qrcode_history">
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="qr_code_id" ColumnName="qr_code_id" />
+          <ScalarProperty Name="fans_id" ColumnName="fans_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_project_imgage_new">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_project_imgage_new">
+        <MappingFragment StoreEntitySet="t_project_imgage_new">
+          <ScalarProperty Name="bg_color" ColumnName="bg_color" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="img_name" ColumnName="img_name" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_wechats">
+      <EntityTypeMapping TypeName="kd_wechatsModel.t_wx_wechats">
+        <MappingFragment StoreEntitySet="t_wx_wechats">
+          <ScalarProperty Name="qrcode_img" ColumnName="qrcode_img" />
+          <ScalarProperty Name="mall_source" ColumnName="mall_source" />
+          <ScalarProperty Name="is_open_wx_reg" ColumnName="is_open_wx_reg" />
+          <ScalarProperty Name="qy_manager_nick" ColumnName="qy_manager_nick" />
+          <ScalarProperty Name="qy_manager_name" ColumnName="qy_manager_name" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="access_token" ColumnName="access_token" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="lbs_radius" ColumnName="lbs_radius" />
+          <ScalarProperty Name="wx_guid" ColumnName="wx_guid" />
+          <ScalarProperty Name="modify_time" ColumnName="modify_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="template_id" ColumnName="template_id" />
+          <ScalarProperty Name="fans" ColumnName="fans" />
+          <ScalarProperty Name="account_pwd" ColumnName="account_pwd" />
+          <ScalarProperty Name="account_name" ColumnName="account_name" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="api_url" ColumnName="api_url" />
+          <ScalarProperty Name="app_secret" ColumnName="app_secret" />
+          <ScalarProperty Name="app_id" ColumnName="app_id" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="header_pic" ColumnName="header_pic" />
+          <ScalarProperty Name="wx_name" ColumnName="wx_name" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_pb_name" ColumnName="wx_pb_name" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

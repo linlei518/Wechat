@@ -1,0 +1,117 @@
+﻿@charset "utf-8";
+/*全局样式*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, span, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td, section, nav, header, footer{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;text-align:inherit;line-height:inherit;}
+html{ width:100%; height:100%; overflow:hidden;}
+input{ font-size:inherit;}
+input,textarea,button{-webkit-appearance:none;}
+body{ font-size:20px; color:#666; line-height:1.4em; background:#e5e5e5; position:relative; font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;height:100%; overflow:hidden;}
+strong{ font-weight:bold;}
+a{ text-decoration:none; text-transform:none; color:#000;}
+a:hover{ }
+a span{ cursor:pointer;}
+em{ text-transform:none; color:#000; font-weight:bold; font-style:normal;}
+img{ position:relative}
+.clear{ width:0; height:0; display:block; clear:both; overflow:hidden;}
+.noFloat:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+textarea{ resize:none;}
+input:focus,textarea:focus{ outline:none;}
+input,textarea,button,select{-webkit-appearance: none;}
+ul, ol, dl{ list-style:none; display:block;}
+dd, dt, li{ display:block;}
+
+
+
+@media only screen and (min-width: 240px) {body{ font-size:15px;} input{ font-size:inherit;} textarea{ font-size:inherit;} select{ font-size:inherit;}}
+@media only screen and (min-width: 320px) {body{ font-size:20px;} input{ font-size:inherit;} textarea{ font-size:inherit;} select{ font-size:inherit;}}
+@media only screen and (min-width: 480px) {body{ font-size:30px;} input{ font-size:inherit;} textarea{ font-size:inherit;} select{ font-size:inherit;}}
+@media only screen and (min-width: 640px) {body{ font-size:40px;} input{ font-size:inherit;} textarea{ font-size:inherit;} select{ font-size:inherit;}}
+@media only screen and (min-width: 800px) {body{ font-size:50px;} input{ font-size:inherit;} textarea{ font-size:inherit;} select{ font-size:inherit;}}
+@media only screen and (min-width: 960px) {body{ font-size:60px;} input{ font-size:inherit;} textarea{ font-size:inherit;} select{ font-size:inherit;}}
+
+/*结构*/
+#container{ width:100%; height:100%; -webkit-transition:-webkit-transform 0.3s; -moz-transition:-webkit-transform 0.3s; -ms-transition:-webkit-transform 0.3s; -o-transition:-webkit-transform 0.3s; transition:-webkit-transform 0.3s;}
+#container.getURL{ -webkit-transform:translate(-100%,0); -moz-transform:translate(-100%,0); -ms-transform:translate(-100%,0); -o-transform:translate(-100%,0); transform:translate(-100%,0);}
+
+#header{ width:100%; background:#fff; background:#fff; box-shadow:0 0 1em rgba(0,0,0,0.2); overflow:hidden; position:relative; z-index:2;}
+
+#main{ width:100%; overflow:auto; position:absolute; top:0; bottom:2.2em; z-index:1;}
+#footer{ position:absolute; bottom:0; left:0; right:0; height:2.2em; background:#fafafa; border-top:1px solid #bfbfbf; line-height:2.2em;}
+#footer h2{ text-align:center; font-size:0.8em; color:#4b4b4b;}
+
+.simulatorPanel_01{ margin:0.9em; box-shadow:0 0 3px rgba(0,0,0,0.4); border-radius:0.25em; overflow:hidden; background:#fff;}
+.simulatorPanel_01 a{ background:#fff; display:block; padding:0.5em; border-top:1px solid #eff1f3; position:relative;}
+.simulatorPanel_01 a:active{ background:#ddd;}
+.simulatorPanel_01 a:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.simulatorPanel_01 a.main { position:relative; border:none;}
+.simulatorPanel_01 a.main .img{ width:100%; position:relative; height:auto; right:auto; top:auto;}
+.simulatorPanel_01 a.main .img .placeholder{ display:block; width:100%; height:auto;}
+.simulatorPanel_01 a.main .img span{ display:block; position:absolute; left:0; right:0; top:0; bottom:0; overflow:hidden; box-shadow:-1px 1px 2px rgba(0,0,0,0.2); margin:0; width:auto; background:50% 50% no-repeat; background-size:cover;}
+.simulatorPanel_01 a.main .title{ position:absolute; line-height:1.2em; bottom:0.5em; left:0.5em; right:0.5em; background:rgba(0,0,0,0.8); margin:0; z-index:2; height:auto; padding:0.3em;}
+.simulatorPanel_01 a.main .title::after{ display:none;}
+.simulatorPanel_01 a.main .title h1{ display:block; font-size:0.9em; color:#fff; max-height:2.7em; overflow:hidden;}
+
+.simulatorPanel_01 .img{ width:2.5em; height:2.5em; box-shadow:-1px 1px 2px rgba(0,0,0,0.2); position:absolute; right:0.5em; top:0.5em; overflow:hidden;}
+.simulatorPanel_01 .img span{ display:block; width:100%; height:100%; background:50% 50% no-repeat; background-size:cover;}
+.simulatorPanel_01 .title{ line-height:1.05em; margin-right:2.5em; height:2.5em; overflow:hidden;}
+.simulatorPanel_01 .title h1{ display:inline-block; vertical-align:middle; font-size:0.8em; width:96%; max-height:2.63em; overflow:hidden;}
+.simulatorPanel_01 .title::after{ display:inline-block; content:''; height:100%; width:0; overflow:hidden; vertical-align:middle;}
+
+
+.simulatorPanel_02{ margin:0.9em; box-shadow:0 0 3px rgba(0,0,0,0.4); border-radius:0.25em; overflow:hidden; background:#fff;}
+.simulatorPanel_02 a{ background:#fff; display:block; padding:0.5em; border-top:1px solid #eff1f3; position:relative;}
+.simulatorPanel_02 a .title{ line-height:1.2em; margin:0; z-index:2; height:auto; margin:0 0 0.5em;}
+.simulatorPanel_02 a .title::after{ display:none;}
+.simulatorPanel_02 a .title h1{ font-size:0.9em;}
+.simulatorPanel_02 a .title h2{ font-size:0.6em; color:#8c8c8c;}
+.multiH2{ font-size:0.6em; color:#8c8c8c; margin-left:0.8em;margin-top:0.5em}
+
+.simulatorPanel_02 a:active{ background:#ddd;}
+.simulatorPanel_02 a:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.simulatorPanel_02 a { position:relative; border:none;}
+.simulatorPanel_02 a .img{ width:100%; position:relative; height:auto; right:auto; top:auto;}
+.simulatorPanel_02 a .img .placeholder{ display:block; width:100%; height:auto;}
+.simulatorPanel_02 a .img span{ display:block; position:absolute; left:0; right:0; top:0; bottom:0; overflow:hidden; box-shadow:-1px 1px 2px rgba(0,0,0,0.2);  background:50% 50% no-repeat; background-size:cover;}
+.simulatorPanel_02 a .img img{ display:block; width:100%; height:auto;}
+
+.simulatorPanel_02 a .text{  line-height:0.85em; padding:0.6em 0;}
+.simulatorPanel_02 a .text p{ font-size:0.7em; color:#737373; text-align:justify;}
+
+.simulatorPanel_02 a .links{  line-height:0.85em; padding:0.4em 0 0; border-top:1px solid #eff1f3; position:relative;}
+.simulatorPanel_02 a .links p{ font-size:0.7em;}
+.simulatorPanel_02 a .links::after{ display:block; content:''; position:absolute; right:0.2em; top:50%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; border:solid #919191; border-width:0.15em 0.15em 0 0; width:0.5em; height:0.5em; margin:-0.1em 0 0; -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg); -ms-transform:rotate(45deg); -o-transform:rotate(45deg); transform:rotate(45deg);}
+
+
+.titlePanel_01{ background:#1061be; height:2.9em; line-height:2em; padding:0 0.9em; color:#fff; margin-bottom:-0.9em; position:relative;}
+.titlePanel_01::before{ display:block; content:''; position:absolute; bottom:0; height:0.9em; left:0; width:4em; border-radius:0 0.6em 0 0; background:#fff;}
+.titlePanel_01::after{ display:block; content:''; position:absolute; bottom:0; height:0.9em; right:0; left:4em; border-radius:0.6em 0 0 0; background:#fff;}
+.titlePanel_01 h1{ font-size:0.9em;}
+
+
+.screenPanel_01{ display:table; width:100%;}
+.screenPanel_01 .selectField{ width:60%; display:table-cell; padding:0.9em 0.9em 0; height:2.5em; vertical-align:top;}
+.screenPanel_01 .btnField{ width:40%; display:table-cell; padding:0.9em 0.9em 0 0; height:2.5em; vertical-align:top;}
+.screenPanel_01 .selectField span{ display:block; width:100%; border-radius:0.2em; background:#1061be; position:relative; overflow:hidden;}
+.screenPanel_01 .selectField span::after{ display:block; content:''; position:absolute; width:0; height:0; right:0.6em; top:50%; margin-top:-0.1em; border-style:solid; border-width:0.2em; border-color:#fff transparent transparent; pointer-events:none;}
+.screenPanel_01 .selectField .select{ display:block; width:130%; border:0; font-size:0.72em; border:0; padding:0.4em 0.6em; height:2.2em; line-height:1.2em; background:none transparent; color:#fff;}
+
+.screenPanel_01 .btnField .btn{ display:block; width:100%; font-size:0.72em; padding:0.4em; height:2.2em; line-height:1.2em; text-align:center; border-radius:0.2em; border:1px solid #ccc; background:#fff;}
+
+
+.selectPanel_01{ padding:2em 0.9em 0.9em;}
+.selectPanel_01 .listField{}
+.selectPanel_01 .listField ul{}
+.selectPanel_01 .listField ul li{ padding:0 0 0.9em; position:relative;}
+.selectPanel_01 .listField ul li .checkbox{ display:block; position:absolute; top:0; left:0;width:100%;height:100%;margin:0 0;cursor:pointer;opacity:0;filter:alpha(opacity=0);z-index:2;}
+.selectPanel_01 .listField ul li label{ display:block; border-radius:2em; padding:0.5em 1em; border:1px solid #e7e7e7;}
+.selectPanel_01 .listField ul li label i{ display:inline-block; vertical-align:middle; margin:-0.2em 0.5em 0 0; width:0.8em; height:0.8em; box-sizing:border-box; border-radius:0.2em; border:0.08em solid #ccc; position:relative;}
+.selectPanel_01 .listField ul li .checkbox:checked + label{ border:1px solid #1061be; color:#1061be;}
+.selectPanel_01 .listField ul li .checkbox:checked + label i{ border-color:#1061be;}
+.selectPanel_01 .listField ul li .checkbox:checked + label i::before{ display:block; content:''; width:0.15em; height:0.4em; position:absolute; left:0.13em; top:0.15em; background:#1061be; border-radius:0.1em; -webkit-transform:rotate(-45deg); z-index:2;}
+.selectPanel_01 .listField ul li .checkbox:checked + label i::after{ display:block; content:''; width:0.15em; height:0.7em; position:absolute; left:0.35em; top:-0.22em; background:#1061be; -webkit-transform:rotate(45deg); border:0.1em solid #fff; border-radius:0.15em; z-index:1;}
+
+.selectPanel_01 .btnField{}
+.selectPanel_01 .btnField .btn{ display:block; height:2.4em; line-height:2.4em; width:100%; text-align:center; background:#1061be; color:#fff; padding:0; border-radius:2.4em; cursor:pointer;}
+
+
+
+

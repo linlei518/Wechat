@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>推送消息预览</title>
+    <link href="/templates/wechat/list_simulator/css/preview.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="container">
+<section id="main">
+    $news_list$
+</section>
+
+<footer id="footer">
+	<h2>模拟推送消息，点击消息查看内容</h2>
+</footer>
+<script>
+var links = document.getElementsByTagName('a');
+var container = document.getElementById('container');
+for(var i=0; i<links.length; i++){
+	links[i].addEventListener('click',linkClickHandler,false);
+}
+function linkClickHandler(e){
+	e.preventDefault();
+	container.classList.add('getURL');
+	var url = this.href;
+	setTimeout(function(){
+		window.location.href = url;
+	},300);
+}
+</script>
+</div>

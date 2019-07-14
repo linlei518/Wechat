@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kd_statisticsModelStoreContainer" CdmEntityContainer="kd_statisticsEntities">
+    <EntitySetMapping Name="t_st_diymenu_click">
+      <EntityTypeMapping TypeName="kd_statisticsModel.t_st_diymenu_click">
+        <MappingFragment StoreEntitySet="t_st_diymenu_click">
+          <ScalarProperty Name="url_referrer" ColumnName="url_referrer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="menu_key" ColumnName="menu_key" />
+          <ScalarProperty Name="menu_name" ColumnName="menu_name" />
+          <ScalarProperty Name="menu_action" ColumnName="menu_action" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_st_keyword_view">
+      <EntityTypeMapping TypeName="kd_statisticsModel.t_st_keyword_view">
+        <MappingFragment StoreEntitySet="t_st_keyword_view">
+          <ScalarProperty Name="url_referrer" ColumnName="url_referrer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="keyword" ColumnName="keyword" />
+          <ScalarProperty Name="keyword_action" ColumnName="keyword_action" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_st_project_share">
+      <EntityTypeMapping TypeName="kd_statisticsModel.t_st_project_share">
+        <MappingFragment StoreEntitySet="t_st_project_share">
+          <ScalarProperty Name="url_referrer" ColumnName="url_referrer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="from_open_id" ColumnName="from_open_id" />
+          <ScalarProperty Name="page_url" ColumnName="page_url" />
+          <ScalarProperty Name="page_name" ColumnName="page_name" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="obj_id" ColumnName="obj_id" />
+          <ScalarProperty Name="obj_name" ColumnName="obj_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_st_project_view">
+      <EntityTypeMapping TypeName="kd_statisticsModel.t_st_project_view">
+        <MappingFragment StoreEntitySet="t_st_project_view">
+          <ScalarProperty Name="url_referrer" ColumnName="url_referrer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="from_open_id" ColumnName="from_open_id" />
+          <ScalarProperty Name="page_url" ColumnName="page_url" />
+          <ScalarProperty Name="page_name" ColumnName="page_name" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="obj_id" ColumnName="obj_id" />
+          <ScalarProperty Name="obj_name" ColumnName="obj_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_st_fullview_view">
+      <EntityTypeMapping TypeName="kd_statisticsModel.t_st_fullview_view">
+        <MappingFragment StoreEntitySet="t_st_fullview_view">
+          <ScalarProperty Name="url_referrer" ColumnName="url_referrer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="from_open_id" ColumnName="from_open_id" />
+          <ScalarProperty Name="page_url" ColumnName="page_url" />
+          <ScalarProperty Name="page_name" ColumnName="page_name" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="obj_id" ColumnName="obj_id" />
+          <ScalarProperty Name="obj_name" ColumnName="obj_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_st_graohic_click">
+      <EntityTypeMapping TypeName="kd_statisticsModel.t_st_graohic_click">
+        <MappingFragment StoreEntitySet="t_st_graohic_click">
+          <ScalarProperty Name="url_referrer" ColumnName="url_referrer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="from_open_id" ColumnName="from_open_id" />
+          <ScalarProperty Name="page_url" ColumnName="page_url" />
+          <ScalarProperty Name="page_name" ColumnName="page_name" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="obj_id" ColumnName="obj_id" />
+          <ScalarProperty Name="obj_name" ColumnName="obj_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_st_graphic_view">
+      <EntityTypeMapping TypeName="kd_statisticsModel.t_st_graphic_view">
+        <MappingFragment StoreEntitySet="t_st_graphic_view">
+          <ScalarProperty Name="url_referrer" ColumnName="url_referrer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="from_open_id" ColumnName="from_open_id" />
+          <ScalarProperty Name="page_url" ColumnName="page_url" />
+          <ScalarProperty Name="page_name" ColumnName="page_name" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="obj_id" ColumnName="obj_id" />
+          <ScalarProperty Name="obj_name" ColumnName="obj_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_st_quest_view">
+      <EntityTypeMapping TypeName="kd_statisticsModel.t_st_quest_view">
+        <MappingFragment StoreEntitySet="t_st_quest_view">
+          <ScalarProperty Name="url_referrer" ColumnName="url_referrer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="from_open_id" ColumnName="from_open_id" />
+          <ScalarProperty Name="page_url" ColumnName="page_url" />
+          <ScalarProperty Name="page_name" ColumnName="page_name" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="obj_id" ColumnName="obj_id" />
+          <ScalarProperty Name="obj_name" ColumnName="obj_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_st_reserve_view">
+      <EntityTypeMapping TypeName="kd_statisticsModel.t_st_reserve_view">
+        <MappingFragment StoreEntitySet="t_st_reserve_view">
+          <ScalarProperty Name="url_referrer" ColumnName="url_referrer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="from_open_id" ColumnName="from_open_id" />
+          <ScalarProperty Name="page_url" ColumnName="page_url" />
+          <ScalarProperty Name="page_name" ColumnName="page_name" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="obj_id" ColumnName="obj_id" />
+          <ScalarProperty Name="obj_name" ColumnName="obj_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_st_signup_view">
+      <EntityTypeMapping TypeName="kd_statisticsModel.t_st_signup_view">
+        <MappingFragment StoreEntitySet="t_st_signup_view">
+          <ScalarProperty Name="url_referrer" ColumnName="url_referrer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="from_open_id" ColumnName="from_open_id" />
+          <ScalarProperty Name="page_url" ColumnName="page_url" />
+          <ScalarProperty Name="page_name" ColumnName="page_name" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="user_ip" ColumnName="user_ip" />
+          <ScalarProperty Name="obj_id" ColumnName="obj_id" />
+          <ScalarProperty Name="obj_name" ColumnName="obj_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="p_graphi_statistics" FunctionName="kd_statisticsModel.Store.p_graphi_statistics">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="kd_statisticsModel.p_graphi_statistics_Result">
+          <ScalarProperty Name="obj_id" ColumnName="obj_id" />
+          <ScalarProperty Name="obj_name" ColumnName="obj_name" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="view_count" ColumnName="view_count" />
+          <ScalarProperty Name="share_count" ColumnName="share_count" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

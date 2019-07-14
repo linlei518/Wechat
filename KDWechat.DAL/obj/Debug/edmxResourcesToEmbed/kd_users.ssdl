@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_usersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="t_member_fans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="unionid" Type="nvarchar" MaxLength="50" />
+    <Property Name="fans_guid" Type="nvarchar" MaxLength="50" />
+    <Property Name="create_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_member_fans_relation">
+    <Key>
+      <PropertyRef Name="fans_id" />
+    </Key>
+    <Property Name="fans_id" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="member_id" Type="int" Nullable="false" />
+    <Property Name="openid" Type="nvarchar" MaxLength="70" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_member_group_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_member_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="unionid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_pwd" Type="nvarchar" MaxLength="50" />
+    <Property Name="group_id" Type="int" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="sex" Type="int" />
+    <Property Name="country" Type="nvarchar" MaxLength="20" />
+    <Property Name="province" Type="nvarchar" MaxLength="20" />
+    <Property Name="city" Type="nvarchar" MaxLength="20" />
+    <Property Name="language" Type="nvarchar" MaxLength="20" />
+    <Property Name="headimgurl" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_kd_owner" Type="int" />
+    <Property Name="buy_project" Type="nvarchar" MaxLength="300" />
+    <Property Name="real_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="birth" Type="datetime" />
+    <Property Name="id_card" Type="nvarchar" MaxLength="20" />
+    <Property Name="home_address" Type="nvarchar" MaxLength="200" />
+    <Property Name="company" Type="nvarchar" MaxLength="30" />
+    <Property Name="post_title" Type="nvarchar" MaxLength="20" />
+    <Property Name="job" Type="nvarchar" MaxLength="20" />
+    <Property Name="month_income" Type="nvarchar" MaxLength="50" />
+    <Property Name="office_tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="marriage" Type="int" />
+    <Property Name="have_child" Type="int" />
+    <Property Name="family_size" Type="int" />
+    <Property Name="family_month_income" Type="nvarchar" MaxLength="50" />
+    <Property Name="spending_power" Type="int" />
+    <Property Name="remark" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_member_property">
+    <Key>
+      <PropertyRef Name="member_id" />
+    </Key>
+    <Property Name="member_id" Type="int" Nullable="false" />
+    <Property Name="sex" Type="int" />
+    <Property Name="age" Type="int" />
+    <Property Name="income" Type="int" />
+    <Property Name="nation" Type="nvarchar" MaxLength="20" />
+    <Property Name="birth" Type="datetime" />
+    <Property Name="ID_No" Type="nvarchar" MaxLength="30" />
+    <Property Name="ID_Type" Type="int" />
+  </EntityType>
+  <EntityType Name="t_member_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mem_unionid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mem_id" Type="int" Nullable="false" />
+    <Property Name="tag_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_sys_letter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="contents" Type="ntext" />
+    <Property Name="create_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_sys_letter_receiver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="l_id" Type="int" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="t_sys_navigation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nav_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" />
+    <Property Name="sub_title" Type="nvarchar" MaxLength="100" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="is_lock" Type="tinyint" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="class_list" Type="nvarchar" MaxLength="500" />
+    <Property Name="class_layer" Type="int" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="action_type" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_sys" Type="tinyint" />
+    <Property Name="type_id" Type="int" />
+    <Property Name="target_type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="t_sys_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_sys_user_manage_child_sys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="nav_type_ids" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_sys_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+    <Property Name="flag" Type="int" Nullable="false" />
+    <Property Name="type_id" Type="int" Nullable="false" />
+    <Property Name="area" Type="int" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_pwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="real_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="dept_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="create_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="login_time" Type="datetime" Nullable="false" />
+    <Property Name="login_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="salt" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="only_op_self" Type="int" Nullable="false" />
+    <Property Name="is_manage_user_role" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_sys_users_power">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="nav_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="action_type" Type="nvarchar(max)" />
+    <Property Name="nav_type_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_tags_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="creat_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_fans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="guid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="unionid" Type="nvarchar" MaxLength="100" />
+    <Property Name="group_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_sex" Type="int" />
+    <Property Name="wx_country" Type="nvarchar" MaxLength="20" />
+    <Property Name="wx_province" Type="nvarchar" MaxLength="20" />
+    <Property Name="wx_city" Type="nvarchar" MaxLength="20" />
+    <Property Name="wx_area" Type="nvarchar" MaxLength="20" />
+    <Property Name="sex" Type="int" />
+    <Property Name="country" Type="nvarchar" MaxLength="20" />
+    <Property Name="ethnic" Type="nvarchar" MaxLength="20" />
+    <Property Name="province" Type="nvarchar" MaxLength="20" />
+    <Property Name="city" Type="nvarchar" MaxLength="20" />
+    <Property Name="area" Type="nvarchar" MaxLength="20" />
+    <Property Name="language" Type="nvarchar" MaxLength="20" />
+    <Property Name="headimgurl" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_kd_owner" Type="int" Nullable="false" />
+    <Property Name="buy_project" Type="nvarchar" MaxLength="300" />
+    <Property Name="real_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="qq" Type="nvarchar" MaxLength="50" />
+    <Property Name="zipcode" Type="nvarchar" MaxLength="6" />
+    <Property Name="wechat_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="weibo_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="birth" Type="datetime" />
+    <Property Name="id_card_type" Type="nvarchar" MaxLength="20" />
+    <Property Name="id_card" Type="nvarchar" MaxLength="20" />
+    <Property Name="home_address" Type="nvarchar" MaxLength="100" />
+    <Property Name="company" Type="nvarchar" MaxLength="80" />
+    <Property Name="post_title" Type="nvarchar" MaxLength="20" />
+    <Property Name="job" Type="nvarchar" MaxLength="20" />
+    <Property Name="month_income" Type="nvarchar" MaxLength="30" />
+    <Property Name="office_tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="marriage" Type="int" />
+    <Property Name="have_child" Type="int" Nullable="false" />
+    <Property Name="family_size" Type="int" />
+    <Property Name="family_month_income" Type="nvarchar" MaxLength="50" />
+    <Property Name="spending_power" Type="int" />
+    <Property Name="hobby" Type="nvarchar" MaxLength="500" />
+    <Property Name="remark" Type="nvarchar" MaxLength="200" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="subscribe_time" Type="datetime" Nullable="false" />
+    <Property Name="remove_time" Type="datetime" />
+    <Property Name="active_time" Type="datetime" />
+    <Property Name="state" Type="int" />
+    <Property Name="last_interact_time" Type="datetime" />
+    <Property Name="source_id" Type="int" />
+    <Property Name="interest_project" Type="nvarchar" MaxLength="500" />
+    <Property Name="reply_state" Type="int" Nullable="false" />
+    <Property Name="is_kd_worker" Type="int" Nullable="false" />
+    <Property Name="score" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_fans_groups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fans_guid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fans_id" Type="int" Nullable="false" />
+    <Property Name="group_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_fans_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fans_guid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fans_id" Type="int" Nullable="false" />
+    <Property Name="tag_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_group_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="is_public" Type="int" Nullable="false" />
+    <Property Name="contents" Type="nvarchar" MaxLength="500" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" />
+  </EntityType>
+  <EntityType Name="t_wx_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_users.dbo.sysUser_WeChat_View”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="sysUser_WeChat_View">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="parent_id" />
+      <PropertyRef Name="flag" />
+      <PropertyRef Name="type_id" />
+      <PropertyRef Name="user_name" />
+      <PropertyRef Name="user_pwd" />
+      <PropertyRef Name="create_time" />
+      <PropertyRef Name="create_ip" />
+      <PropertyRef Name="login_time" />
+      <PropertyRef Name="login_ip" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="salt" />
+      <PropertyRef Name="only_op_self" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+    <Property Name="flag" Type="int" Nullable="false" />
+    <Property Name="type_id" Type="int" Nullable="false" />
+    <Property Name="area" Type="int" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_pwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="real_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="dept_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="create_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="login_time" Type="datetime" Nullable="false" />
+    <Property Name="login_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="salt" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="only_op_self" Type="int" Nullable="false" />
+    <Property Name="uscou" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_users.dbo.wx_tags_relation_View”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="wx_tags_relation_View">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="fans_id" />
+    </Key>
+    <Property Name="tagID" Type="int" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="fans_id" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_users.dbo.wx_users_wechats_View”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="wx_users_wechats_View">
+    <Key>
+      <PropertyRef Name="u_id" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="uid" />
+      <PropertyRef Name="type_id" />
+      <PropertyRef Name="create_time" />
+      <PropertyRef Name="modify_time" />
+      <PropertyRef Name="wx_guid" />
+    </Key>
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="uid" Type="int" Nullable="false" />
+    <Property Name="type_id" Type="int" Nullable="false" />
+    <Property Name="wx_pb_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="wx_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="header_pic" Type="nvarchar" MaxLength="200" />
+    <Property Name="country" Type="nvarchar" MaxLength="20" />
+    <Property Name="province" Type="nvarchar" MaxLength="20" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="app_id" Type="nvarchar" MaxLength="200" />
+    <Property Name="app_secret" Type="nvarchar" MaxLength="200" />
+    <Property Name="api_url" Type="nvarchar" MaxLength="200" />
+    <Property Name="token" Type="nvarchar" MaxLength="10" />
+    <Property Name="account_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="account_pwd" Type="nvarchar" MaxLength="50" />
+    <Property Name="fans" Type="int" />
+    <Property Name="template_id" Type="int" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="modify_time" Type="datetime" Nullable="false" />
+    <Property Name="wx_guid" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="kd_usersModelStoreContainer">
+    <EntitySet Name="t_member_fans" EntityType="Self.t_member_fans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_member_fans_relation" EntityType="Self.t_member_fans_relation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_member_group_tags" EntityType="Self.t_member_group_tags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_member_info" EntityType="Self.t_member_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_member_property" EntityType="Self.t_member_property" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_member_tags" EntityType="Self.t_member_tags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_sys_letter" EntityType="Self.t_sys_letter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_sys_letter_receiver" EntityType="Self.t_sys_letter_receiver" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_sys_navigation" EntityType="Self.t_sys_navigation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_sys_tags" EntityType="Self.t_sys_tags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_sys_user_manage_child_sys" EntityType="Self.t_sys_user_manage_child_sys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_sys_users" EntityType="Self.t_sys_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_sys_users_power" EntityType="Self.t_sys_users_power" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_tags_category" EntityType="Self.t_tags_category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_fans" EntityType="Self.t_wx_fans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_fans_groups" EntityType="Self.t_wx_fans_groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_fans_tags" EntityType="Self.t_wx_fans_tags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_group_tags" EntityType="Self.t_wx_group_tags" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_users" EntityType="Self.t_wx_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysUser_WeChat_View" EntityType="Self.sysUser_WeChat_View" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[sysUser_WeChat_View].[id] AS [id], 
+[sysUser_WeChat_View].[parent_id] AS [parent_id], 
+[sysUser_WeChat_View].[flag] AS [flag], 
+[sysUser_WeChat_View].[type_id] AS [type_id], 
+[sysUser_WeChat_View].[area] AS [area], 
+[sysUser_WeChat_View].[user_name] AS [user_name], 
+[sysUser_WeChat_View].[user_pwd] AS [user_pwd], 
+[sysUser_WeChat_View].[real_name] AS [real_name], 
+[sysUser_WeChat_View].[nick_name] AS [nick_name], 
+[sysUser_WeChat_View].[dept_name] AS [dept_name], 
+[sysUser_WeChat_View].[tel] AS [tel], 
+[sysUser_WeChat_View].[email] AS [email], 
+[sysUser_WeChat_View].[mobile] AS [mobile], 
+[sysUser_WeChat_View].[create_time] AS [create_time], 
+[sysUser_WeChat_View].[create_ip] AS [create_ip], 
+[sysUser_WeChat_View].[login_time] AS [login_time], 
+[sysUser_WeChat_View].[login_ip] AS [login_ip], 
+[sysUser_WeChat_View].[status] AS [status], 
+[sysUser_WeChat_View].[salt] AS [salt], 
+[sysUser_WeChat_View].[only_op_self] AS [only_op_self], 
+[sysUser_WeChat_View].[uscou] AS [uscou]
+FROM [dbo].[sysUser_WeChat_View] AS [sysUser_WeChat_View]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="wx_tags_relation_View" EntityType="Self.wx_tags_relation_View" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[wx_tags_relation_View].[tagID] AS [tagID], 
+[wx_tags_relation_View].[title] AS [title], 
+[wx_tags_relation_View].[id] AS [id], 
+[wx_tags_relation_View].[fans_id] AS [fans_id], 
+[wx_tags_relation_View].[wx_id] AS [wx_id]
+FROM [dbo].[wx_tags_relation_View] AS [wx_tags_relation_View]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="wx_users_wechats_View" EntityType="Self.wx_users_wechats_View" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[wx_users_wechats_View].[u_id] AS [u_id], 
+[wx_users_wechats_View].[id] AS [id], 
+[wx_users_wechats_View].[uid] AS [uid], 
+[wx_users_wechats_View].[type_id] AS [type_id], 
+[wx_users_wechats_View].[wx_pb_name] AS [wx_pb_name], 
+[wx_users_wechats_View].[wx_og_id] AS [wx_og_id], 
+[wx_users_wechats_View].[wx_name] AS [wx_name], 
+[wx_users_wechats_View].[header_pic] AS [header_pic], 
+[wx_users_wechats_View].[country] AS [country], 
+[wx_users_wechats_View].[province] AS [province], 
+[wx_users_wechats_View].[city] AS [city], 
+[wx_users_wechats_View].[app_id] AS [app_id], 
+[wx_users_wechats_View].[app_secret] AS [app_secret], 
+[wx_users_wechats_View].[api_url] AS [api_url], 
+[wx_users_wechats_View].[token] AS [token], 
+[wx_users_wechats_View].[account_name] AS [account_name], 
+[wx_users_wechats_View].[account_pwd] AS [account_pwd], 
+[wx_users_wechats_View].[fans] AS [fans], 
+[wx_users_wechats_View].[template_id] AS [template_id], 
+[wx_users_wechats_View].[create_time] AS [create_time], 
+[wx_users_wechats_View].[modify_time] AS [modify_time], 
+[wx_users_wechats_View].[wx_guid] AS [wx_guid]
+FROM [dbo].[wx_users_wechats_View] AS [wx_users_wechats_View]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_statisticsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="t_st_diymenu_click">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="menu_key" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="menu_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="menu_action" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="url_referrer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_statistics.dbo.t_st_fullview_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_st_fullview_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="page_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="page_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="obj_id" Type="int" Nullable="false" />
+    <Property Name="obj_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="url_referrer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_statistics.dbo.t_st_graohic_click”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_st_graohic_click">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="page_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="page_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="obj_id" Type="int" Nullable="false" />
+    <Property Name="obj_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="url_referrer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_statistics.dbo.t_st_graphic_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_st_graphic_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="page_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="page_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="obj_id" Type="int" Nullable="false" />
+    <Property Name="obj_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="url_referrer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="t_st_keyword_view">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="keyword" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="keyword_action" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="url_referrer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="t_st_project_share">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="page_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="page_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="obj_id" Type="int" Nullable="false" />
+    <Property Name="obj_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="url_referrer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="t_st_project_view">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_open_id" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="page_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="page_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="obj_id" Type="int" Nullable="false" />
+    <Property Name="obj_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="url_referrer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_statistics.dbo.t_st_quest_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_st_quest_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="page_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="page_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="obj_id" Type="int" Nullable="false" />
+    <Property Name="obj_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="url_referrer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_statistics.dbo.t_st_reserve_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_st_reserve_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="page_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="page_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="obj_id" Type="int" Nullable="false" />
+    <Property Name="obj_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="url_referrer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_statistics.dbo.t_st_signup_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="t_st_signup_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="from_open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="page_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="page_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="user_ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="obj_id" Type="int" Nullable="false" />
+    <Property Name="obj_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="url_referrer" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <Function Name="p_graphi_statistics" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+    <Parameter Name="wx_id" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="kd_statisticsModelStoreContainer">
+    <EntitySet Name="t_st_diymenu_click" EntityType="Self.t_st_diymenu_click" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_st_keyword_view" EntityType="Self.t_st_keyword_view" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_st_project_share" EntityType="Self.t_st_project_share" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_st_project_view" EntityType="Self.t_st_project_view" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_st_fullview_view" EntityType="Self.t_st_fullview_view" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_st_fullview_view].[id] AS [id], 
+    [t_st_fullview_view].[wx_id] AS [wx_id], 
+    [t_st_fullview_view].[wx_og_id] AS [wx_og_id], 
+    [t_st_fullview_view].[open_id] AS [open_id], 
+    [t_st_fullview_view].[from_open_id] AS [from_open_id], 
+    [t_st_fullview_view].[page_url] AS [page_url], 
+    [t_st_fullview_view].[page_name] AS [page_name], 
+    [t_st_fullview_view].[add_time] AS [add_time], 
+    [t_st_fullview_view].[user_ip] AS [user_ip], 
+    [t_st_fullview_view].[obj_id] AS [obj_id], 
+    [t_st_fullview_view].[obj_name] AS [obj_name], 
+    [t_st_fullview_view].[url_referrer] AS [url_referrer]
+    FROM [dbo].[t_st_fullview_view] AS [t_st_fullview_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="t_st_graohic_click" EntityType="Self.t_st_graohic_click" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_st_graohic_click].[id] AS [id], 
+    [t_st_graohic_click].[wx_id] AS [wx_id], 
+    [t_st_graohic_click].[wx_og_id] AS [wx_og_id], 
+    [t_st_graohic_click].[open_id] AS [open_id], 
+    [t_st_graohic_click].[from_open_id] AS [from_open_id], 
+    [t_st_graohic_click].[page_url] AS [page_url], 
+    [t_st_graohic_click].[page_name] AS [page_name], 
+    [t_st_graohic_click].[add_time] AS [add_time], 
+    [t_st_graohic_click].[user_ip] AS [user_ip], 
+    [t_st_graohic_click].[obj_id] AS [obj_id], 
+    [t_st_graohic_click].[obj_name] AS [obj_name], 
+    [t_st_graohic_click].[url_referrer] AS [url_referrer]
+    FROM [dbo].[t_st_graohic_click] AS [t_st_graohic_click]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="t_st_graphic_view" EntityType="Self.t_st_graphic_view" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_st_graphic_view].[id] AS [id], 
+    [t_st_graphic_view].[wx_id] AS [wx_id], 
+    [t_st_graphic_view].[wx_og_id] AS [wx_og_id], 
+    [t_st_graphic_view].[open_id] AS [open_id], 
+    [t_st_graphic_view].[from_open_id] AS [from_open_id], 
+    [t_st_graphic_view].[page_url] AS [page_url], 
+    [t_st_graphic_view].[page_name] AS [page_name], 
+    [t_st_graphic_view].[add_time] AS [add_time], 
+    [t_st_graphic_view].[user_ip] AS [user_ip], 
+    [t_st_graphic_view].[obj_id] AS [obj_id], 
+    [t_st_graphic_view].[obj_name] AS [obj_name], 
+    [t_st_graphic_view].[url_referrer] AS [url_referrer]
+    FROM [dbo].[t_st_graphic_view] AS [t_st_graphic_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="t_st_quest_view" EntityType="Self.t_st_quest_view" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_st_quest_view].[id] AS [id], 
+    [t_st_quest_view].[wx_id] AS [wx_id], 
+    [t_st_quest_view].[wx_og_id] AS [wx_og_id], 
+    [t_st_quest_view].[open_id] AS [open_id], 
+    [t_st_quest_view].[from_open_id] AS [from_open_id], 
+    [t_st_quest_view].[page_url] AS [page_url], 
+    [t_st_quest_view].[page_name] AS [page_name], 
+    [t_st_quest_view].[add_time] AS [add_time], 
+    [t_st_quest_view].[user_ip] AS [user_ip], 
+    [t_st_quest_view].[obj_id] AS [obj_id], 
+    [t_st_quest_view].[obj_name] AS [obj_name], 
+    [t_st_quest_view].[url_referrer] AS [url_referrer]
+    FROM [dbo].[t_st_quest_view] AS [t_st_quest_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="t_st_reserve_view" EntityType="Self.t_st_reserve_view" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_st_reserve_view].[id] AS [id], 
+    [t_st_reserve_view].[wx_id] AS [wx_id], 
+    [t_st_reserve_view].[wx_og_id] AS [wx_og_id], 
+    [t_st_reserve_view].[open_id] AS [open_id], 
+    [t_st_reserve_view].[from_open_id] AS [from_open_id], 
+    [t_st_reserve_view].[page_url] AS [page_url], 
+    [t_st_reserve_view].[page_name] AS [page_name], 
+    [t_st_reserve_view].[add_time] AS [add_time], 
+    [t_st_reserve_view].[user_ip] AS [user_ip], 
+    [t_st_reserve_view].[obj_id] AS [obj_id], 
+    [t_st_reserve_view].[obj_name] AS [obj_name], 
+    [t_st_reserve_view].[url_referrer] AS [url_referrer]
+    FROM [dbo].[t_st_reserve_view] AS [t_st_reserve_view]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="t_st_signup_view" EntityType="Self.t_st_signup_view" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [t_st_signup_view].[id] AS [id], 
+    [t_st_signup_view].[wx_id] AS [wx_id], 
+    [t_st_signup_view].[wx_og_id] AS [wx_og_id], 
+    [t_st_signup_view].[open_id] AS [open_id], 
+    [t_st_signup_view].[from_open_id] AS [from_open_id], 
+    [t_st_signup_view].[page_url] AS [page_url], 
+    [t_st_signup_view].[page_name] AS [page_name], 
+    [t_st_signup_view].[add_time] AS [add_time], 
+    [t_st_signup_view].[user_ip] AS [user_ip], 
+    [t_st_signup_view].[obj_id] AS [obj_id], 
+    [t_st_signup_view].[obj_name] AS [obj_name], 
+    [t_st_signup_view].[url_referrer] AS [url_referrer]
+    FROM [dbo].[t_st_signup_view] AS [t_st_signup_view]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

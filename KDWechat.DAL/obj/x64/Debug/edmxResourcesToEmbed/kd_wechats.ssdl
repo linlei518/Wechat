@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_wechatsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="t_messages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="contents" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="source_id" Type="int" />
+    <Property Name="msg_type" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_module_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" />
+    <Property Name="module_id" Type="int" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="sort" Type="int" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="create_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_module_wechat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="app_id" Type="int" Nullable="false" />
+    <Property Name="app_parent_id" Type="int" Nullable="false" />
+    <Property Name="app_table" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="app_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="app_img_url" Type="nvarchar" MaxLength="150" />
+    <Property Name="app_link_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="app_remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_module_wx_switch">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="module_id" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_modules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="call_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="version" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="500" />
+    <Property Name="manage_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="is_sys" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="check_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="allow_wechats" Type="nvarchar" MaxLength="4000" />
+    <Property Name="is_push" Type="int" />
+  </EntityType>
+  <EntityType Name="t_questionnaire">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="200" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_ogid" Type="nvarchar" MaxLength="80" />
+    <Property Name="end_time" Type="datetime" />
+    <Property Name="is_look" Type="int" />
+    <Property Name="is_required" Type="int" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="add_time" Type="datetime" />
+    <Property Name="m_w_id" Type="int" />
+    <Property Name="start_time" Type="datetime" />
+    <Property Name="end_description" Type="ntext" />
+    <Property Name="end_url" Type="nvarchar" MaxLength="255" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="t_questionnaire_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="q_id" Type="int" />
+    <Property Name="radio_choice" Type="int" />
+    <Property Name="topic_title" Type="nvarchar" MaxLength="200" />
+    <Property Name="isOther" Type="int" />
+    <Property Name="add_time" Type="datetime" />
+    <Property Name="is_required" Type="int" />
+    <Property Name="sort_id" Type="int" />
+  </EntityType>
+  <EntityType Name="t_statistics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="q_id" Type="int" />
+    <Property Name="t_id" Type="int" />
+    <Property Name="o_id" Type="int" />
+    <Property Name="u_id" Type="int" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="80" />
+    <Property Name="u_ip" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_guid" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_ogid" Type="nvarchar" MaxLength="80" />
+    <Property Name="wx_area" Type="nvarchar" MaxLength="80" />
+    <Property Name="isOther" Type="int" />
+    <Property Name="OtherContent" Type="nvarchar" MaxLength="500" />
+    <Property Name="add_time" Type="datetime" />
+    <Property Name="nick_name" Type="nvarchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="t_subject_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="q_id" Type="int" />
+    <Property Name="t_id" Type="int" />
+    <Property Name="options_title" Type="nvarchar" MaxLength="200" />
+    <Property Name="options_img_url" Type="nvarchar" MaxLength="225" />
+    <Property Name="add_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="t_wx_basic_reply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="reply_type" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="contents" Type="nvarchar" MaxLength="500" />
+    <Property Name="source_id" Type="int" />
+    <Property Name="status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_diy_menus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="menu_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+    <Property Name="menu_type" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="menu_key" Type="nvarchar" MaxLength="50" />
+    <Property Name="menu_url" Type="nvarchar" MaxLength="500" />
+    <Property Name="reply_type" Type="int" />
+    <Property Name="contents" Type="nvarchar" MaxLength="1000" />
+    <Property Name="soucre_id" Type="int" />
+    <Property Name="sort_id" Type="int" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_emotion">
+    <Key>
+      <PropertyRef Name="img" />
+    </Key>
+    <Property Name="img" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="emo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_group_msgs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="source_id" Type="int" />
+    <Property Name="contents" Type="nvarchar" MaxLength="1000" />
+    <Property Name="msg_type" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="send_num" Type="int" Nullable="false" />
+    <Property Name="err_code" Type="int" />
+    <Property Name="err_msg" Type="nvarchar" MaxLength="100" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="is_send" Type="int" Nullable="false" />
+    <Property Name="send_time" Type="datetime" />
+    <Property Name="is_timer" Type="int" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="openIDs" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="t_wx_lbs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Province" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="County" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Contents" Type="nvarchar(max)" />
+    <Property Name="ImgUrl" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="poi_id" Type="int" Nullable="false" />
+    <Property Name="tags" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lat" Type="decimal" Precision="18" Scale="10" Nullable="false" />
+    <Property Name="lng" Type="decimal" Precision="18" Scale="10" Nullable="false" />
+    <Property Name="baidu_id" Type="int" Nullable="false" />
+    <Property Name="w_url" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_top" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_media_materials">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="group_id" Type="int" />
+    <Property Name="file_url" Type="nvarchar" MaxLength="500" />
+    <Property Name="file_ext" Type="nvarchar" MaxLength="50" />
+    <Property Name="file_size" Type="nvarchar" MaxLength="50" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="video_type" Type="int" />
+    <Property Name="media_id" Type="nvarchar" MaxLength="100" />
+    <Property Name="hq_music_url" Type="nvarchar" MaxLength="500" />
+    <Property Name="is_public" Type="int" Nullable="false" />
+    <Property Name="upload_time" Type="datetime" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_news_materials">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="author" Type="nvarchar" MaxLength="50" />
+    <Property Name="cover_img" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="summary" Type="nvarchar" MaxLength="500" />
+    <Property Name="contents" Type="text" Nullable="false" />
+    <Property Name="link_url" Type="nvarchar" MaxLength="500" />
+    <Property Name="source_url" Type="nvarchar" MaxLength="500" />
+    <Property Name="group_id" Type="int" />
+    <Property Name="template_id" Type="int" Nullable="false" />
+    <Property Name="par_id" Type="int" Nullable="false" />
+    <Property Name="is_public" Type="int" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="push_type" Type="nvarchar" MaxLength="10" />
+    <Property Name="app_id" Type="int" />
+    <Property Name="app_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="app_link" Type="nvarchar" MaxLength="150" />
+    <Property Name="app_type_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="app_type_img" Type="nvarchar" MaxLength="150" />
+    <Property Name="app_table_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="multi_html" Type="nvarchar" MaxLength="1000" />
+    <Property Name="content_html" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="t_wx_qrcode">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="souce_id" Type="int" Nullable="false" />
+    <Property Name="q_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ticket" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_rule_reply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="r_id" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="contents" Type="nvarchar" MaxLength="1000" />
+    <Property Name="source_id" Type="int" />
+    <Property Name="reply_type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_rules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rule_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="reply_type" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="sort_id" Type="int" />
+  </EntityType>
+  <EntityType Name="t_wx_rules_keywords">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="r_id" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="reply_type" Type="int" Nullable="false" />
+    <Property Name="key_words" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="eq_type" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_templates">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="channel_id" Type="int" Nullable="false" />
+    <Property Name="cate_id" Type="int" Nullable="false" />
+    <Property Name="img_url" Type="nvarchar" MaxLength="500" />
+    <Property Name="file_path" Type="nvarchar" MaxLength="500" />
+    <Property Name="remark" Type="nvarchar" MaxLength="500" />
+    <Property Name="contents" Type="nvarchar(max)" />
+    <Property Name="is_default" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="sort_id" Type="int" />
+  </EntityType>
+  <EntityType Name="t_wx_templates_wechats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="template_id" Type="int" Nullable="false" />
+    <Property Name="is_default" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_txt_materials">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="contents" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="group_id" Type="int" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="is_public" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_wechats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uid" Type="int" Nullable="false" />
+    <Property Name="type_id" Type="int" Nullable="false" />
+    <Property Name="wx_pb_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="wx_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="header_pic" Type="nvarchar" MaxLength="200" />
+    <Property Name="country" Type="nvarchar" MaxLength="20" />
+    <Property Name="province" Type="nvarchar" MaxLength="20" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="app_id" Type="nvarchar" MaxLength="200" />
+    <Property Name="app_secret" Type="nvarchar" MaxLength="200" />
+    <Property Name="api_url" Type="nvarchar" MaxLength="200" />
+    <Property Name="token" Type="nvarchar" MaxLength="10" />
+    <Property Name="account_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="account_pwd" Type="nvarchar" MaxLength="50" />
+    <Property Name="fans" Type="int" />
+    <Property Name="template_id" Type="int" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="modify_time" Type="datetime" Nullable="false" />
+    <Property Name="wx_guid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lbs_radius" Type="int" Nullable="false" />
+    <Property Name="status" Type="int" />
+    <Property Name="access_token" Type="nvarchar" MaxLength="550" />
+    <Property Name="update_time" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_wechats.dbo.wechat_groupmsg_view”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="wechat_groupmsg_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="msg_type" />
+      <PropertyRef Name="create_time" />
+      <PropertyRef Name="send_num" />
+      <PropertyRef Name="is_send" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="msg_type" Type="int" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="send_num" Type="int" Nullable="false" />
+    <Property Name="send_time" Type="datetime" />
+    <Property Name="is_send" Type="int" Nullable="false" />
+    <Property Name="wx_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="kd_wechatsModelStoreContainer">
+    <EntitySet Name="t_messages" EntityType="Self.t_messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_module_menu" EntityType="Self.t_module_menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_module_wechat" EntityType="Self.t_module_wechat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_module_wx_switch" EntityType="Self.t_module_wx_switch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_modules" EntityType="Self.t_modules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_questionnaire" EntityType="Self.t_questionnaire" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_questionnaire_topic" EntityType="Self.t_questionnaire_topic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_statistics" EntityType="Self.t_statistics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_subject_options" EntityType="Self.t_subject_options" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_basic_reply" EntityType="Self.t_wx_basic_reply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_diy_menus" EntityType="Self.t_wx_diy_menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_emotion" EntityType="Self.t_wx_emotion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_group_msgs" EntityType="Self.t_wx_group_msgs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_lbs" EntityType="Self.t_wx_lbs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_media_materials" EntityType="Self.t_wx_media_materials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_news_materials" EntityType="Self.t_wx_news_materials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_qrcode" EntityType="Self.t_wx_qrcode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_rule_reply" EntityType="Self.t_wx_rule_reply" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_rules" EntityType="Self.t_wx_rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_rules_keywords" EntityType="Self.t_wx_rules_keywords" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_templates" EntityType="Self.t_wx_templates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_templates_wechats" EntityType="Self.t_wx_templates_wechats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_txt_materials" EntityType="Self.t_wx_txt_materials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_wechats" EntityType="Self.t_wx_wechats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wechat_groupmsg_view" EntityType="Self.wechat_groupmsg_view" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[wechat_groupmsg_view].[id] AS [id], 
+[wechat_groupmsg_view].[title] AS [title], 
+[wechat_groupmsg_view].[msg_type] AS [msg_type], 
+[wechat_groupmsg_view].[create_time] AS [create_time], 
+[wechat_groupmsg_view].[send_num] AS [send_num], 
+[wechat_groupmsg_view].[send_time] AS [send_time], 
+[wechat_groupmsg_view].[is_send] AS [is_send], 
+[wechat_groupmsg_view].[wx_name] AS [wx_name]
+FROM [dbo].[wechat_groupmsg_view] AS [wechat_groupmsg_view]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

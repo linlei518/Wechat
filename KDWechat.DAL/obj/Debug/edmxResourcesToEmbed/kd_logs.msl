@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kd_logsModelStoreContainer" CdmEntityContainer="kd_logsEntities">
+    <EntitySetMapping Name="t_wx_fans_hisactivity">
+      <EntityTypeMapping TypeName="kd_logsModel.t_wx_fans_hisactivity">
+        <MappingFragment StoreEntitySet="t_wx_fans_hisactivity">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="act_url" ColumnName="act_url" />
+          <ScalarProperty Name="act_name" ColumnName="act_name" />
+          <ScalarProperty Name="join_time" ColumnName="join_time" />
+          <ScalarProperty Name="channel_name" ColumnName="channel_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_fans_hislocation">
+      <EntityTypeMapping TypeName="kd_logsModel.t_wx_fans_hislocation">
+        <MappingFragment StoreEntitySet="t_wx_fans_hislocation">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="lng" ColumnName="lng" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_fans_hisview">
+      <EntityTypeMapping TypeName="kd_logsModel.t_wx_fans_hisview">
+        <MappingFragment StoreEntitySet="t_wx_fans_hisview">
+          <ScalarProperty Name="news_id" ColumnName="news_id" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="page_url" ColumnName="page_url" />
+          <ScalarProperty Name="page_name" ColumnName="page_name" />
+          <ScalarProperty Name="view_time" ColumnName="view_time" />
+          <ScalarProperty Name="channel_name" ColumnName="channel_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_logs">
+      <EntityTypeMapping TypeName="kd_logsModel.t_wx_logs">
+        <MappingFragment StoreEntitySet="t_wx_logs">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="login_name" ColumnName="login_name" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_fans_actview">
+      <EntityTypeMapping TypeName="kd_logsModel.view_fans_actview">
+        <MappingFragment StoreEntitySet="view_fans_actview">
+          <ScalarProperty Name="join_time" ColumnName="join_time" />
+          <ScalarProperty Name="join_count" ColumnName="join_count" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="channel_name" ColumnName="channel_name" />
+          <ScalarProperty Name="act_name" ColumnName="act_name" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_fans_hisview">
+      <EntityTypeMapping TypeName="kd_logsModel.view_fans_hisview">
+        <MappingFragment StoreEntitySet="view_fans_hisview">
+          <ScalarProperty Name="news_id" ColumnName="news_id" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="view_time" ColumnName="view_time" />
+          <ScalarProperty Name="view_count" ColumnName="view_count" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="channel_name" ColumnName="channel_name" />
+          <ScalarProperty Name="page_name" ColumnName="page_name" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_fans_chats">
+      <EntityTypeMapping TypeName="kd_logsModel.t_wx_fans_chats">
+        <MappingFragment StoreEntitySet="t_wx_fans_chats">
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="media_id" ColumnName="media_id" />
+          <ScalarProperty Name="from_type" ColumnName="from_type" />
+          <ScalarProperty Name="msg_type" ColumnName="msg_type" />
+          <ScalarProperty Name="is_sys_auto_reply" ColumnName="is_sys_auto_reply" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_wx_error_logs">
+      <EntityTypeMapping TypeName="kd_logsModel.t_wx_error_logs">
+        <MappingFragment StoreEntitySet="t_wx_error_logs">
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="login_name" ColumnName="login_name" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kd_moduleModelStoreContainer" CdmEntityContainer="kd_moduleEntities">
+    <EntitySetMapping Name="t_md_sale_chats">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_chats">
+        <MappingFragment StoreEntitySet="t_md_sale_chats">
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="user_openid" ColumnName="user_openid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_project">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_project">
+        <MappingFragment StoreEntitySet="t_md_sale_project">
+          <ScalarProperty Name="manager_id" ColumnName="manager_id" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_user_project_relation">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_user_project_relation">
+        <MappingFragment StoreEntitySet="t_md_sale_user_project_relation">
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_users">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_users">
+        <MappingFragment StoreEntitySet="t_md_sale_users">
+          <ScalarProperty Name="is_manager" ColumnName="is_manager" />
+          <ScalarProperty Name="head_url" ColumnName="head_url" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="cellphone" ColumnName="cellphone" />
+          <ScalarProperty Name="introduce" ColumnName="introduce" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_users_fans_relation">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_users_fans_relation">
+        <MappingFragment StoreEntitySet="t_md_sale_users_fans_relation">
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fans_open_id" ColumnName="fans_open_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_chats_project_view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_chats_project_view">
+        <MappingFragment StoreEntitySet="t_md_sale_chats_project_view">
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="user_openid" ColumnName="user_openid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_chats_fans_view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_chats_fans_view">
+        <MappingFragment StoreEntitySet="t_md_sale_chats_fans_view">
+          <ScalarProperty Name="msg_id" ColumnName="msg_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="headimgurl" ColumnName="headimgurl" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="user_openid" ColumnName="user_openid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_users_project_view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_users_project_view">
+        <MappingFragment StoreEntitySet="t_md_sale_users_project_view">
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_chats_fans_seller_view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_chats_fans_seller_view">
+        <MappingFragment StoreEntitySet="t_md_sale_chats_fans_seller_view">
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="headimgurl" ColumnName="headimgurl" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="user_openid" ColumnName="user_openid" />
+          <ScalarProperty Name="msg_id" ColumnName="msg_id" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_360buid">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_360buid">
+        <MappingFragment StoreEntitySet="t_md_360buid">
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lng" ColumnName="Lng" />
+          <ScalarProperty Name="tranimg" ColumnName="tranimg" />
+          <ScalarProperty Name="buidimg" ColumnName="buidimg" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="introdution" ColumnName="introdution" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_360view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_360view">
+        <MappingFragment StoreEntitySet="t_md_360view">
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="showimg" ColumnName="showimg" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="imgbottom" ColumnName="imgbottom" />
+          <ScalarProperty Name="imgtop" ColumnName="imgtop" />
+          <ScalarProperty Name="imgleft" ColumnName="imgleft" />
+          <ScalarProperty Name="imgnext" ColumnName="imgnext" />
+          <ScalarProperty Name="imgright" ColumnName="imgright" />
+          <ScalarProperty Name="imgpre" ColumnName="imgpre" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_360viewList">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_360viewList">
+        <MappingFragment StoreEntitySet="t_md_360viewList">
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="himg" ColumnName="himg" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_360viewtype">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_360viewtype">
+        <MappingFragment StoreEntitySet="t_md_360viewtype">
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

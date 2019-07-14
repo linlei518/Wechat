@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_logsModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="kd_logsEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="t_wx_fans_hisactivity" EntityType="kd_logsModel.t_wx_fans_hisactivity" />
+    <EntitySet Name="t_wx_fans_hislocation" EntityType="kd_logsModel.t_wx_fans_hislocation" />
+    <EntitySet Name="t_wx_fans_hisview" EntityType="kd_logsModel.t_wx_fans_hisview" />
+    <EntitySet Name="t_wx_logs" EntityType="kd_logsModel.t_wx_logs" />
+    <EntitySet Name="view_fans_actview" EntityType="kd_logsModel.view_fans_actview" />
+    <EntitySet Name="view_fans_hisview" EntityType="kd_logsModel.view_fans_hisview" />
+    <EntitySet Name="t_wx_fans_chats" EntityType="kd_logsModel.t_wx_fans_chats" />
+  </EntityContainer>
+  <EntityType Name="t_wx_fans_hisactivity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="open_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="act_url" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="act_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="join_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="channel_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="t_wx_fans_hislocation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="open_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="lng" Type="Decimal" Nullable="false" Precision="18" Scale="10" />
+    <Property Name="lat" Type="Decimal" Nullable="false" Precision="18" Scale="10" />
+    <Property Name="address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_wx_fans_hisview">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="open_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="page_url" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="page_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="view_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="channel_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="type_id" Type="Int32" />
+    <Property Name="news_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_wx_logs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="u_id" Type="Int32" Nullable="false" />
+    <Property Name="login_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="contents" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="ip" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+    <Property Type="Int32" Name="type" />
+  </EntityType>
+  <EntityType Name="view_fans_actview">
+    <Key>
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="act_name" />
+      <PropertyRef Name="channel_name" />
+    </Key>
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="open_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="act_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="channel_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="url" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="join_count" />
+    <Property Type="DateTime" Name="join_time" Precision="3" />
+  </EntityType>
+  <EntityType Name="view_fans_hisview">
+    <Key>
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="channel_name" />
+    </Key>
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="open_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="page_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="channel_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="url" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="view_count" />
+    <Property Type="DateTime" Name="view_time" Precision="3" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="type_id" Type="Int32" />
+    <Property Name="news_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_wx_fans_chats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="open_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="is_sys_auto_reply" />
+    <Property Type="Int32" Name="msg_type" Nullable="false" />
+    <Property Type="Int32" Name="from_type" Nullable="false" />
+    <Property Type="String" Name="media_id" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="contents" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

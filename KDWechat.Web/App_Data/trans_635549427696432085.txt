@@ -1,0 +1,2 @@
+http://api.osd.weimob.com/api?t=c66d6ae7f7cdde96cc91bc79c1ebe16b==G&signature=0d01bd86aa4bc2b7045d97a6f10d64cc7ee24ed4&timestamp=abc&nonce=abc
+<xml><ToUserName><![CDATA[oIyYMj-x8y5lrg-kAiI9LLJNVJjI]]></ToUserName><FromUserName><![CDATA[gh_24b28a35578b]]></FromUserName><CreateTime>1419317165</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[haha]]></Content></xml>

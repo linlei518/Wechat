@@ -1,0 +1,931 @@
+@charset "utf-8";
+/*全局样式*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, span, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td, section, nav, header, footer{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;text-align:inherit;line-height:inherit;}
+html{}
+body{ font-size:12px; color:#000; line-height:24px; font-family:Arial,"微软雅黑","黑体"; background:#fff;}
+strong{ font-weight:bold;}
+a{ text-decoration:none; text-transform:none; color:#000;}
+a:hover{ }
+a span{ cursor:pointer;}
+h1, h2, h3, h4, h5, h6{ color:#181818;}
+h1{}
+em{ text-transform:none; color:#181818; font-style:normal;}
+.clear{ width:0; height:0; display:block; clear:both; overflow:hidden;}
+.noFloat:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+textarea{ resize:none;}
+input:focus,textarea:focus{ outline:none;}
+ul, ol, dl{ list-style:none; display:block;}
+dd, dt, li{ display:block;}
+
+.hidden{ display:none;}
+
+/*图标*/
+sup{ background:#e20000; display:inline-block; color:#fff; line-height:15px; height:15px; min-width:9px; text-align:center; padding:0 3px; border-radius:7px; font-size:12px; font-weight:bold;}
+
+
+
+i{ display:inline-block; width:22px; height:22px; background-position:50% 50%; background-repeat:no-repeat; margin:-3px 4px 0; vertical-align:middle; color:#C03; font-size:16px;}
+.btn i{ margin:-3px 4px 0 -6px;}
+i.moreInfo{ background-image:url(../images/icon_arrow_01.png); background-position: 0 -22px;}
+#header i.moreInfo{ background-position: 0 0;}
+i.statistics{ background-image:url(../images/icon_statistics_01.gif)}
+.current i.statistics{ background-image:url(../images/icon_blue_statistics_01.gif)}
+i.back{ background:url(../images/icon_arrow_01.png) -44px 0 no-repeat;}
+i.black.back{ background:url(../images/icon_arrow_01.png) -44px -44px no-repeat;}
+i.sound{ background:url(../images/icon_black_selectMessage_01.png) -3px -111px no-repeat; opacity:0.4}
+i.video{ background:url(../images/icon_black_selectMessage_01.png) -3px -138px no-repeat; opacity:0.4}
+i.open{ background-image:url(../images/icon_blue_nav_02.gif)}
+i.close{ background-image:url(../images/icon_blue_nav_01.gif)}
+i.config{ background-image:url(../images/icon_config_01.png)}
+i.message{ background-image:url(../images/icon_message_01.png)}
+i.time{ background-image:url(../images/icon_blue_time_01.png)}
+i.count{ background-image:url(../images/icon_blue_list_01.png)}
+
+
+#mainNav i{ margin:0 6px 0 0}
+#mainNav i.hasChild{ margin:0 13px 0 0; float:right;}
+
+i.navBase{ background:url(../images/icon_mainNav_01.png) 0 0 no-repeat;}
+a:hover > i.navBase{ background-position:-44px 0;}
+.current > a > i.navBase{ background-position:-22px 0;}
+
+i.navUser{ background:url(../images/icon_mainNav_01.png) 0 -22px no-repeat;}
+a:hover > i.navUser{ background-position:-44px -22px;}
+.current > a > i.navUser{ background-position:-22px -22px;}
+
+i.navMessage{ background:url(../images/icon_mainNav_01.png) 0 -44px no-repeat;}
+a:hover > i.navMessage{ background-position:-44px -44px;}
+.current > a > i.navMessage{ background-position:-22px -44px;}
+
+i.navApp{ background:url(../images/icon_mainNav_01.png) 0 -66px no-repeat;}
+a:hover > i.navApp{ background-position:-44px -66px;}
+.current > a > i.navApp{ background-position:-22px -66px;}
+
+i.navStatistics{ background:url(../images/icon_mainNav_01.png) 0 -88px no-repeat;}
+a:hover > i.navStatistics{ background-position:-44px -88px;}
+.current > a > i.navStatistics{ background-position:-22px -88px;}
+
+i.navSystem{ background:url(../images/icon_mainNav_01.png) 0 -110px no-repeat;}
+a:hover > i.navSystem{ background-position:-44px -110px;}
+.current > a > i.navSystem{ background-position:-22px -110px;}
+
+i.navFile{ background:url(../images/icon_mainNav_01.png) 0 -132px no-repeat;}
+a:hover > i.navFile{ background-position:-44px -132px;}
+.current > a > i.navFile{ background-position:-22px -132px;}
+
+i.navUserGroup{ background:url(../images/icon_mainNav_01.png) 0 -154px no-repeat;}
+a:hover > i.navUserGroup{ background-position:-44px -154px;}
+.current > a > i.navUserGroup{ background-position:-22px -154px;}
+
+i.navPM{ background:url(../images/icon_mainNav_01.png) 0 -176px no-repeat;}
+a:hover > i.navPM{ background-position:-44px -176px;}
+.current > a > i.navPM{ background-position:-22px -176px;}
+
+i.navPic{ background:url(../images/icon_mainNav_01.png) 0 -198px no-repeat;}
+a:hover > i.navPic{ background-position:-44px -198px;}
+.current > a > i.navPic{ background-position:-22px -198px;}
+
+i.navLog{ background:url(../images/icon_mainNav_01.png) 0 -220px no-repeat;}
+a:hover > i.navLog{ background-position:-44px -220px;}
+.current > a > i.navLog{ background-position:-22px -220px;}
+
+i.navPassword{ background:url(../images/icon_mainNav_01.png) 0 -242px no-repeat;}
+a:hover > i.navPassword{ background-position:-44px -242px;}
+.current > a > i.navPassword{ background-position:-22px -242px;}
+
+
+
+
+i.hasChild{ background:url(../images/icon_arrow_01.png) 0 -44px no-repeat;}
+a:hover > i.hasChild{ background-position:0 -22px;}
+.current > a > i.hasChild{ background-position:-22px -66px;}
+
+
+i.offNav{ background:url(../images/icon_offNav_01.gif) 50% 0 no-repeat; width:18px; margin:0;}
+a:hover > i.offNav{ background-position:50% -44px;}
+.current > a > i.offNav{ background-position:50% -22px;}
+
+
+i.message1{ background:url(../images/icon_black_selectMessage_01.png) 0 0 no-repeat; width:27px; height:27px; margin:4px auto; display:block;}
+i.message2{ background:url(../images/icon_black_selectMessage_01.png) 0 -27px no-repeat; width:27px; height:27px; margin:4px auto; display:block;}
+i.message3{ background:url(../images/icon_black_selectMessage_01.png) 0 -54px no-repeat; width:27px; height:27px; margin:4px auto; display:block;}
+i.message4{ background:url(../images/icon_black_selectMessage_01.png) 0 -81px no-repeat; width:27px; height:27px; margin:4px auto; display:block;}
+i.message5{ background:url(../images/icon_black_selectMessage_01.png) 0 -108px no-repeat; width:27px; height:27px; margin:4px auto; display:block;}
+i.message6{ background:url(../images/icon_black_selectMessage_01.png) 0 -135px no-repeat; width:27px; height:27px; margin:4px auto; display:block;}
+i.message7{ background:url(../images/icon_black_selectMessage_01.png) 0 -162px no-repeat; width:27px; height:27px; margin:4px auto; display:block;}
+i.message8{ background:url(../images/icon_black_selectMessage_01.png) 0 -189px no-repeat; width:27px; height:27px; margin:4px auto; display:block;}
+i.message9{ background:url(../images/icon_black_selectMessage_01.png) 0 -216px no-repeat; width:27px; height:27px; margin:4px auto; display:block;}
+
+
+
+/*结构样式*/
+#header{ background:#1161be; color:#fff; height:45px; position:relative; z-index:2; box-shadow:0 0 8px rgba(0,0,0,0.5)}
+#header .logoField{ width:218px; float:left; height:100%;}
+#header .logoField .logo{ display:block; padding:2px 0 0 8px; font-size:16px; line-height:40px; letter-spacing:1px;}
+#header .logoField img{ vertical-align:middle;}
+
+#header .userField{ float:right; padding:0 12px 0 0; position:relative; z-index:2;}
+#header .userField p{ font-size:14px; line-height:45px;}
+#header .userField a{ color:#fff;}
+
+#header .titleField{ margin-left:218px; padding:0 0 0 25px; position:relative;}
+#header .titleField h1{ color:#fff; font-size:14px; line-height:45px;}
+#header .titleField h1 a{ color:#fff;}
+#header .titleField ul{ position:absolute; top:43px; background:#fff; left:20px; padding:5px 5px 10px; border:2px solid #1161be; display:none; width:220px;}
+#header .titleField ul li{ line-height:20px; border-bottom:1px solid #f1f1f1;}
+#header .titleField ul li a{ display:block; padding:8px 10px 8px 5px; font-size:14px;}
+#header .titleField ul li a:hover{ color:#1161be;}
+
+#header .userField ul{ position:absolute; top:43px; background:#fff; right:18px; padding:5px 5px 10px; border:2px solid #1161be; display:none; width:140px;}
+#header .userField ul li{ line-height:20px; border-bottom:1px solid #f1f1f1;}
+#header .userField ul li a{ display:block; padding:5px 5px 5px 10px; color:#000; text-align:right;}
+#header .userField ul li a:hover{ color:#1161be;}
+#header .userField ul li em{ color:#e20000; font-weight:bold;}
+
+
+
+#mainNav{ width:217px; position:absolute; left:0; top:45px; bottom:0; padding:38px 0 0; overflow:auto; border-right:1px solid #d4d4d4;}
+#mainNav ul{ width:100%;}
+#mainNav ul li{ padding:0 18px;}
+#mainNav ul li a{ display:block; padding:9px 0; line-height:24px; color:#222; font-size:14px; border-bottom:1px solid #ececec;}
+#mainNav ul li a:hover{ color:#44b549; text-decoration:none;}
+#mainNav ul li.current{ padding:0;}
+#mainNav ul li.current a{ color:#fff; background:#1161be; padding:8px 18px;}
+
+#mainNav ul li ul{ display:none; padding:5px 0 15px; width:auto; margin:0 18px; border-bottom:1px solid #ececec;}
+#mainNav ul li.current ul{ display:block;}
+#mainNav ul li ul li{ padding:0;}
+#mainNav ul li ul li a{ padding:9px 0 9px 28px; border:0;}
+#mainNav ul li.current ul li a{ background:none; color:#222; padding:9px 0 9px 28px;}
+#mainNav ul li ul li a:hover{ color:#44b549;}
+#mainNav ul li ul li.current a{ color:#1161be;}
+
+#mainNav ul li.current ul li ul{ display:none; padding:5px 0 15px; margin:0; border:0;}
+#mainNav ul li.current ul li.current ul{ display:block;}
+#mainNav ul li ul li.current ul li{ background:none;}
+#mainNav ul li ul li.current ul li a{ background:none; padding:8px 0 8px 28px; color:#666}
+#mainNav ul li ul li.current ul li a:hover{ color:#44b549;}
+#mainNav ul li ul li.current ul li.current a{ color:#1161be;}
+
+
+#main{ position:absolute; left:220px; right:0; top:45px; bottom:0; padding:38px 0 0; overflow:auto;}
+
+#salesHeader{ position:absolute; left:0; right:0; top:0; height:40px; background:#0b50a1;}
+#salesHeader .navField{ float:left; height:100%;}
+#salesHeader .navField ul{ height:100%; text-align:left;}
+#salesHeader .navField ul li{ display:inline-block; padding:0 20px; line-height:40px; height:100%; font-size:14px; color:#fff;}
+#salesHeader .navField ul li a{ color:#fff;}
+#salesHeader .navField ul li.current{ background:#f3f7fb; color:#0b50a1;}
+#salesHeader .navField ul li.current a{ color:#0b50a1;}
+
+
+#salesHeader .userField{ float:right; height:100%; position:relative; padding:0 0 0 8px;}
+#salesHeader .userField p{ height:100%; color:#fff; line-height:40px;}
+#salesHeader .userField p span{ display:inline-block; height:24px; width:24px; margin:8px; vertical-align:middle; overflow:hidden;}
+#salesHeader .userField p span img{ display:block; width:100%; height:auto;}
+#salesHeader .userField p em{ font-size:14px; color:#fff;}
+#salesHeader .userField ul{ display:none;}
+
+#salesHeader .btns{ float:right; height:100%; border-left:1px solid #295fa1;}
+#salesHeader .btns .btn{ height:100%; width:47px; border-right:1px solid #295fa1; background:none; text-align:center;}
+#salesHeader .btns .btn.messageBtn{ position:relative;}
+#salesHeader .btns .btn.messageBtn i{ margin:0;}
+#salesHeader .btns .btn.messageBtn sup{ position:absolute; top:1px; right:1px;}
+
+
+#salesMain{ position:absolute; left:0; right:0; top:40px; bottom:0; background:#e8e8e8; overflow:auto;}
+
+/*弹框页面结构*/
+.bombbox{ background:#fff;}
+#bombboxTitle{ position:absolute; left:0; right:0; top:0; z-index:12; box-shadow:0 0 10px rgba(0,0,0,0.2); background:#f4f4f4;}
+#bombboxMain{ position:absolute; left:0; right:0; top:43px; bottom:0; overflow:auto;}
+
+/*公用样式*/
+.txt{ background:#fff; border:1px solid #e6e7ec; border-radius:0; padding:6px 8px 7px; line-height:17px; vertical-align:middle; margin:0; vertical-align:middle; width:372px; font-size:14px;}
+.txt:focus{ border-color:#a6bcd0; background-color:#f7fbff;}
+.txt:disabled,.txt.disabled{ background:#f6f6f6;}
+
+.date{ width:168px; background:url(../images/icon_gray_calendar_01.png) 96% 5px no-repeat #fff; padding-right:30px; font-size:12px;}
+
+.radio{ margin:0 3px; vertical-align:text-top;}
+.checkbox{ margin:0 3px; vertical-align:text-top;}
+
+label.radioArea{ margin:0 6px 0 0;}
+label.checkboxArea{ margin:0 6px 0 0;}
+
+
+.btn{ display:inline-block; cursor:pointer; font-size:12px; vertical-align:middle;}
+
+.textarea{ border:1px solid #e6e7ec; margin:0; padding:7px 8px; line-height:18px; font-size:14px; width:666px; height:140px; overflow:auto;}
+.textarea:focus{ border-color:#a6bcd0; background-color:#f7fbff;}
+
+
+.btn1{ background:#2974cc; border:0; min-width:90px; padding:0 16px; text-align:center; height:32px; margin:0; vertical-align:middle; line-height:32px; color:#fff; border-radius:3px; font-size:14px;}
+.btn1:hover{ background:#2469b9;}
+a.btn1{min-width:58px;}
+
+.btn2{ background:#acacac; border:0; min-width:90px; padding:0 16px; text-align:center; height:32px; margin:0; vertical-align:middle; line-height:32px; color:#fff; border-radius:3px; font-size:14px;}
+.btn2:hover{ background:#989898;}
+a.btn2{min-width:58px;}
+
+.btn3{ background:#44b549; border:0; min-width:90px; padding:0 16px; text-align:center; height:32px; margin:0; vertical-align:middle; line-height:32px; color:#fff; border-radius:3px; font-size:14px;}
+.btn3:hover{ background:#36a33b;}
+a.btn3{min-width:58px;}
+
+.btn5{ background:#fff; border:1px solid #e6e7ec; min-width:78px; padding:0 16px; text-align:center; height:32px; margin:0; vertical-align:middle; line-height:30px; border-radius:3px; font-size:14px;}
+.btn5:hover{ background:#f4f4f4;}
+a.btn5{ height:30px; min-width:46px;}
+
+
+.btn6{ background:#fff; border:1px solid #e6e7ec; min-width:68px; text-align:center; height:32px; margin:0; vertical-align:middle; padding:0 10px; line-height:30px; border-radius:3px; font-size:14px;}
+.btn6:hover{ background:#f4f4f4;}
+a.btn6{ min-width:46px; height:30px;}
+
+
+
+.tipText1{ display:inline-block; vertical-align:middle; background:url(../images/icon_11.png) 0 50% no-repeat; padding-left:8px; font-size:12px;}
+.tipText1 p{color:#e60020; border:1px solid #b0b0b0; border-left:0 none; word-break: break-all; word-wrap: break-word;height:28; padding:0 10px; background:#ffffff}
+.tipText1 em{font-style: normal;font-weight: 400; color:#e60020; padding:0 5px}
+
+.cancelBubble{ border:1px solid #e6e7ec; padding:0 22px 0 6px; color:#1161be; line-height:24px; background:url(../images/icon_cancel_01.gif) 100% 2px no-repeat #fff; text-decoration:none; border-radius:3px; margin-right:12px;}
+.cancelBubble:hover{ border:1px solid #e20001; color:#e20001; line-height:24px; background:url(../images/icon_cancel_01.gif) 100% -18px no-repeat #fff;}
+.cancelBubble.disabled{ border-color:#ccc; padding:0 4px; color:#666; text-decoration:none; background:none;}
+
+
+.subGroup{ font-size:0; width:704px;}
+.subGroup .btn{}
+.subGroup .txt{ width:586px; margin-right:12px;}
+
+
+select.select{ display:none;}
+.selectAera{ display:inline-block; vertical-align:middle; border:1px solid #e6e7ec; background:#fff; position:relative; z-index:1; cursor:pointer; height:30px; width:120px; margin:0 12px 0 0; font-size:14px; color:#000;}
+.selectAera:hover{}
+
+.selectAera .selected{ padding:6px 28px 6px 8px; line-height:18px; height:18px; overflow:hidden; background:url(../images/icon_arrow_01.gif) 100% 50% no-repeat;}
+.selectAera .selected:hover{ background-color:#f4f4f4;}
+.selectAera .options{ background:#fff; margin:0 -1px; width:100%; float:left; border:1px solid #e6e7ec; display:none; max-height:420px; overflow-y:auto;}
+.selectAera .options li{  line-height:18px; padding:6px 8px; border-top:1px solid #f4f4f4;}
+.selectAera .options li:hover,.selectAera .options li.selectedOption{ background-color:#f4f4f4;}
+.selectAera.disabled{ border-color:#ccc; background:#f6f6f6; color:#aaa;}
+.selectAera .options li.disabled{ color:#999;}
+.selectAera .options li.disabled:hover{ background:#f1f1f1; color:#aaa;}
+.selectAera .selected.disabled{ color:#999;}
+
+
+
+.checkBoxList{ width:760px; padding: 0 0 20px;}
+.checkBoxList label{ display:inline-block; vertical-align:top; width:160px; height:30px; line-height:30px; padding:5px 10px 5px 0;}
+
+
+.file{ display:none;}
+.fileAera{ font-size:0; position:relative;}
+.fileAera .btn{}
+.fileAera .txt{ width:284px; margin-right:12px;}
+
+
+.audio:hover,.video:hover{ opacity:0.8;}
+
+
+.bottomLine{ border-bottom:1px solid #e6e7ec;}
+
+
+
+
+.pageNum{ text-align:right; padding:0 0 10px; font-size:0; margin:22px 0 0;}
+.pageNum .info{ float:left; color:#999; font-size:12px;}
+.pageNum .info em{}
+.pageNum a{ display:inline-block; line-height:22px; padding:0 8px; border:1px solid #e3e3e3; vertical-align:middle; min-width:6px; font-size:12px; margin:0 2px; border-radius:3px;}
+.pageNum a:hover{ background:#f4f4f4;}
+.pageNum a.current{ color:#fff; background:#1161be; border-color:#1161be;}
+.pageNum .txt{ width:40px; height:13px; padding:5px 4px 4px; margin:0 2px;}
+.pageNum .btn{width:40px; height:24px; border:0; margin:0 2px; text-align:center; border-radius:3px; border:1px solid #e3e3e3; background:#fff;}
+.pageNum .btn:hover{ background:#f4f4f4;}
+
+
+
+.userTags{ position:absolute; z-index:15; background:#fff; padding:10px; width:410px; border:2px solid #6ba109; display:none;}
+.userTags .title{ border-bottom:1px solid #f1f1f1; padding:5px 0;}
+.userTags .title h2{ font-size:14px;}
+.userTags .title a.link{ margin:0 10px; color:#1161be; text-decoration:underline; font-size:12px;}
+.userTags .title h2 span{ font-size:12px; color:#666; padding:0 0 0 10px;}
+.userTags .title .control{ position:absolute; top:0; right:0;}
+.userTags .title .control .close{ width:43px; height:43px; background:url(../images/btn_close_02.gif) 50% 50% no-repeat; border:0; padding:0; cursor:pointer;}
+.userTags .list{ padding:5px 0 10px; width:410px; height:144px; overflow:auto; border-bottom:1px solid #f1f1f1;}
+.userTags .list ul{ font-size:0;}
+.userTags .list ul li{ display:inline-block; vertical-align:top; font-size:12px; width:180px; padding:0 10px 0 0;}
+.userTags .list label{ cursor:pointer; display:block;}
+.userTags .btns{ padding:10px 0 0;}
+.userTags .btns .tip{ float:right; color:#666; line-height:30px;}
+
+
+
+.userTypes{ position:absolute; z-index:15; background:#fff; padding:10px; border:2px solid #6ba109; display:none;}
+.userTypes .title{ border-bottom:1px solid #f1f1f1; padding:5px 0;}
+.userTypes .title h2{ font-size:14px;}
+.userTypes .title a.link{ margin:0 10px; color:#1161be; text-decoration:underline; font-size:12px;}
+.userTypes .title h2 span{ font-size:12px; color:#666; padding:0 0 0 10px;}
+.userTypes .title .control{ position:absolute; top:0; right:0;}
+.userTypes .title .control .close{ width:43px; height:43px; background:url(../images/btn_close_02.gif) 50% 50% no-repeat; border:0; padding:0; cursor:pointer;}
+.userTypes .list{ padding:5px 0 10px; width:200px; height:144px; overflow:auto; border-bottom:1px solid #f1f1f1;}
+.userTypes .list ul{}
+.userTypes .list ul li{}
+.userTypes .list label{ cursor:pointer; display:block;}
+.userTypes .btns{ padding:10px 0 0;}
+.userTypes .btns .tip{ float:right; color:#666; line-height:30px;}
+
+
+
+.statisticsContrast{ position:absolute; z-index:15; background:#fff; padding:10px; border:2px solid #6ba109; display:none;}
+.statisticsContrast .title{ border-bottom:1px solid #f1f1f1; padding:5px 0;}
+.statisticsContrast .title h2{ font-size:14px;}
+.statisticsContrast .title a.link{ margin:0 10px; color:#1161be; text-decoration:underline; font-size:12px;}
+.statisticsContrast .title h2 span{ font-size:12px; color:#666; padding:0 0 0 10px;}
+.statisticsContrast .title .control{ position:absolute; top:0; right:0;}
+.statisticsContrast .title .control .close{ width:43px; height:43px; background:url(../images/btn_close_02.gif) 50% 50% no-repeat; border:0; padding:0; cursor:pointer;}
+.statisticsContrast .list{ padding:5px 0 10px; width:200px; height:144px; overflow:auto; border-bottom:1px solid #f1f1f1;}
+.statisticsContrast .list ul{}
+.statisticsContrast .list ul li{}
+.statisticsContrast .list label{ cursor:pointer; display:block;}
+.statisticsContrast .btns{ padding:10px 0 0;}
+.statisticsContrast .btns .tip{ float:right; color:#666; line-height:30px;}
+
+
+
+
+
+
+.userBaseInfo{ background:#fff; padding:10px; line-height:20px;}
+.userBaseInfo:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.userBaseInfo .img{ width:105px; height:105px; float:left; border:1px solid #e6e7ec;}
+.userBaseInfo .img span{ display:block; width:100%; height:100%; overflow:hidden;}
+.userBaseInfo .img img{ display:block; width:100%; height:auto;}
+.userBaseInfo .info{ margin-left:125px; color:#999;}
+.userBaseInfo .info h2{ padding:0 0 5px;}
+.userBaseInfo .info h2 em{ font-size:14px; font-weight:bold; margin-right:10px;}
+.userBaseInfo .info p em{ color:#e20000;}
+.userBaseInfo .tags{ margin-left:125px; font-size:0;}
+.userBaseInfo .tags span{ font-size:12px; color:#999;}
+.userBaseInfo .tags .tag{ margin:0 8px 0 0; padding:0 8px 0 0; color:#1161be; border-right:1px dotted #ccc;}
+.userBaseInfo .tags .btnAdd{ border:0; background:url(../images/icon_green_add_01.png) 5px 3px no-repeat; height:20px; padding:0 3px 0 21px; margin:0; vertical-align:middle; margin: 0 0; color:#6aa10a;}
+.userBaseInfo .tags .btnAdd.btnOpen{ background-image:url(../images/icon_green_up_01.png);}
+.userBaseInfo .group{ float:right; color:#999;}
+.userBaseInfo .group .selected{ color:#1161be;}
+.userBaseInfo .group .btnSelect{ border:0; background:url(../images/icon_gray_select_01.png) 50% 1px no-repeat; width:20px; height:20px; padding:0; margin:0; vertical-align:middle;}
+.userBaseInfo .group .btnSelect.btnOpen{ background-image:url(../images/icon_green_up_01.png);}
+.userBaseInfo .btns{ margin:7px 0 0 120px; color:#999;}
+.userBaseInfo .btns .btn{ margin:0 0 0 6px;}
+.userBaseInfo .btns2{ margin:7px 0 0; float:right; color:#999;}
+.userBaseInfo .btns2 em{ color:#e20000;}
+
+li.userBaseInfo{ margin:0 0 10px;}
+li.userBaseInfo.selected{ padding:8px; border:2px solid #ccc; background:#f6f6f6;}
+li.userBaseInfo .check{ float:left; width:30px; height:30px;}
+li.userBaseInfo .check label{ display:block; width:100%; height:100%; cursor:pointer;}
+li.userBaseInfo .img{ width:60px; height:60px; margin-top:2px;}
+li.userBaseInfo .info,li.userBaseInfo .tags{ margin-left:110px;}
+li.userBaseInfo .btns{ margin:5px 0 0; float:right; }
+
+
+.listNTab{ height:40px; background:#c7ced3; font-size:0;}
+.listNTab .nTabBtn{ vertical-align:top; border-right:1px solid #fff; padding:0 30px; line-height:40px;}
+.listNTab .nTabBtn.current{ background:#fff;}
+
+
+
+.tableNTab{ height:31px; font-size:0; margin:0 1px 10px 0; overflow:hidden; border-bottom:1px solid #ccc; padding:0 0 0 1px;}
+.tableNTab .nTabBtn{ vertical-align:top; line-height:30px; padding:0 10px; font-size:14px; margin-left:-1px; vertical-align:bottom; border:solid #c7ced3; border-width:1px 1px 0; background:#dde2e5;}
+.tableNTab .nTabBtn.current{ background:#fff; color:#1161be;}
+
+
+.userMessage{ background:#fff; margin:0 0 10px; padding:10px; line-height:20px;}
+.userMessage:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.userMessage .img{ float:left; width:60px; height:60px; border:1px solid #e6e7ec;}
+.userMessage .img span,.userMessage .img a{ display:block; width:100%; height:100%; overflow:hidden;}
+.userMessage .img img{ display:block; width:100%; height:auto;}
+.userMessage .info{ margin-left:80px; padding:0 0 5px;}
+.userMessage .info .time{ float:right; color:#999;}
+.userMessage .info .time em{ color:#e20000;}
+.userMessage .info .time span{ color:#000;}
+.userMessage .info .name{ font-size:14px; font-weight:bold;}
+.userMessage .text{ margin:0 210px 0 80px; color:#666;}
+.userMessage .text a{ color:#1161be; text-decoration:underline;}
+.userMessage .btns{ float:right;}
+
+.userMessage.repeat .img{ float:right;}
+.userMessage.repeat .info,.userMessage.repeat .text{ margin-left:0;}
+.userMessage.repeat .time{ padding-right:10px;}
+
+
+
+
+
+
+.jurisdictionSet{ border-bottom:1px solid #e6e7ec; padding:0 0 10px;}
+.jurisdictionSet .btnOpen{ width:19px; height:19px; cursor:pointer; background:url(../images/icon_blue_nav_02.gif) 50% 50% no-repeat; border:0; display:block; position:absolute; top:50%; margin-top:-10px;}
+.jurisdictionSet .btnOpen.open{ background-image:url(../images/icon_blue_nav_01.gif);}
+.jurisdictionSet ul{}
+.jurisdictionSet ul li{ margin:0 0 10px;}
+.jurisdictionSet ul li h3{ line-height:20px; padding:6px 40px; background:#c7ced3; position:relative;}
+.jurisdictionSet ul li h3 .btnOpen{ left:20px;}
+.jurisdictionSet ul li ul{ display:none;}
+.jurisdictionSet ul li ul li{ background:#fff; margin:0;}
+.jurisdictionSet ul li ul li h3{ background:none; border-bottom:1px solid #eee; padding:6px 60px;}
+.jurisdictionSet ul li ul li h3 .btnOpen{ left:40px;}
+.jurisdictionSet ul li ul li ul{ display:none; margin:0 0 10px;}
+.jurisdictionSet ul li ul li ul li{ background:none;}
+.jurisdictionSet ul li ul li ul li h3{ padding:0px 80px; border:0;}
+
+
+
+/*error*/
+input.error { border: 1px solid red; }
+select.error { border: 1px solid red; }
+textarea.error { border: 1px solid red; }
+label.error {
+  background:url("./demo/images/unchecked.gif") no-repeat 0px 0px;
+
+  padding-left: 16px;
+
+  padding-bottom: 2px;
+
+  font-weight: bold;
+
+  color: #EA5200;
+}
+label.checked {
+  background:url("./demo/images/checked.gif") no-repeat 0px 0px;
+}
+
+
+
+/*模块样式*/
+
+.titlePanel_01{}
+.titlePanel_01 h1{ padding:9px 0 10px 30px; font-size:16px; color:#000; line-height:24px;}
+.bombbox .titlePanel_01 h1{ padding-left:20px;}
+.titlePanel_01 .btns{ float:right; padding:6px 20px 0 0;}
+.bombbox .titlePanel_01 .btns{ padding-right:10px;}
+.titlePanel_01 .btns .btn{ margin-right:10px;}
+
+
+.listPanel_01{ padding:20px 0 0; margin:0 30px; font-size:14px;}
+.bombbox .listPanel_01{ margin:0 20px; width:auto;}
+
+.listPanel_01 .title{ border-bottom:1px solid #e6e7ec; margin-bottom:20px;}
+.listPanel_01 .title h2{ line-height:30px; font-size:14px; font-weight:bold;}
+
+
+.listPanel_01 .table{ width:100%; margin:0 0 20px;}
+
+.listPanel_01 dl{ padding:0 0 20px; line-height:30px;}
+.listPanel_01 dl:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.listPanel_01 dl dt{ width:110px; float:left;}
+.listPanel_01 dl dd{ margin-left:110px; color:#666; font-size:12px;}
+
+.listPanel_01.longTitle dl dt{ width:150px;}
+.listPanel_01.longTitle dl dd{ margin-left:150px;}
+.listPanel_01.longTitle .textarea{ width:626px;}
+
+.listPanel_01.longTitle .subGroup .txt{ width:537px;}
+
+.listPanel_01 dl dd em{ display:inline-block; vertical-align:middle; font-size:14px; color:#000;}
+.listPanel_01 dl dd a{ color:#1161be; text-decoration:underline;}
+.listPanel_01 dl dd p{ line-height:20px;}
+.listPanel_01 dl dd .cancelBubble{ text-decoration:none; background-color:#fff; margin:0 4px 0 0; font-size:12px; color:#000;}
+
+.listPanel_01 label{ margin:0 10px 0 0; display:inline-block;}
+
+
+.listPanel_01 .listGroup{ display:none;}
+.listPanel_01 .listGroup.listGroup1{ display:block;}
+
+.listPanel_01 .btnPanel_01{ margin:0;}
+
+
+
+.listPanel_03{ padding:20px 0 20px 20px; background:#fff; margin:20px;}
+.bombbox .listPanel_03{ margin:0 20px; width:auto;}
+
+.listPanel_03 .title{ border-bottom:1px solid #e6e7ec; margin:0 20px 20px 0;}
+.listPanel_03 .title h2{ line-height:30px; font-size:14px; font-weight:bold;}
+
+.listPanel_03 dl{ padding:0 0 20px; line-height:30px;}
+.listPanel_03 dl:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.listPanel_03 dl dt{ width:80px; float:left;}
+.listPanel_03 dl dd{ width:280px; float:left;}
+.listPanel_03 dl dd .selectAera{ width:260px;}
+.listPanel_03 dl dd .txt{ width:248px;}
+.listPanel_03 dl dd .txt.date{ width:228px;}
+
+.listPanel_03 dl.colspan{}
+.listPanel_03 dl.colspan dd{ width:640px; float:left;}
+.listPanel_03 dl.colspan dd .selectAera{ width:199px;}
+.listPanel_03 dl.colspan dd .txt{ width:608px;}
+.listPanel_03 dl.colspan dd .txt.date{ width:588px;}
+.listPanel_03 dl.colspan dd .textarea{ width:608px;}
+ 
+
+.listPanel_03 dl dd em{ display:inline-block; vertical-align:middle;}
+.listPanel_03 dl dd a{ color:#1161be; text-decoration:underline;}
+.listPanel_03 dl dd p{ line-height:20px;}
+.listPanel_03 dl dd .cancelBubble{ text-decoration:none; background-color:#fff; margin:0 4px 0 0;}
+
+
+.listPanel_03 .listGroup{ display:none;}
+.listPanel_03 .listGroup.listGroup1{ display:block;}
+
+.listPanel_03 .subGroup{}
+.listPanel_03 dl dd .subGroup .txt{ width:508px;}
+
+.listPanel_03 .map{ width:757px; height:228px;}
+.listPanel_03 .info{ padding:0 0 20px;}
+
+
+
+.btnPanel_01{ padding:30px 0; margin:0 30px; font-size:0;}
+.btnPanel_01 .btn{ margin-right:10px;}
+.btnPanel_01 .fileAera{ display:inline-block; font-size:0;}
+.btnPanel_01 .fileAera .txt{ display:none;}
+.bombbox .btnPanel_01{ margin:0 20px; width:auto;}
+
+.btnPanel_01.longTitle{ padding-left:120px;}
+.btnPanel_01 .btn{ margin:0 10px 0 0;}
+
+
+
+
+
+.tablePanel_01{ padding:22px 0; margin:0 29px 0 30px; min-width:740px;}
+.tablePanel_01 .title{ margin:0 0 10px;}
+.tablePanel_01 .title h2{ line-height:30px; font-size:14px; font-weight:bold;}
+.tablePanel_01 .table{ width:100%;}
+
+
+
+.table{ border-collapse:collapse; line-height:24px;}
+.table th{ background:url(../images/bg_table_01.gif) 0 100% repeat-x #fff; padding:6px 8px; color:#000; border:1px solid #e3e3e3; border-bottom-width:2px; font-weight:normal; text-align:center;}
+.table td{ padding:6px 8px; border:1px solid #e3e3e3; background:#fff; color:#333;}
+.table .btn{ height:24px; line-height:22px; padding:0 12px; min-width:50px; font-size:12px;}
+.table a.btn{ min-width:24px; height:22px;}
+.table .check{ width:22px; text-align:center;}
+.table .name{ text-align:left; padding-left:12px;}
+.table .name a{ color:#333}
+.table .name a:hover{ color:#1161be;}
+.table .img{ width:160px;}
+.table .img span{ width:100%; overflow:hidden;}
+.table .img img{ display:block; width:100%; height:auto;}
+.materialList .img span{ height:84px; overflow:hidden;}
+.table .info1{ text-align:center;}
+.table .info2{ text-align:left; padding-left:20px;}
+.table .link{ text-align:center;}
+.table .link a{ text-decoration:underline; color:#1161be;}
+.table td.time{ text-align:center;}
+.table .control{ text-align:center; width:200px;}
+.table .control2{ text-align:center; width:140px;}
+.table td.control{ font-size:0;}
+.table .control .btn{ margin:0 5px;}
+.table .selectControl{ width:80px; text-align:center;}
+.table tr:hover td{ background:#f7f7f7;}
+.table .info em,.table .info a{ display:inline-block; margin:0 3px;}
+
+.table .info2 .info2List{ overflow:hidden;}
+.table .info2 .info2List.close{ height:90px;}
+.table .info2 .btns{ margin-top:10px; display:none;}
+.table .info2 em{ border-right:1px dotted #ccc; height:16px; line-height:16px; overflow:hidden; vertical-align:top; width:110px; padding:0 4px 0 0; margin:7px 10px 7px 0;}
+.table .info a{ color:#1161be;}
+.table .info .audio,.table .info .video{ font-size:0; width:20px; height:20px; background:url(../images/icon_gray_play_01.png) 50% 50% no-repeat;}
+.table .info .audio.audioPlaying{ background-image:url(../images/icon_gray_stop_01.png)}
+
+.table .btnUp{ width:21px; height:21px; border:0; background:url(../images/icon_black_upBtn_01.gif) 50% 50% no-repeat; padding:0; margin:0;}
+.table .btnDown{ width:21px; height:21px; border:0; background:url(../images/icon_black_downBtn_01.gif) 50% 50% no-repeat; padding:0; margin:0;}
+
+
+
+.table2{ border-collapse:collapse; line-height:20px;}
+.table2 th{ border:solid #1161be; border-width:1px 0; color:#1161be; font-weight:bold; font-size:14px; padding:8px; text-align:left;}
+.table2 td{ padding:8px; border-bottom:1px solid #e8f0fa; background:#fff; color:#999;}
+.table2 .name{ font-size:14px; text-align:left; padding:0 20px 0 0;}
+.table2 td.name{ color:#5f97d8;}
+
+
+
+
+
+
+.filterPanel_01{ padding:22px 0 0; margin:0 30px; overflow:hidden;}
+.filterPanel_01 dl{ padding:5px 0; line-height:20px; border-bottom:1px solid #eee}
+.filterPanel_01 dl:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.filterPanel_01 dl dt{ width:90px; padding:0 0 0 10px; float:left;}
+.filterPanel_01 dl dd{ margin-left:100px; font-size:0;}
+.filterPanel_01 dl.selected{ display:none;}
+
+.filterPanel_01 .selectedList{ border-bottom:0; background:#eee; margin:0 0 5px;}
+.filterPanel_01 .selectedList dt{ line-height:26px;}
+.filterPanel_01 .selectedList dd{ margin:0 90px; margin-bottom:-10px;}
+.filterPanel_01 .selectedList .btns{ margin:0; float:right;}
+
+.filterPanel_01 .filterSelect{ color:#1161be; margin:0 20px 0 0;}
+.filterPanel_01 .filterSelect:hover{ color:#e20001;}
+.filterPanel_01 .cancelBubble{ margin:0 10px 10px 0;}
+.filterPanel_01 .filterCancel{ padding:0 20px; line-height:26px;}
+.filterPanel_01 .filterCancel:hover{ color:#e20001;}
+
+.filterPanel_01 .btns2{ text-align:center;}
+.filterPanel_01 .btns2 .btn{ border-top:0; height:20px; line-height:20px; vertical-align:top; background:#d7d7d7;}
+
+
+
+.searchPanel_01{ padding:20px 0 0; margin:0 20px;}
+.searchPanel_01:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.searchPanel_01 .searchField{ float:right; font-size:0;}
+.searchPanel_01 .searchField .searchTxt{ width:160px; padding-right:36px;}
+.searchPanel_01 .searchField .searchBtn{ width:30px; height:30px; padding:0; background:url(../images/icon_blue_search_01.png) 50% 50% no-repeat; border:0; margin-left:-30px;}
+
+
+
+.selectMessageModule_01{ margin:22px 30px 50px; background:#fff; border:1px solid #e6e7ec; position:relative;}
+.selectMessageModule_01 .infor{ position:absolute; top:100%; left:0; margin-top:5px;}
+
+
+.messageNTabPanel_01{ width:100%; border-bottom:1px solid #e6e7ec;}
+.messageNTabPanel_01 ul{ height:35px; font-size:0; line-height:35px; padding:0 10px;}
+.messageNTabPanel_01 ul li{ display:inline-block; vertical-align:top; width:50px; height:100%;}
+.messageNTabPanel_01 ul li a{ display:block; width:100%; height:100%; position:relative; overflow:hidden;}
+.messageNTabPanel_01 ul li i{ opacity:0.4;}
+.messageNTabPanel_01 ul li a:hover i, .messageNTabPanel_01 ul li a.current i{ opacity:1;}
+.messageNTabPanel_01 ul li a em{ width:200px; position:absolute; top:32px; left:50%; margin-left:-100px; background:url(../images/icon_12.png) 50% 0 no-repeat; padding:5px 0 0; text-align:center; display:none;}
+.messageNTabPanel_01 ul li a:hover{ overflow:visible;}
+.messageNTabPanel_01 ul li a:hover em{ display:block;}
+.messageNTabPanel_01 ul li a span{ display:inline-block; line-height:24px; background:#000; color:#fff; font-size:14px; vertical-align:top; padding:0 8px;}
+
+
+
+.userListPanel_01{ padding:0 20px 20px;}
+.userListPanel_01 .control{ padding:0 10px;}
+.userListPanel_01 .control label{ margin:0 10px 0 0; display:inline-block; cursor:pointer;}
+
+.userListPanel_01 .list{ padding:20px 0 0;}
+.userListPanel_01 .list ul{}
+
+
+.userDetailModule_01{ padding:20px;}
+.userDetailModule_01 .listPanel_03{ margin:20px 0 0;}
+
+.userMessageModule_01{ padding:20px;}
+.userMessageModule_01 .userBaseInfo{ margin:0 0 10px;}
+
+.userMessageListPanel_01{}
+.userMessageListPanel_01 .list{}
+.userMessageListPanel_01 .list ul{}
+
+
+
+.weixinInfoPanel_01{ margin:20px 20px 0; background:#fff; padding:20px;}
+.weixinInfoPanel_01:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.weixinInfoPanel_01 .logoField{ width:180px; height:180px; padding:0 30px 0 0; border-right:1px solid #e6e7ec; float:left;}
+.weixinInfoPanel_01 .logoField span{ display:block; width:100%; height:100%; overflow:hidden;}
+.weixinInfoPanel_01 .logoField img{ display:block; }
+.weixinInfoPanel_01 .listField{ margin-left:240px;}
+.weixinInfoPanel_01 .listField dl{ min-height:20px; line-height:20px; padding:0 0 10px; font-size:14px;}
+.weixinInfoPanel_01 .listField dl dt{ width:8em; float:left; color:#999;}
+.weixinInfoPanel_01 .listField dl dd{ margin-left:8em;}
+
+
+.statisticsListPanel_01{ margin:20px; background:#fff; overflow:hidden;}
+.statisticsListPanel_01 .listField{ padding:0 20px; margin-bottom:-1px;}
+.statisticsListPanel_01 .listField .title{ padding:20px 0 0;}
+.statisticsListPanel_01 .listField .title .filter{ float:right;}
+.statisticsListPanel_01 .listField .title:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.statisticsListPanel_01 .listField .title .btns{ float:right;}
+.statisticsListPanel_01 .listField .title h2{ font-size:14px;}
+.statisticsListPanel_01 .listField .statistics{ padding:0 0 20px; border-bottom:1px solid #e6e7ec;}
+.statisticsListPanel_01 .listField .statistics:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.statisticsListPanel_01 .listField .statistics .pie{ width:440px; float:left;}
+.statisticsListPanel_01 .listField .statistics .info{ margin-left:440px; padding:40px 0;}
+.statisticsListPanel_01 .listField .statistics .info table{ width:100%; max-width:400px;}
+.statisticsListPanel_01 .listField .statistics .info h3{ font-size:14px; font-weight:bold; line-height:30px;}
+
+
+.pmListModule_01{ padding:20px;}
+.pmListModule_01 .control{ padding:0 10px;}
+.pmListModule_01 .control label{ margin:0 10px 0 0; display:inline-block; cursor:pointer;}
+.pmListModule_01 .tablePanel_01{ padding:20px 0; margin:0;}
+.pmListModule_01 .tablePanel_01 .readed td{ color:#999;}
+.pmListModule_01 .tablePanel_01 .readed td a{ color:#999; font-weight:normal;}
+
+
+.pmDetailPanel_01{}
+.pmDetailPanel_01 .titleField{ padding:20px 30px 0;}
+.pmDetailPanel_01 .titleField h1{ font-size:24px; line-height:36px;}
+.pmDetailPanel_01 .titleField h2{ color:#999;}
+.pmDetailPanel_01 .textField{ margin:20px; background:#fff; padding:20px; min-height:300px; font-size:14px; background:#f9f9f9;}
+.pmDetailPanel_01 .textField p{ padding:0 0 2em;}
+.pmDetailPanel_01 .textField a{ color:#1161be; text-decoration:underline;}
+
+
+
+
+.appListPanel_01{ padding:20px;}
+.appListPanel_01 .titleField{ padding:0 0 20px;}
+.appListPanel_01 .titleField h1{ font-size:14px; font-weight:bold;}
+.appListPanel_01 .listField{ padding:20px 0 1px 20px; background:#fff;}
+.appListPanel_01 .listField ul{ font-size:0;}
+.appListPanel_01 .listField ul li{ display:inline-block; padding:0 20px 0 0; margin:0 0 20px; vertical-align:top; width:204px; font-size:12px; position:relative; overflow:hidden;}
+.appListPanel_01 .listField ul li .img{ width:100%; height:224px;}
+.appListPanel_01 .listField ul li .img span{ display:block; width:100%; height:100%; overflow:hidden;}
+.appListPanel_01 .listField ul li .img img{ display:block; width:100%; height:auto;}
+.appListPanel_01 .listField ul li .info{ position:absolute; left:0; right:20px; top:184px; height:100%; background:rgba(0,0,0,0.8); -webkit-transition: -webkit-transform 0.3s, top 0.3s; -moz-transition: -moz-transform 0.3s, top 0.3s; -ms-transition: -ms-transform 0.3s, top 0.3s; -o-transition: -o-transform 0.3s, top 0.3s; transition: transform 0.3s, top 0.3s;}
+.appListPanel_01 .listField ul li.selected .info{ background:rgba(0,102,0,0.9)}
+.appListPanel_01 .listField ul li .title{}
+.appListPanel_01 .listField ul li .title h2{ font-size:14px; color:#fff; font-weight:bold; line-height:40px; padding:0 10px;}
+.appListPanel_01 .listField ul li:hover .info{ top:0;}
+.appListPanel_01 .listField ul li .info .text{ padding:0 10px; color:#ccc; line-height:16px; height:64px; overflow:hidden;}
+.appListPanel_01 .listField ul li.selected .info .text{ padding:0 10px; color:#cfc;}
+.appListPanel_01 .listField ul li .info .btns{ position:absolute; left:10px; right:10px; bottom:10px;}
+.appListPanel_01 .listField ul li .info .btns .btn{ display:block; padding:0; margin:6px 0 0; width:100%; height:30px; border:1px solid #0c0; background:none; border-radius:6px; color:#0c0; font-size:14px; font-weight:bold;}
+.appListPanel_01 .listField ul li .info .btns .btn:hover{ color:#fff; background:rgba(0,102,0,0.6)}
+.appListPanel_01 .listField ul li.selected .info .btns .btn{ border:1px solid #fff; color:#fff;}
+.appListPanel_01 .listField ul li.selected .info .btns .btn:hover{ color:#060; background:rgba(255,255,255,0.6)}
+
+
+/*销售面板*/
+.salesInterfaceDialogueModule_01{ position:absolute; top:0; left:0; right:0; bottom:0; overflow:hidden;}
+
+.userListPanel_02{ position:absolute; right:0; top:0; bottom:0; width:300px; background:#fff;}
+.userListPanel_02 .titleField{ height:40px; line-height:40px; background:url(../images/bg_title_01.gif) 0 100% repeat-x; border-bottom:1px solid #ccc;}
+.userListPanel_02 .titleField h1{ padding:0 10px; font-size:16px; font-weight:bold;}
+
+.userListPanel_02 .titleField .btns{ float:right; padding:0 7px;}
+.userListPanel_02 .titleField .btns .btn{ vertical-align:middle; width:30px; height:30px;line-height:30px; text-align:center; margin:0 3px; background:none;}
+.userListPanel_02 .titleField .btns .btn i{ margin:0; }
+
+.userListPanel_02 .listField{ position:absolute; top:41px; bottom:0; left:0; right:0;  overflow:auto;}
+.userListPanel_02 .listField ul{}
+.userListPanel_02 .listField ul li{ border-bottom:1px dashed #ccc; padding:10px; cursor:pointer;}
+.userListPanel_02 .listField ul li:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.userListPanel_02 .listField ul li .img{ width:48px; height:48px; float:left;}
+.userListPanel_02 .listField ul li .img span{ display:block; width:100%; height:100%; overflow:hidden; background:#fff;}
+.userListPanel_02 .listField ul li .img img{ display:block; width:100%; height:auto;}
+.userListPanel_02 .listField ul li .info{ margin:0 0 0 60px; padding:0 40px 0 0; position:relative;}
+.userListPanel_02 .listField ul li .info h2{ font-size:16px; font-weight:bold;}
+.userListPanel_02 .listField ul li .info p{ color:#999;}
+.userListPanel_02 .listField ul li .info sup{ position:absolute; top:50%; right:10px; margin-top:-8px;}
+
+.userListPanel_02 .tipField{ position:absolute; top:41px; bottom:0; left:0; right:0; text-align:center; display:none;}
+.userListPanel_02 .tipField p{ width:90%; display:inline-block; vertical-align:middle; font-size:20px; color:#999}
+.userListPanel_02 .tipField i{ width:0; height:100%; vertical-align:middle;}
+
+.userListPanel_02.noUser{ background-color:transparent;}
+.userListPanel_02.noUser .listField{ display:none;}
+.userListPanel_02.noUser .tipField{ display:block;}
+
+
+
+.userListPanel_02 .listField ul li.old{ color:#999; background:#f9f9f9;}
+.userListPanel_02 .listField ul li.old h2{ color:#999;}
+.userListPanel_02 .listField ul li.old img{ -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); }
+
+.userListPanel_02 .listField ul li:hover{ background:#f0f0f0;}
+
+.userListPanel_02 .listField ul li.current{ background:#2461aa; color:#fff;}
+.userListPanel_02 .listField ul li.current h2{ color:#fff;}
+.userListPanel_02 .listField ul li.current p{ color:#fff;}
+
+
+
+.dialoguePanel_01{ position:absolute; left:0; top:0; bottom:0; right:300px; border-right:1px solid #ccc;}
+.dialoguePanel_01 .titleField{ height:40px; line-height:40px; background:url(../images/bg_title_01.gif) 0 100% repeat-x; border-bottom:1px solid #ccc;}
+.dialoguePanel_01 .titleField h1{ padding:0 20px; font-size:16px; font-weight:bold;}
+
+.dialoguePanel_01 .userDialogue{ position:absolute; left:0; top:41px; right:0; bottom:200px; border-bottom:1px solid #ccc; overflow:auto;}
+.userDialogue .list{ padding:20px;}
+.userDialogue .list ul{}
+.userDialogue .list ul li{ padding:0 0 20px;}
+.userDialogue .list ul li:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+
+.userDialogue .list ul li .img{ width:48px; height:48px; float:left; position: relative; z-index:2;}
+.userDialogue .list ul li .img span{ display:block; width:100%; height:100%; overflow:hidden; background:#fff;}
+.userDialogue .list ul li .img img{ display:block; width:100%; height:auto;}
+.userDialogue .list ul li .content{ margin-left:68px; background:#fff; position:relative; z-index:1;}
+.userDialogue .list ul li .content .info{ padding:0 10px; height:30px; overflow:hidden; line-height:30px; border-bottom:1px solid #eee; background:#f9f9f9;}
+.userDialogue .list ul li .content .info .time{ float:right; color:#999;}
+.userDialogue .list ul li .content .info em{ font-size:14px; font-weight:bold; margin-right:10px;}
+.userDialogue .list ul li .content .text{ padding:10px; font-size:14px;}
+.userDialogue .list ul li .content .arrow{ display:block; border:8px solid; border-color:#e8e8e8 #f9f9f9 #e8e8e8 #e8e8e8; height:0; width:0; overflow:hidden; position:absolute; right:100%; top:10px; margin:0;}
+.bombbox .userDialogue .list ul li .content .info{ background:#eee;}
+.bombbox .userDialogue .list ul li .content .text{ background:#f9f9f9;}
+.bombbox .userDialogue .list ul li .content .arrow{ border-color:#fff #eee #fff #fff;}
+
+.userDialogue .list ul li.reply{}
+.userDialogue .list ul li.reply .img{ float:right;}
+.userDialogue .list ul li.reply .content{ margin:0 68px 0 0;}
+.userDialogue .list ul li.reply .content .arrow{  border-color:#e8e8e8 #e8e8e8 #e8e8e8 #f9f9f9; left:100%; right:auto;}
+.userDialogue .list ul li.tip{ color:#c00; font-size:14px;}
+
+.dialoguePanel_01 .tipField{ display:none; position:absolute; bottom:220px; left:50%; width:300px; margin-left:-150px; z-index:3; padding:5px 10px; background:url(../images/bg_mask_01.png) 0 0 repeat; text-align:center; color:#fff; border-radius:6px;}
+
+.dialoguePanel_01.cantReply .listField .list{ padding-bottom:60px;}
+.dialoguePanel_01.cantReply .tipField{ display:block;}
+
+.dialoguePanel_01 .inputField{ position:absolute; bottom:0; left:0; right:0; height:200px;}
+.dialoguePanel_01 .inputField .text{ padding:10px 24px 10px 10px;}
+.dialoguePanel_01 .inputField .text .textarea{ display:block; width:100%; height:120px;}
+.dialoguePanel_01 .inputField .btns{ padding:0 10px; text-align:right;}
+
+
+/*添加图文素材模块*/
+.graphicMaterialModule_01{ padding:20px;}
+.graphicMaterialModule_01:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+
+
+.simulationPanel_00{ width:300px; border:1px solid #e6e7ec; background:#fff;}
+.simulationPanel_00 .infoField{ padding:0;}
+.simulationPanel_00 .infoField .img{ width:268px; height:150px; position:relative; overflow:hidden; padding:16px;}
+.simulationPanel_00 .infoField .img span{ display:block; background:#ececec; height:100%; width:100%; overflow:hidden; position:relative; z-index:1;}
+.simulationPanel_00 .infoField .img img{ display:block; width:100%; height:auto;}
+.simulationPanel_00 .infoField .img .tip{ text-align:center; color:#c0c0c0; font-size:14px; line-height:150px; position:absolute; left:0; top:0; width:300px; height:100%; z-index:2;}
+
+
+.simulationPanel_01{ width:300px; border:1px solid #e6e7ec; background:#fff;}
+.graphicMaterialModule_01 .simulationPanel_01{ float:left;}
+.selectMessageModule_01 .simulationPanel_00,.selectMessageModule_01 .simulationPanel_01,.selectMessageModule_01 .simulationPanel_02,.selectMessageModule_01 .simulationPanel_03{ margin:20px;}
+
+
+.simulationPanel_01 .infoField{ padding:0 0 8px;}
+.simulationPanel_01 .infoField .title{ padding:16px;}
+.simulationPanel_01 .infoField .title h1{ font-size:16px; font-weight:bold;}
+.simulationPanel_01 .infoField .title p{ color:#8c8c8c;}
+.simulationPanel_01 .infoField .img{ width:268px; height:150px; position:relative; overflow:hidden; padding:0 16px 8px;}
+.graphicMaterialModule_01 .simulationPanel_01 .infoField .img{ padding:0 36px 8px 16px; margin-right:-20px; background:url(../images/icon_arrow_02.gif) 100% 50% no-repeat;}
+.simulationPanel_01 .infoField .img .video{ display:block; position:absolute; width:100%; height:100%; left:0; top:0; background:url(../images/btn_play_01.png) 50% 50% no-repeat;}
+.simulationPanel_01 .infoField .img span{ display:block; background:#ececec; height:100%; width:100%; overflow:hidden; position:relative; z-index:1;}
+.simulationPanel_01 .infoField .img img{ display:block; width:100%; height:auto;}
+.simulationPanel_01 .infoField .img .tip{ text-align:center; color:#c0c0c0; font-size:14px; line-height:150px; position:absolute; left:0; top:0; width:300px; height:100%; z-index:2;}
+.simulationPanel_01 .infoField .content{ padding:0 16px; color:#999; line-height:16px;}
+
+
+.simulationPanel_02{ width:300px; border:1px solid #e6e7ec; border-bottom:0; background:#fff;}
+.graphicMaterialModule_01 .simulationPanel_02{ float:left;}
+.simulationPanel_02 .infoField{ position:relative; border-bottom:1px solid #e6e7ec;}
+.simulationPanel_02 .infoField:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden;}
+.simulationPanel_02 .infoField.mainInfo .title{ padding:8px 16px; position:absolute; bottom:16px; left:16px; right:16px; z-index:3; background:url(../images/bg_mask_01.png); margin:0;}
+.simulationPanel_02 .infoField.mainInfo .title h1{ color:#fff;}
+.simulationPanel_02 .infoField.mainInfo .img{ width:268px; height:150px; overflow:hidden; padding:16px; float:none;}
+.simulationPanel_02 .infoField.mainInfo .img img{ display:block; width:100%; height:auto;}
+.simulationPanel_02 .infoField.mainInfo .img .tip{ line-height:150px; position:absolute; left:0; right:auto; top:16px; width:300px; height:100%; z-index:2;}
+.simulationPanel_02 .infoField .title{ padding:16px; margin-right:100px;}
+.simulationPanel_02 .infoField .title h1{ font-size:16px; font-weight:bold;}
+.graphicMaterialModule_01 .simulationPanel_02 .infoField.act .img{ padding-right:36px; margin-right:-20px; background:url(../images/icon_arrow_02.gif) 100% 50% no-repeat;}
+.simulationPanel_02 .infoField .img{ float:right; padding:16px; width:70px; height:70px; position:relative;}
+.simulationPanel_02 .infoField .img span{ display:block; background:#ececec; height:100%; width:100%; overflow:hidden; position:relative; z-index:1;}
+.simulationPanel_02 .infoField .img img{ display:block; height:100%; width:auto;}
+.simulationPanel_02 .infoField .img .tip{ text-align:center; color:#c0c0c0; font-size:14px; line-height:70px; position:absolute; left:16px; top:16px; width:70px; z-index:2;}
+.simulationPanel_02 .infoField .btns{ position:absolute; left:0; right:0; top:0; bottom:0; background:rgba(232,232,232,0.85); z-index:4; text-align:center; padding:30px 0 0; display:none;}
+.simulationPanel_02 .infoField:hover .btns{ display:block;}
+.simulationPanel_02 .infoField.mainInfo .btns{ padding:70px 0 0;}
+.simulationPanel_02 .infoField .btns .btn{ vertical-align:middle; width:36px; height:36px; cursor:pointer; border:0; opacity:0.5; margin:0 5px;}
+.simulationPanel_02 .infoField .btns .btn:hover{ opacity:1;}
+.simulationPanel_02 .infoField .btns .editBtn{ background:url(../images/icon_black_edit_01.png) 50% 50% no-repeat;}
+.simulationPanel_02 .infoField .btns .deleteBtn{ background:url(../images/icon_black_delete_01.png) 50% 50% no-repeat;}
+.simulationPanel_02 .infoField .btns .upBtn{ background:url(../images/icon_black_up_01.png) 50% 50% no-repeat;}
+.simulationPanel_02 .infoField .btns .downBtn{ background:url(../images/icon_black_down_01.png) 50% 50% no-repeat;}
+
+
+.simulationPanel_02 .addField{ border-bottom:1px solid #e6e7ec; padding:16px;}
+.simulationPanel_02 .addField .addBtn{ border:2px dashed #e8e8e8; display:block; width:264px; height:60px; line-height:56px; background:#fff; text-align:center; font-size:16px; color:#999;}
+.simulationPanel_02 .addField .addBtn:hover{ border:2px dashed #e8e8e8;  background:#e8e8e8; color:#666;}
+
+
+.simulationPanel_03{ width:300px; border:1px solid #e6e7ec; background:#fff;}
+.simulationPanel_03 .infoField{ }
+.simulationPanel_03 .infoField .title{ padding:16px 16px 0;}
+.simulationPanel_03 .infoField .title h1{ font-size:16px; font-weight:bold;}
+.simulationPanel_03 .infoField .sound{ width:268px; height:130px; position:relative; overflow:hidden; padding:16px;}
+.simulationPanel_03 .infoField .sound .audio{ display:block; width:100%; height:100%; background:url(../images/icon_gray_sound_01.png) 50% 50% no-repeat #f6f6f6;}
+.simulationPanel_03 .infoField .sound .audio.audioPlaying{ background-image:url(../images/icon_gray_stop_02.png);}
+
+
+
+.listPanel_02{ margin-left:320px; padding:16px; border:1px solid #e6e7ec; width:656px; background:#f9f9f9;}
+.listPanel_02 .btns{ padding:0 0 16px; text-align:right; border-bottom:1px solid #e6e7ec; margin:0 0 16px;}
+.listPanel_02 dl{ padding:0 0 20px;}
+.listPanel_02 dl dt{ padding:0 0 5px; line-height:20px; color:#999;}
+.listPanel_02 dl dd{}
+.listPanel_02 dl dd .selectAera{ width:654px;}
+.listPanel_02 dl dd .txt{ width:642px;}
+.listPanel_02 dl dd .textarea{ width:642px; height:108px;}
+.listPanel_02 .fileAera .txt{ display:none;}
+
+.btnPanel_02{ padding:0 0 40px; margin:0 0 0 20px; width:1010px; text-align:right; font-size:0;}
+.btnPanel_02 .btn{ margin:0 0 0 10px;}
+
+
+
+
+
+
+
+
+
+
+

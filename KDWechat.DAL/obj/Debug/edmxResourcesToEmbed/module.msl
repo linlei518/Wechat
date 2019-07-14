@@ -1,0 +1,835 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kd_moduleModelStoreContainer" CdmEntityContainer="kd_moduleEntities">
+    <EntitySetMapping Name="t_md_sale_chats">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_chats">
+        <MappingFragment StoreEntitySet="t_md_sale_chats">
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="user_openid" ColumnName="user_openid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_project">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_project">
+        <MappingFragment StoreEntitySet="t_md_sale_project">
+          <ScalarProperty Name="manager_id" ColumnName="manager_id" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_user_project_relation">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_user_project_relation">
+        <MappingFragment StoreEntitySet="t_md_sale_user_project_relation">
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_users">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_users">
+        <MappingFragment StoreEntitySet="t_md_sale_users">
+          <ScalarProperty Name="is_manager" ColumnName="is_manager" />
+          <ScalarProperty Name="head_url" ColumnName="head_url" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="cellphone" ColumnName="cellphone" />
+          <ScalarProperty Name="introduce" ColumnName="introduce" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_users_fans_relation">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_users_fans_relation">
+        <MappingFragment StoreEntitySet="t_md_sale_users_fans_relation">
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fans_open_id" ColumnName="fans_open_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_chats_project_view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_chats_project_view">
+        <MappingFragment StoreEntitySet="t_md_sale_chats_project_view">
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="user_openid" ColumnName="user_openid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_chats_fans_view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_chats_fans_view">
+        <MappingFragment StoreEntitySet="t_md_sale_chats_fans_view">
+          <ScalarProperty Name="msg_id" ColumnName="msg_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="headimgurl" ColumnName="headimgurl" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="user_openid" ColumnName="user_openid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_users_project_view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_users_project_view">
+        <MappingFragment StoreEntitySet="t_md_sale_users_project_view">
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_chats_fans_seller_view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_chats_fans_seller_view">
+        <MappingFragment StoreEntitySet="t_md_sale_chats_fans_seller_view">
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="headimgurl" ColumnName="headimgurl" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+          <ScalarProperty Name="creat_time" ColumnName="creat_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="user_openid" ColumnName="user_openid" />
+          <ScalarProperty Name="msg_id" ColumnName="msg_id" />
+          <ScalarProperty Name="realname" ColumnName="realname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_360buid">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_360buid">
+        <MappingFragment StoreEntitySet="t_md_360buid">
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lng" ColumnName="Lng" />
+          <ScalarProperty Name="tranimg" ColumnName="tranimg" />
+          <ScalarProperty Name="buidimg" ColumnName="buidimg" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="introdution" ColumnName="introdution" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_360view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_360view">
+        <MappingFragment StoreEntitySet="t_md_360view">
+          <ScalarProperty Name="linkAddress" ColumnName="linkAddress" />
+          <ScalarProperty Name="is_link" ColumnName="is_link" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="showimg" ColumnName="showimg" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="imgbottom" ColumnName="imgbottom" />
+          <ScalarProperty Name="imgtop" ColumnName="imgtop" />
+          <ScalarProperty Name="imgleft" ColumnName="imgleft" />
+          <ScalarProperty Name="imgnext" ColumnName="imgnext" />
+          <ScalarProperty Name="imgright" ColumnName="imgright" />
+          <ScalarProperty Name="imgpre" ColumnName="imgpre" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_360viewList">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_360viewList">
+        <MappingFragment StoreEntitySet="t_md_360viewList">
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="himg" ColumnName="himg" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_360viewtype">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_360viewtype">
+        <MappingFragment StoreEntitySet="t_md_360viewtype">
+          <ScalarProperty Name="showImgs" ColumnName="showImgs" />
+          <ScalarProperty Name="himg" ColumnName="himg" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="summarize" ColumnName="summarize" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_reserve_house">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_reserve_house">
+        <MappingFragment StoreEntitySet="t_md_reserve_house">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="constraction" ColumnName="constraction" />
+          <ScalarProperty Name="themes" ColumnName="themes" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="buidid" ColumnName="buidid" />
+          <ScalarProperty Name="SeeSum" ColumnName="SeeSum" />
+          <ScalarProperty Name="SeeTime" ColumnName="SeeTime" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_reserve_manage">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_reserve_manage">
+        <MappingFragment StoreEntitySet="t_md_reserve_manage">
+          <ScalarProperty Name="qy_manage_nick" ColumnName="qy_manage_nick" />
+          <ScalarProperty Name="qy_manage_name" ColumnName="qy_manage_name" />
+          <ScalarProperty Name="themes" ColumnName="themes" />
+          <ScalarProperty Name="IsOpen" ColumnName="IsOpen" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="isEmail" ColumnName="isEmail" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="reserveprojects" ColumnName="reserveprojects" />
+          <ScalarProperty Name="reservename" ColumnName="reservename" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_activity">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_activity">
+        <MappingFragment StoreEntitySet="t_activity">
+          <ScalarProperty Name="is_link" ColumnName="is_link" />
+          <ScalarProperty Name="is_end_url" ColumnName="is_end_url" />
+          <ScalarProperty Name="end_description" ColumnName="end_description" />
+          <ScalarProperty Name="end_url" ColumnName="end_url" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="bg_color" ColumnName="bg_color" />
+          <ScalarProperty Name="success_url" ColumnName="success_url" />
+          <ScalarProperty Name="link_lock" ColumnName="link_lock" />
+          <ScalarProperty Name="info_lock" ColumnName="info_lock" />
+          <ScalarProperty Name="title_lock" ColumnName="title_lock" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="success_tip" ColumnName="success_tip" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="m_w_id" ColumnName="m_w_id" />
+          <ScalarProperty Name="wx_ogid" ColumnName="wx_ogid" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_activity_options">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_activity_options">
+        <MappingFragment StoreEntitySet="t_activity_options">
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="options_img_url" ColumnName="options_img_url" />
+          <ScalarProperty Name="options_title" ColumnName="options_title" />
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="a_id" ColumnName="a_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_activity_statistics">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_activity_statistics">
+        <MappingFragment StoreEntitySet="t_activity_statistics">
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="is_join" ColumnName="is_join" />
+          <ScalarProperty Name="OtherContent" ColumnName="OtherContent" />
+          <ScalarProperty Name="isOther" ColumnName="isOther" />
+          <ScalarProperty Name="wx_area" ColumnName="wx_area" />
+          <ScalarProperty Name="wx_ogid" ColumnName="wx_ogid" />
+          <ScalarProperty Name="wx_guid" ColumnName="wx_guid" />
+          <ScalarProperty Name="u_ip" ColumnName="u_ip" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="o_id" ColumnName="o_id" />
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="a_id" ColumnName="a_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_activity_topic">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_activity_topic">
+        <MappingFragment StoreEntitySet="t_activity_topic">
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+          <ScalarProperty Name="is_required" ColumnName="is_required" />
+          <ScalarProperty Name="isOther" ColumnName="isOther" />
+          <ScalarProperty Name="alter_meg" ColumnName="alter_meg" />
+          <ScalarProperty Name="topic_title" ColumnName="topic_title" />
+          <ScalarProperty Name="radio_choice" ColumnName="radio_choice" />
+          <ScalarProperty Name="a_id" ColumnName="a_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_activity_user">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_activity_user">
+        <MappingFragment StoreEntitySet="t_activity_user">
+          <ScalarProperty Name="wx_ogid" ColumnName="wx_ogid" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="is_join" ColumnName="is_join" />
+          <ScalarProperty Name="is_Cade" ColumnName="is_Cade" />
+          <ScalarProperty Name="blood" ColumnName="blood" />
+          <ScalarProperty Name="mailbox" ColumnName="mailbox" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="o_id" ColumnName="o_id" />
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="a_id" ColumnName="a_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_questionnaire">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_questionnaire">
+        <MappingFragment StoreEntitySet="t_questionnaire">
+          <ScalarProperty Name="is_end_url" ColumnName="is_end_url" />
+          <ScalarProperty Name="success_url" ColumnName="success_url" />
+          <ScalarProperty Name="success_tip" ColumnName="success_tip" />
+          <ScalarProperty Name="is_link" ColumnName="is_link" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="end_url" ColumnName="end_url" />
+          <ScalarProperty Name="end_description" ColumnName="end_description" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="is_required" ColumnName="is_required" />
+          <ScalarProperty Name="is_look" ColumnName="is_look" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="m_w_id" ColumnName="m_w_id" />
+          <ScalarProperty Name="wx_ogid" ColumnName="wx_ogid" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_questionnaire_topic">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_questionnaire_topic">
+        <MappingFragment StoreEntitySet="t_questionnaire_topic">
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="is_required" ColumnName="is_required" />
+          <ScalarProperty Name="isOther" ColumnName="isOther" />
+          <ScalarProperty Name="topic_title" ColumnName="topic_title" />
+          <ScalarProperty Name="radio_choice" ColumnName="radio_choice" />
+          <ScalarProperty Name="q_id" ColumnName="q_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_statistics">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_statistics">
+        <MappingFragment StoreEntitySet="t_statistics">
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="OtherContent" ColumnName="OtherContent" />
+          <ScalarProperty Name="isOther" ColumnName="isOther" />
+          <ScalarProperty Name="wx_area" ColumnName="wx_area" />
+          <ScalarProperty Name="wx_ogid" ColumnName="wx_ogid" />
+          <ScalarProperty Name="wx_guid" ColumnName="wx_guid" />
+          <ScalarProperty Name="u_ip" ColumnName="u_ip" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="nick_name" ColumnName="nick_name" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="o_id" ColumnName="o_id" />
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="q_id" ColumnName="q_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_subject_options">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_subject_options">
+        <MappingFragment StoreEntitySet="t_subject_options">
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="options_img_url" ColumnName="options_img_url" />
+          <ScalarProperty Name="options_title" ColumnName="options_title" />
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="q_id" ColumnName="q_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_news_type">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_news_type">
+        <MappingFragment StoreEntitySet="t_md_news_type">
+          <ScalarProperty Name="crteate_time" ColumnName="crteate_time" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="isBook" ColumnName="isBook" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_news_themes">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_news_themes">
+        <MappingFragment StoreEntitySet="t_md_news_themes">
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="themes" ColumnName="themes" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_news_info">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_news_info">
+        <MappingFragment StoreEntitySet="t_md_news_info">
+          <ScalarProperty Name="Istop" ColumnName="Istop" />
+          <ScalarProperty Name="news_ids" ColumnName="news_ids" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_draw_award">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_draw_award">
+        <MappingFragment StoreEntitySet="t_draw_award">
+          <ScalarProperty Name="show_count" ColumnName="show_count" />
+          <ScalarProperty Name="act_id" ColumnName="act_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_draw_order">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_draw_order">
+        <MappingFragment StoreEntitySet="t_draw_order">
+          <ScalarProperty Name="total_count" ColumnName="total_count" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_draw_receipt">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_draw_receipt">
+        <MappingFragment StoreEntitySet="t_draw_receipt">
+          <ScalarProperty Name="order_no" ColumnName="order_no" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="receipt_no" ColumnName="receipt_no" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_draw_winner">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_draw_winner">
+        <MappingFragment StoreEntitySet="t_draw_winner">
+          <ScalarProperty Name="ID_NO" ColumnName="ID_NO" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="used" ColumnName="used" />
+          <ScalarProperty Name="award_id" ColumnName="award_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="cellphone" ColumnName="cellphone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_award_winner_view">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_award_winner_view">
+        <MappingFragment StoreEntitySet="t_award_winner_view">
+          <ScalarProperty Name="ID_NO" ColumnName="ID_NO" />
+          <ScalarProperty Name="act_id" ColumnName="act_id" />
+          <ScalarProperty Name="a_name" ColumnName="a_name" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="used" ColumnName="used" />
+          <ScalarProperty Name="award_id" ColumnName="award_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="cellphone" ColumnName="cellphone" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Lottery">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_Lottery">
+        <MappingFragment StoreEntitySet="t_Lottery">
+          <ScalarProperty Name="is_everyDay" ColumnName="is_everyDay" />
+          <ScalarProperty Name="wx_ogid" ColumnName="wx_ogid" />
+          <ScalarProperty Name="is_out" ColumnName="is_out" />
+          <ScalarProperty Name="out_link" ColumnName="out_link" />
+          <ScalarProperty Name="is_continue" ColumnName="is_continue" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+          <ScalarProperty Name="lottery_num" ColumnName="lottery_num" />
+          <ScalarProperty Name="p_num" ColumnName="p_num" />
+          <ScalarProperty Name="more_replies" ColumnName="more_replies" />
+          <ScalarProperty Name="end_img" ColumnName="end_img" />
+          <ScalarProperty Name="str_img" ColumnName="str_img" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+          <ScalarProperty Name="star_time" ColumnName="star_time" />
+          <ScalarProperty Name="theam" ColumnName="theam" />
+          <ScalarProperty Name="dj_information" ColumnName="dj_information" />
+          <ScalarProperty Name="end_desction" ColumnName="end_desction" />
+          <ScalarProperty Name="star_desction" ColumnName="star_desction" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_PazzRecord">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_PazzRecord">
+        <MappingFragment StoreEntitySet="t_PazzRecord">
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="Is_prized" ColumnName="Is_prized" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="award_time" ColumnName="award_time" />
+          <ScalarProperty Name="award_user" ColumnName="award_user" />
+          <ScalarProperty Name="user_tel" ColumnName="user_tel" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="is_award" ColumnName="is_award" />
+          <ScalarProperty Name="p_code" ColumnName="p_code" />
+          <ScalarProperty Name="prize_name" ColumnName="prize_name" />
+          <ScalarProperty Name="prize_t_name" ColumnName="prize_t_name" />
+          <ScalarProperty Name="lottery_id" ColumnName="lottery_id" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="openid" ColumnName="openid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_prizeinfo">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_prizeinfo">
+        <MappingFragment StoreEntitySet="t_prizeinfo">
+          <ScalarProperty Name="pazz_num" ColumnName="pazz_num" />
+          <ScalarProperty Name="prize_url" ColumnName="prize_url" />
+          <ScalarProperty Name="prize_num" ColumnName="prize_num" />
+          <ScalarProperty Name="probability" ColumnName="probability" />
+          <ScalarProperty Name="prize_name" ColumnName="prize_name" />
+          <ScalarProperty Name="prize_type" ColumnName="prize_type" />
+          <ScalarProperty Name="lottery_id" ColumnName="lottery_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_draw_activity">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_draw_activity">
+        <MappingFragment StoreEntitySet="t_draw_activity">
+          <ScalarProperty Name="drawed" ColumnName="drawed" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_rafflescity_activity_10">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_rafflescity_activity_10">
+        <MappingFragment StoreEntitySet="t_rafflescity_activity_10">
+          <ScalarProperty Name="qr_code" ColumnName="qr_code" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="win" ColumnName="win" />
+          <ScalarProperty Name="w_6" ColumnName="w_6" />
+          <ScalarProperty Name="w_5" ColumnName="w_5" />
+          <ScalarProperty Name="w_4" ColumnName="w_4" />
+          <ScalarProperty Name="w_3" ColumnName="w_3" />
+          <ScalarProperty Name="w_2" ColumnName="w_2" />
+          <ScalarProperty Name="w_1" ColumnName="w_1" />
+          <ScalarProperty Name="a_6" ColumnName="a_6" />
+          <ScalarProperty Name="a_5" ColumnName="a_5" />
+          <ScalarProperty Name="a_4" ColumnName="a_4" />
+          <ScalarProperty Name="a_3" ColumnName="a_3" />
+          <ScalarProperty Name="a_2" ColumnName="a_2" />
+          <ScalarProperty Name="a_1" ColumnName="a_1" />
+          <ScalarProperty Name="check_time" ColumnName="check_time" />
+          <ScalarProperty Name="checked" ColumnName="checked" />
+          <ScalarProperty Name="openid" ColumnName="openid" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_GreetingCard_info">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_GreetingCard_info">
+        <MappingFragment StoreEntitySet="t_md_GreetingCard_info">
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="openId" ColumnName="openId" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_GreetingCard_views">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_GreetingCard_views">
+        <MappingFragment StoreEntitySet="t_md_GreetingCard_views">
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="View_openId" ColumnName="View_openId" />
+          <ScalarProperty Name="From_openId" ColumnName="From_openId" />
+          <ScalarProperty Name="cardID" ColumnName="cardID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_GreetingCardNo">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_GreetingCardNo">
+        <MappingFragment StoreEntitySet="t_md_GreetingCardNo">
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_massage">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_massage">
+        <MappingFragment StoreEntitySet="t_md_massage">
+          <ScalarProperty Name="massageboard_id" ColumnName="massageboard_id" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="answers" ColumnName="answers" />
+          <ScalarProperty Name="constraction" ColumnName="constraction" />
+          <ScalarProperty Name="themes" ColumnName="themes" />
+          <ScalarProperty Name="open_id" ColumnName="open_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_Messageboard_info">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_Messageboard_info">
+        <MappingFragment StoreEntitySet="t_md_Messageboard_info">
+          <ScalarProperty Name="themes" ColumnName="themes" />
+          <ScalarProperty Name="IsOpen" ColumnName="IsOpen" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="isEmail" ColumnName="isEmail" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="Messageboardprojects" ColumnName="Messageboardprojects" />
+          <ScalarProperty Name="MessageboardName" ColumnName="MessageboardName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_sale_fans">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_sale_fans">
+        <MappingFragment StoreEntitySet="t_md_sale_fans">
+          <ScalarProperty Name="opid" ColumnName="opid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="fan_id" ColumnName="fan_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_v_invite_detail">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_v_invite_detail">
+        <MappingFragment StoreEntitySet="t_v_invite_detail">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="lng" ColumnName="lng" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="raffic" ColumnName="raffic" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="is_multi_page" ColumnName="is_multi_page" />
+          <ScalarProperty Name="link_url" ColumnName="link_url" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="app_html" ColumnName="app_html" />
+          <ScalarProperty Name="app_link_url" ColumnName="app_link_url" />
+          <ScalarProperty Name="app_id" ColumnName="app_id" />
+          <ScalarProperty Name="display_name" ColumnName="display_name" />
+          <ScalarProperty Name="channel_name" ColumnName="channel_name" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="v_id" ColumnName="v_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_v_invite_images">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_v_invite_images">
+        <MappingFragment StoreEntitySet="t_v_invite_images">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="img_remark" ColumnName="img_remark" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="img_name" ColumnName="img_name" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="channel_name" ColumnName="channel_name" />
+          <ScalarProperty Name="channel_id" ColumnName="channel_id" />
+          <ScalarProperty Name="v_id" ColumnName="v_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_v_invite_info">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_v_invite_info">
+        <MappingFragment StoreEntitySet="t_v_invite_info">
+          <ScalarProperty Name="last_modify_time" ColumnName="last_modify_time" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="add_uid" ColumnName="add_uid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="template_path" ColumnName="template_path" />
+          <ScalarProperty Name="template_id" ColumnName="template_id" />
+          <ScalarProperty Name="home_logo" ColumnName="home_logo" />
+          <ScalarProperty Name="home_image" ColumnName="home_image" />
+          <ScalarProperty Name="home_background_muisc_name" ColumnName="home_background_muisc_name" />
+          <ScalarProperty Name="home_background_muisc" ColumnName="home_background_muisc" />
+          <ScalarProperty Name="home_font" ColumnName="home_font" />
+          <ScalarProperty Name="home_sub_title_style" ColumnName="home_sub_title_style" />
+          <ScalarProperty Name="home_sub_title" ColumnName="home_sub_title" />
+          <ScalarProperty Name="home_title_style" ColumnName="home_title_style" />
+          <ScalarProperty Name="home_title" ColumnName="home_title" />
+          <ScalarProperty Name="activity_tel" ColumnName="activity_tel" />
+          <ScalarProperty Name="activity_address" ColumnName="activity_address" />
+          <ScalarProperty Name="activity_place" ColumnName="activity_place" />
+          <ScalarProperty Name="activity_timie" ColumnName="activity_timie" />
+          <ScalarProperty Name="activity_name" ColumnName="activity_name" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_news_users">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_news_users">
+        <MappingFragment StoreEntitySet="t_md_news_users">
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="openId" ColumnName="openId" />
+          <ScalarProperty Name="type_ids" ColumnName="type_ids" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_abluminfo">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_abluminfo">
+        <MappingFragment StoreEntitySet="t_md_abluminfo">
+          <ScalarProperty Name="small_img" ColumnName="small_img" />
+          <ScalarProperty Name="Reserve2" ColumnName="Reserve2" />
+          <ScalarProperty Name="Reserve1" ColumnName="Reserve1" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="ablum_id" ColumnName="ablum_id" />
+          <ScalarProperty Name="abluminfo_id" ColumnName="abluminfo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_md_ablumlist">
+      <EntityTypeMapping TypeName="kd_moduleModel.t_md_ablumlist">
+        <MappingFragment StoreEntitySet="t_md_ablumlist">
+          <ScalarProperty Name="Reserve2" ColumnName="Reserve2" />
+          <ScalarProperty Name="BrowseMode" ColumnName="BrowseMode" />
+          <ScalarProperty Name="updatetime" ColumnName="updatetime" />
+          <ScalarProperty Name="createtime" ColumnName="createtime" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="is_open" ColumnName="is_open" />
+          <ScalarProperty Name="ablumRemark" ColumnName="ablumRemark" />
+          <ScalarProperty Name="ablumCover" ColumnName="ablumCover" />
+          <ScalarProperty Name="ablum_name" ColumnName="ablum_name" />
+          <ScalarProperty Name="ablum_id" ColumnName="ablum_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

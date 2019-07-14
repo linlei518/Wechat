@@ -1,0 +1,2 @@
+http://api.weimob.com/api?t=3ead643825415f623ab4085086cd30f9==T&signature=431a8b00b0131d9d4805268c2a53cf6556ab17c1&timestamp=abc&echostr=abc&nonce=abc
+abc

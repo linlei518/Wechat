@@ -1,0 +1,885 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_moduleModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="kd_moduleEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="t_md_sale_chats" EntityType="kd_moduleModel.t_md_sale_chats" />
+    <EntitySet Name="t_md_sale_project" EntityType="kd_moduleModel.t_md_sale_project" />
+    <EntitySet Name="t_md_sale_user_project_relation" EntityType="kd_moduleModel.t_md_sale_user_project_relation" />
+    <EntitySet Name="t_md_sale_users" EntityType="kd_moduleModel.t_md_sale_users" />
+    <EntitySet Name="t_md_sale_users_fans_relation" EntityType="kd_moduleModel.t_md_sale_users_fans_relation" />
+    <EntitySet Name="t_md_sale_chats_project_view" EntityType="kd_moduleModel.t_md_sale_chats_project_view" />
+    <EntitySet Name="t_md_sale_chats_fans_view" EntityType="kd_moduleModel.t_md_sale_chats_fans_view" />
+    <EntitySet Name="t_md_sale_users_project_view" EntityType="kd_moduleModel.t_md_sale_users_project_view" />
+    <EntitySet Name="t_md_sale_chats_fans_seller_view" EntityType="kd_moduleModel.t_md_sale_chats_fans_seller_view" />
+    <EntitySet Name="t_md_360buid" EntityType="kd_moduleModel.t_md_360buid" />
+    <EntitySet Name="t_md_360view" EntityType="kd_moduleModel.t_md_360view" />
+    <EntitySet Name="t_md_360viewList" EntityType="kd_moduleModel.t_md_360viewList" />
+    <EntitySet Name="t_md_360viewtype" EntityType="kd_moduleModel.t_md_360viewtype" />
+    <EntitySet Name="t_md_reserve_house" EntityType="kd_moduleModel.t_md_reserve_house" />
+    <EntitySet Name="t_md_reserve_manage" EntityType="kd_moduleModel.t_md_reserve_manage" />
+    <EntitySet Name="t_activity" EntityType="kd_moduleModel.t_activity" />
+    <EntitySet Name="t_activity_options" EntityType="kd_moduleModel.t_activity_options" />
+    <EntitySet Name="t_activity_statistics" EntityType="kd_moduleModel.t_activity_statistics" />
+    <EntitySet Name="t_activity_topic" EntityType="kd_moduleModel.t_activity_topic" />
+    <EntitySet Name="t_activity_user" EntityType="kd_moduleModel.t_activity_user" />
+    <EntitySet Name="t_questionnaire" EntityType="kd_moduleModel.t_questionnaire" />
+    <EntitySet Name="t_questionnaire_topic" EntityType="kd_moduleModel.t_questionnaire_topic" />
+    <EntitySet Name="t_statistics" EntityType="kd_moduleModel.t_statistics" />
+    <EntitySet Name="t_subject_options" EntityType="kd_moduleModel.t_subject_options" />
+    <EntitySet Name="t_md_news_type" EntityType="kd_moduleModel.t_md_news_type" />
+    <EntitySet Name="t_md_news_themes" EntityType="kd_moduleModel.t_md_news_themes" />
+    <EntitySet Name="t_md_news_info" EntityType="kd_moduleModel.t_md_news_info" />
+    <EntitySet Name="t_draw_award" EntityType="kd_moduleModel.t_draw_award" />
+    <EntitySet Name="t_draw_order" EntityType="kd_moduleModel.t_draw_order" />
+    <EntitySet Name="t_draw_receipt" EntityType="kd_moduleModel.t_draw_receipt" />
+    <EntitySet Name="t_draw_winner" EntityType="kd_moduleModel.t_draw_winner" />
+    <EntitySet Name="t_award_winner_view" EntityType="kd_moduleModel.t_award_winner_view" />
+    <EntitySet Name="t_Lottery" EntityType="kd_moduleModel.t_Lottery" />
+    <EntitySet Name="t_PazzRecord" EntityType="kd_moduleModel.t_PazzRecord" />
+    <EntitySet Name="t_prizeinfo" EntityType="kd_moduleModel.t_prizeinfo" />
+    <EntitySet Name="t_draw_activity" EntityType="kd_moduleModel.t_draw_activity" />
+    <EntitySet Name="t_rafflescity_activity_10" EntityType="kd_moduleModel.t_rafflescity_activity_10" />
+    <EntitySet Name="t_md_GreetingCard_info" EntityType="kd_moduleModel.t_md_GreetingCard_info" />
+    <EntitySet Name="t_md_GreetingCard_views" EntityType="kd_moduleModel.t_md_GreetingCard_views" />
+    <EntitySet Name="t_md_GreetingCardNo" EntityType="kd_moduleModel.t_md_GreetingCardNo" />
+    <EntitySet Name="t_md_massage" EntityType="kd_moduleModel.t_md_massage" />
+    <EntitySet Name="t_md_Messageboard_info" EntityType="kd_moduleModel.t_md_Messageboard_info" />
+    <EntitySet Name="t_md_sale_fans" EntityType="kd_moduleModel.t_md_sale_fans" />
+    <EntitySet Name="t_v_invite_detail" EntityType="kd_moduleModel.t_v_invite_detail" />
+    <EntitySet Name="t_v_invite_images" EntityType="kd_moduleModel.t_v_invite_images" />
+    <EntitySet Name="t_v_invite_info" EntityType="kd_moduleModel.t_v_invite_info" />
+    <EntitySet Name="t_md_news_users" EntityType="kd_moduleModel.t_md_news_users" />
+    <EntitySet Name="t_md_abluminfo" EntityType="kd_moduleModel.t_md_abluminfo" />
+    <EntitySet Name="t_md_ablumlist" EntityType="kd_moduleModel.t_md_ablumlist" />
+  </EntityContainer>
+  <EntityType Name="t_md_sale_chats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_openid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="seller_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="creat_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="is_read" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_sale_project">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="p_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="creat_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" Nullable="false" />
+    <Property Name="manager_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_sale_user_project_relation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="seller_id" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_md_sale_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="realname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="introduce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cellphone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="salt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="creat_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="head_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_manager" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_sale_users_fans_relation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fans_open_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_sale_chats_project_view">
+    <Key>
+      <PropertyRef Name="p_name" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="user_openid" />
+      <PropertyRef Name="seller_id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="creat_time" />
+      <PropertyRef Name="is_read" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="message" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="project_id" />
+    </Key>
+    <Property Name="p_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="user_openid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="seller_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="creat_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="is_read" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_sale_chats_fans_view">
+    <Key>
+      <PropertyRef Name="user_openid" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="seller_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="creat_time" />
+      <PropertyRef Name="is_read" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="message" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="project_id" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="msg_id" />
+    </Key>
+    <Property Name="user_openid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="seller_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="creat_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="is_read" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="nick_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="headimgurl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="msg_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_sale_users_project_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="seller_id" />
+      <PropertyRef Name="project_id" />
+      <PropertyRef Name="create_time" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="p_name" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="seller_id" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="p_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_md_sale_chats_fans_seller_view">
+    <Key>
+      <PropertyRef Name="msg_id" />
+      <PropertyRef Name="user_openid" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="seller_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="creat_time" />
+      <PropertyRef Name="is_read" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="message" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="project_id" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="p_name" />
+    </Key>
+    <Property Name="realname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="msg_id" Type="Int32" Nullable="false" />
+    <Property Name="user_openid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="seller_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="creat_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="is_read" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="nick_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="headimgurl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="p_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_md_360buid">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="introdution" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="summary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="buidimg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="tranimg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Lng" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_md_360view">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="imgpre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="imgright" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="imgnext" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="imgleft" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="imgtop" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="imgbottom" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="wx_og_id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="showimg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="t_id" Type="Int32" />
+    <Property Name="p_id" Type="Int32" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="is_link" Type="Int32" />
+    <Property Name="linkAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_md_360viewList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="himg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="wx_og_id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="sort_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_md_360viewtype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="wx_og_id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="summarize" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="summary" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="himg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="showImgs" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_md_reserve_house">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SeeTime" Type="DateTime" Precision="0" />
+    <Property Name="SeeSum" Type="Int32" />
+    <Property Name="buidid" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wx_id" Type="Int32" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="themes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="constraction" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="p_id" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_md_reserve_manage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reservename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reserveprojects" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="0" />
+    <Property Name="updatetime" Type="DateTime" Precision="0" />
+    <Property Name="u_id" Type="Int32" />
+    <Property Name="isEmail" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsOpen" Type="Int32" />
+    <Property Name="themes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qy_manage_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="qy_manage_nick" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_activity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="open_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wx_ogid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="m_w_id" Type="Int32" />
+    <Property Name="info" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="success_tip" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="title_lock" Type="Int32" />
+    <Property Name="info_lock" Type="Int32" />
+    <Property Name="link_lock" Type="Int32" />
+    <Property Name="success_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="bg_color" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <Property Name="end_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="end_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="is_end_url" Type="Int32" />
+    <Property Name="is_link" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_activity_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="a_id" Type="Int32" />
+    <Property Name="t_id" Type="Int32" />
+    <Property Name="options_title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="options_img_url" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_activity_statistics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="a_id" Type="Int32" />
+    <Property Name="t_id" Type="Int32" />
+    <Property Name="o_id" Type="Int32" />
+    <Property Name="u_id" Type="Int32" />
+    <Property Name="nick_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="open_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="u_ip" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wx_guid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wx_ogid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wx_area" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="isOther" Type="Int32" />
+    <Property Name="OtherContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_join" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_activity_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="a_id" Type="Int32" />
+    <Property Name="radio_choice" Type="Int32" />
+    <Property Name="topic_title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="alter_meg" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="isOther" Type="Int32" />
+    <Property Name="is_required" Type="Int32" />
+    <Property Name="is_lock" Type="Int32" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_activity_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="a_id" Type="Int32" />
+    <Property Name="t_id" Type="Int32" />
+    <Property Name="o_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nick_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mailbox" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="blood" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="is_Cade" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="is_join" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <Property Name="open_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wx_ogid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_questionnaire">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="open_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wx_ogid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="m_w_id" Type="Int32" />
+    <Property Name="start_time" Type="DateTime" Precision="3" />
+    <Property Name="end_time" Type="DateTime" Precision="3" />
+    <Property Name="is_look" Type="Int32" />
+    <Property Name="is_required" Type="Int32" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="end_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="end_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <Property Name="is_link" Type="Int32" />
+    <Property Name="success_tip" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="success_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="is_end_url" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_questionnaire_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="q_id" Type="Int32" />
+    <Property Name="radio_choice" Type="Int32" />
+    <Property Name="topic_title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="isOther" Type="Int32" />
+    <Property Name="is_required" Type="Int32" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_statistics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="q_id" Type="Int32" />
+    <Property Name="t_id" Type="Int32" />
+    <Property Name="o_id" Type="Int32" />
+    <Property Name="u_id" Type="Int32" />
+    <Property Name="nick_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="open_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="u_ip" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wx_guid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wx_ogid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wx_area" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="isOther" Type="Int32" />
+    <Property Name="OtherContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_subject_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="q_id" Type="Int32" />
+    <Property Name="t_id" Type="Int32" />
+    <Property Name="options_title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="options_img_url" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_md_news_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="isBook" Type="Int32" />
+    <Property Name="wx_id" Type="Int32" />
+    <Property Name="wx_og_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="crteate_time" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="t_md_news_themes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="themes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wx_id" Type="Int32" />
+    <Property Name="wx_og_id" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_md_news_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type_id" Type="Int32" />
+    <Property Name="wx_id" Type="Int32" />
+    <Property Name="wx_og_id" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="create_time" Type="DateTime" Precision="0" />
+    <Property Name="news_ids" Type="Int32" />
+    <Property Name="Istop" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_draw_award">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="act_id" Type="Int32" Nullable="false" />
+    <Property Name="show_count" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_draw_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="telephone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="total_count" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="t_draw_receipt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="receipt_no" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="order_no" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_draw_winner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cellphone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="award_id" Type="Int32" Nullable="false" />
+    <Property Name="used" Type="Int32" Nullable="false" />
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="ID_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_award_winner_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="cellphone" />
+      <PropertyRef Name="create_time" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="award_id" />
+      <PropertyRef Name="used" />
+      <PropertyRef Name="order_id" />
+      <PropertyRef Name="a_name" />
+      <PropertyRef Name="act_id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cellphone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="award_id" Type="Int32" Nullable="false" />
+    <Property Name="used" Type="Int32" Nullable="false" />
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="a_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="act_id" Type="Int32" Nullable="false" />
+    <Property Name="ID_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Lottery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="star_desction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="end_desction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dj_information" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="theam" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="star_time" Type="DateTime" Precision="3" />
+    <Property Name="end_time" Type="DateTime" Precision="3" />
+    <Property Name="str_img" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="end_img" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="more_replies" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="p_num" Type="Int32" />
+    <Property Name="lottery_num" Type="Int32" />
+    <Property Name="is_lock" Type="Int32" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <Property Name="is_continue" Type="Int32" />
+    <Property Name="out_link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="is_out" Type="Int32" />
+    <Property Name="wx_ogid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="is_everyDay" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_PazzRecord">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="openid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="lottery_id" Type="Int32" />
+    <Property Name="prize_t_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prize_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="p_code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="is_award" Type="Int32" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_tel" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="award_user" Type="Int32" />
+    <Property Name="award_time" Type="DateTime" Precision="3" />
+    <Property Name="add_time" Type="DateTime" Precision="3" />
+    <Property Name="Is_prized" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_prizeinfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lottery_id" Type="Int32" />
+    <Property Name="prize_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="prize_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="probability" Type="Double" />
+    <Property Name="prize_num" Type="Int32" />
+    <Property Name="prize_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="pazz_num" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_draw_activity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="drawed" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_rafflescity_activity_10">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="openid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="checked" Type="Int32" Nullable="false" />
+    <Property Name="check_time" Type="DateTime" Precision="3" />
+    <Property Name="a_1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="a_2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="a_3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="a_4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="a_5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="a_6" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="w_1" Type="Int32" Nullable="false" />
+    <Property Name="w_2" Type="Int32" Nullable="false" />
+    <Property Name="w_3" Type="Int32" Nullable="false" />
+    <Property Name="w_4" Type="Int32" Nullable="false" />
+    <Property Name="w_5" Type="Int32" Nullable="false" />
+    <Property Name="w_6" Type="Int32" Nullable="false" />
+    <Property Name="win" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="qr_code" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_md_GreetingCard_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="contents" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="wx_id" Type="Int32" />
+    <Property Name="wx_og_id" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="openId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_md_GreetingCard_views">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cardID" Type="Int32" />
+    <Property Name="From_openId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="View_openId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_md_GreetingCardNo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_md_massage">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="p_id" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contents" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="wx_id" Type="Int32" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="themes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="constraction" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="answers" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="0" />
+    <Property Name="massageboard_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_md_Messageboard_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageboardName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Messageboardprojects" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createtime" Type="DateTime" Precision="0" />
+    <Property Name="updatetime" Type="DateTime" Precision="0" />
+    <Property Name="u_id" Type="Int32" />
+    <Property Name="isEmail" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="IsOpen" Type="Int32" />
+    <Property Name="themes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_md_sale_fans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fan_id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="opid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_v_invite_detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="v_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="display_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="app_id" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="app_link_url" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="app_html" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" Nullable="false" />
+    <Property Name="link_url" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_multi_page" Type="Int32" Nullable="false" />
+    <Property Name="contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="raffic" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="lat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lng" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_v_invite_images">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="v_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="img_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="img_url" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="img_remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="sort_id" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_v_invite_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="activity_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="activity_timie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="activity_place" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="activity_address" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="activity_tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="home_title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="home_title_style" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="home_sub_title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="home_sub_title_style" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="home_font" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="home_background_muisc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="home_background_muisc_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="home_image" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="home_logo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="template_id" Type="Int32" />
+    <Property Name="template_path" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="add_uid" Type="Int32" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="last_modify_time" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_md_news_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type_ids" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="openId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="wx_id" Type="Int32" />
+    <Property Name="wx_og_id" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_md_abluminfo">
+    <Key>
+      <PropertyRef Name="abluminfo_id" />
+    </Key>
+    <Property Name="abluminfo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ablum_id" Type="Int32" />
+    <Property Name="img_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="wx_og_id" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+    <Property Name="wx_id" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+    <Property Name="sort" Type="Int32" />
+    <Property Name="createtime" Type="DateTime" Precision="0" />
+    <Property Name="Reserve1" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+    <Property Name="Reserve2" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+    <Property Name="small_img" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_md_ablumlist">
+    <Key>
+      <PropertyRef Name="ablum_id" />
+    </Key>
+    <Property Name="ablum_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ablum_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ablumCover" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ablumRemark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="is_open" Type="Int32" />
+    <Property Name="sort" Type="Int32" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wx_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="createtime" Type="DateTime" Precision="0" />
+    <Property Name="updatetime" Type="DateTime" Precision="0" />
+    <Property Name="BrowseMode" Type="Int32" />
+    <Property Name="Reserve2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

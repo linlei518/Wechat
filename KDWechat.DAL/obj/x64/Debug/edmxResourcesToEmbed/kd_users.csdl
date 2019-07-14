@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_usersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="kd_usersEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="t_member_group_tags" EntityType="kd_usersModel.t_member_group_tags" />
+    <EntitySet Name="t_member_info" EntityType="kd_usersModel.t_member_info" />
+    <EntitySet Name="t_member_tags" EntityType="kd_usersModel.t_member_tags" />
+    <EntitySet Name="t_sys_users" EntityType="kd_usersModel.t_sys_users" />
+    <EntitySet Name="t_wx_fans" EntityType="kd_usersModel.t_wx_fans" />
+    <EntitySet Name="t_wx_fans_groups" EntityType="kd_usersModel.t_wx_fans_groups" />
+    <EntitySet Name="t_wx_fans_tags" EntityType="kd_usersModel.t_wx_fans_tags" />
+    <EntitySet Name="t_wx_group_tags" EntityType="kd_usersModel.t_wx_group_tags" />
+    <EntitySet Name="wx_users_wechats_View" EntityType="kd_usersModel.wx_users_wechats_View" />
+    <EntitySet Name="t_sys_navigation" EntityType="kd_usersModel.t_sys_navigation" />
+    <EntitySet Name="t_wx_users" EntityType="kd_usersModel.t_wx_users" />
+    <EntitySet Name="t_sys_users_power" EntityType="kd_usersModel.t_sys_users_power" />
+    <EntitySet Name="sysUser_WeChat_View" EntityType="kd_usersModel.sysUser_WeChat_View" />
+    <EntitySet Name="t_member_fans" EntityType="kd_usersModel.t_member_fans" />
+    <EntitySet Name="wx_tags_relation_View" EntityType="kd_usersModel.wx_tags_relation_View" />
+    <EntitySet Name="t_sys_tags" EntityType="kd_usersModel.t_sys_tags" />
+    <EntitySet Name="t_sys_letter" EntityType="kd_usersModel.t_sys_letter" />
+    <EntitySet Name="t_sys_letter_receiver" EntityType="kd_usersModel.t_sys_letter_receiver" />
+  </EntityContainer>
+  <EntityType Name="t_member_group_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="remark" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_member_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="unionid" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="user_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="user_pwd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="group_id" Type="Int32" />
+    <Property Name="nick_name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="sex" Type="Int32" />
+    <Property Name="country" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="province" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="language" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="headimgurl" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="is_kd_owner" Type="Int32" />
+    <Property Name="buy_project" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="real_name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="mobile" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="tel" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="birth" Type="DateTime" Precision="3" />
+    <Property Name="id_card" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="home_address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="company" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="post_title" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="job" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="month_income" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="office_tel" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="marriage" Type="Int32" />
+    <Property Name="have_child" Type="Int32" />
+    <Property Name="family_size" Type="Int32" />
+    <Property Name="family_month_income" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="spending_power" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_member_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mem_unionid" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="mem_id" Type="Int32" Nullable="false" />
+    <Property Name="tag_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_sys_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="parent_id" Type="Int32" Nullable="false" />
+    <Property Name="flag" Type="Int32" Nullable="false" />
+    <Property Name="type_id" Type="Int32" Nullable="false" />
+    <Property Name="area" Type="Int32" Nullable="false" />
+    <Property Name="user_name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="user_pwd" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="real_name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="nick_name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="dept_name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="tel" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="mobile" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="create_ip" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="login_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="login_ip" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Type="String" Name="salt" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_wx_fans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="guid" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="unionid" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="group_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="open_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="nick_name" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="sex" Type="Int32" />
+    <Property Name="country" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="province" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="language" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="headimgurl" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="is_kd_owner" Type="Int32" Nullable="false" />
+    <Property Name="buy_project" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="real_name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="mobile" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="tel" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="birth" Type="DateTime" Precision="3" />
+    <Property Name="id_card" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="home_address" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="company" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+    <Property Name="post_title" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="job" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="month_income" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="office_tel" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="marriage" Type="Int32" />
+    <Property Name="have_child" Type="Int32" Nullable="false" />
+    <Property Name="family_size" Type="Int32" />
+    <Property Name="family_month_income" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="spending_power" Type="Int32" />
+    <Property Name="remark" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="subscribe_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="remove_time" Type="DateTime" Precision="3" />
+    <Property Type="String" Name="ethnic" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="area" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="qq" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="zipcode" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wechat_no" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="weibo_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="id_card_type" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="hobby" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="active_time" Type="DateTime" Precision="3" />
+    <Property Name="state" Type="Int32" />
+    <Property Name="last_interact_time" Type="DateTime" Precision="3" />
+    <Property Name="wx_sex" Type="Int32" />
+    <Property Name="wx_country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wx_province" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wx_city" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="wx_area" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="source_id" Type="Int32" />
+    <Property Name="interest_project" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_wx_fans_groups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fans_guid" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fans_id" Type="Int32" Nullable="false" />
+    <Property Name="group_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_fans_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fans_guid" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fans_id" Type="Int32" Nullable="false" />
+    <Property Name="tag_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_group_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" Nullable="false" />
+    <Property Name="is_public" Type="Int32" Nullable="false" />
+    <Property Type="String" Name="contents" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="create_time" Precision="3" />
+  </EntityType>
+  <EntityType Name="wx_users_wechats_View">
+    <Key>
+      <PropertyRef Name="u_id" />
+      <PropertyRef Name="id" />
+      <PropertyRef Name="uid" />
+      <PropertyRef Name="type_id" />
+      <PropertyRef Name="create_time" />
+      <PropertyRef Name="modify_time" />
+      <PropertyRef Name="wx_guid" />
+    </Key>
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="uid" Nullable="false" />
+    <Property Type="Int32" Name="type_id" Nullable="false" />
+    <Property Type="String" Name="wx_pb_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wx_og_id" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wx_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="header_pic" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="country" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="province" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="city" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="app_id" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="app_secret" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="api_url" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="token" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="account_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="account_pwd" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="fans" />
+    <Property Type="Int32" Name="template_id" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="modify_time" Nullable="false" Precision="3" />
+    <Property Type="String" Name="wx_guid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_sys_navigation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="nav_type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="sub_title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="link_url" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="sort_id" />
+    <Property Type="Byte" Name="is_lock" />
+    <Property Type="String" Name="remark" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="parent_id" />
+    <Property Type="String" Name="class_list" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="class_layer" />
+    <Property Type="Int32" Name="channel_id" />
+    <Property Type="String" Name="action_type" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="is_sys" />
+  </EntityType>
+  <EntityType Name="t_wx_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_sys_users_power">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="wx_id" />
+    <Property Type="Int32" Name="u_id" />
+    <Property Type="String" Name="nav_name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="action_type" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysUser_WeChat_View">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="parent_id" />
+      <PropertyRef Name="flag" />
+      <PropertyRef Name="type_id" />
+      <PropertyRef Name="user_name" />
+      <PropertyRef Name="user_pwd" />
+      <PropertyRef Name="create_time" />
+      <PropertyRef Name="create_ip" />
+      <PropertyRef Name="login_time" />
+      <PropertyRef Name="login_ip" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="salt" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="parent_id" Nullable="false" />
+    <Property Type="Int32" Name="flag" Nullable="false" />
+    <Property Type="Int32" Name="type_id" Nullable="false" />
+    <Property Type="Int32" Name="area" />
+    <Property Type="String" Name="user_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="user_pwd" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="real_name" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="nick_name" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="dept_name" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tel" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="mobile" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+    <Property Type="String" Name="create_ip" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="login_time" Nullable="false" Precision="3" />
+    <Property Type="String" Name="login_ip" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="status" Nullable="false" />
+    <Property Type="String" Name="salt" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="uscou" />
+  </EntityType>
+  <EntityType Name="t_member_fans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="unionid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fans_guid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="wx_tags_relation_View">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="fans_id" />
+    </Key>
+    <Property Name="tagID" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="fans_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_sys_tags">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="parent_id" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_sys_letter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="u_id" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_sys_letter_receiver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="l_id" Type="Int32" />
+    <Property Name="u_id" Type="Int32" />
+    <Property Name="status" Type="Int32" />
+  </EntityType>
+</Schema>

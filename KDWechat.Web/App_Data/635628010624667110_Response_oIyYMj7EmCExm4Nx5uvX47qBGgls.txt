@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xml>
+  <ToUserName><![CDATA[oIyYMj7EmCExm4Nx5uvX47qBGgls]]></ToUserName>
+  <FromUserName><![CDATA[gh_24b28a35578b]]></FromUserName>
+  <CreateTime>1427175462</CreateTime>
+  <MsgType><![CDATA[news]]></MsgType>
+  <ArticleCount>1</ArticleCount>
+  <Articles>
+    <item>
+      <Title><![CDATA[凯德·莲公馆]]></Title>
+      <Description><![CDATA[凯德·莲公馆是凯德集团进入中国20年之际，继凯德·茂名公馆之后，打造的公馆系2号作品。项目靠近两河一园，总建筑面积约66586㎡，共4栋16层建筑，398套房源。包含…]]></Description>
+      <PicUrl><![CDATA[http://wx.companycn.net]]></PicUrl>
+      <Url><![CDATA[http://wx.companycn.net/wxpage/projects/detail.aspx?proj=27&openId=oIyYMj7EmCExm4Nx5uvX47qBGgls&wx_og_id=gh_24b28a35578b]]></Url>
+    </item>
+  </Articles>
+</xml>

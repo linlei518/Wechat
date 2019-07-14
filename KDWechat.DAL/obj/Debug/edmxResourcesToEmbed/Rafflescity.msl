@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="raf_activityModelStoreContainer" CdmEntityContainer="raf_activityEntities">
+    <EntitySetMapping Name="t_rafflescity_activity">
+      <EntityTypeMapping TypeName="raf_activityModel.t_rafflescity_activity">
+        <MappingFragment StoreEntitySet="t_rafflescity_activity">
+          <ScalarProperty Name="Channel" ColumnName="Channel" />
+          <ScalarProperty Name="ddlRaffcity" ColumnName="ddlRaffcity" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UName" ColumnName="UName" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="cellphone" ColumnName="cellphone" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="userAgent" ColumnName="userAgent" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_rafflescity_share">
+      <EntityTypeMapping TypeName="raf_activityModel.t_rafflescity_share">
+        <MappingFragment StoreEntitySet="t_rafflescity_share">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="userAgent" ColumnName="userAgent" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="link" ColumnName="link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/* CSS Document */
+.btn1,.btn2,.btn3{ min-width:58px;}
+.btn5{ min-width:46px;}
+.btn6{ min-width:46px;}
+
+.table .btn{ min-width:24px;}
+
+.txt{ padding-top:7px;}
+
+i.sound,i.video{ filter: Alpha(opacity=40); background-image:url(../images/icon_black_selectMessage_01.gif)}
+i.message1,i.message2,i.message3,i.message4,i.message5,i.message6,i.message7,i.message8,i.message9,i.message10{ background-image:url(../images/icon_black_selectMessage_01.gif);}
+
+
+
+.articleEditor .control .btns .btn i{ filter: Alpha(opacity=40);}
+.articleEditor .control .btns .btn:hover i{ filter: Alpha(opacity=100);}
+
+
+#bombboxTitle{ border-bottom:1px solid #ccc;}
+
+.simulationPanel_02 .infoField .btns{filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d9e8e8e8,endColorstr=#d9e8e8e8);}
+.simulationPanel_02 .infoField .btns .btn{filter: Alpha(opacity=50);}
+.simulationPanel_02 .infoField .btns .btn:hover{filter: Alpha(opacity=100);}
+
+.messageNTabPanel_01 ul li i{ filter: Alpha(opacity=40);}
+.messageNTabPanel_01 ul li a:hover i, .messageNTabPanel_01 ul li a.current i{ filter: Alpha(opacity=100);}
+
+.audio:hover,.video:hover{ filter: Alpha(opacity=80);}
+
+.userBaseInfo .tags .btnAdd{ margin-top:-5px;}
+
+
+.appListPanel_01 .listField ul li .info{filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d9000000,endColorstr=#d9000000);}
+.appListPanel_01 .listField ul li.selected .info{filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#d9006600,endColorstr=#d9006600);}
+.appListPanel_01 .listField ul li .info .btns .btn{ background:#060; color:#fff;}
+.appListPanel_01 .listField ul li.selected .info .btns .btn{ background:#a5c6a4; color:#060;}
+
+
+.userListPanel_02 .listField ul li.old img{filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);}
+
+
+/*
+.picListPanel_01 .listField ul li .control .btn{ filter: Alpha(opacity=60);}
+.picListPanel_01 .listField ul li .control .btn:hover{ filter: Alpha(opacity=100);}
+
+
+.editList li .show .btn{ filter: Alpha(opacity=60);}
+.editList li .show .btn:hover{ filter: Alpha(opacity=100);}
+
+
+
+.navListPanel_01 .btns .btn,.navListPanel_01 dl .sorts .btn{ filter: Alpha(opacity=60);}
+.navListPanel_01 dl .sorts .btn.up{ filter: Alpha(opacity=20);}
+.navListPanel_01 dl .sorts .btn.down{ filter: Alpha(opacity=20);}
+
+.navListPanel_01 .btns .btn:hover,.navListPanel_01 dl .sorts .btn:hover{ filter: Alpha(opacity=100);}
+*/

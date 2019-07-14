@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_statisticsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="t_st_diymenu_click">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="menu_key" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="menu_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="menu_action" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="url_referrer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_st_keyword_view">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="keyword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="keyword_action" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="url_referrer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_st_project_share">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="from_open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="obj_id" Type="Int32" Nullable="false" />
+    <Property Name="obj_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="url_referrer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_st_project_view">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="from_open_id" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="obj_id" Type="Int32" Nullable="false" />
+    <Property Name="obj_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="url_referrer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_st_fullview_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="from_open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="obj_id" Type="Int32" Nullable="false" />
+    <Property Name="obj_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="url_referrer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_st_graohic_click">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="from_open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="obj_id" Type="Int32" Nullable="false" />
+    <Property Name="obj_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="url_referrer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_st_graphic_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="from_open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="obj_id" Type="Int32" Nullable="false" />
+    <Property Name="obj_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="url_referrer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_st_quest_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="from_open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="obj_id" Type="Int32" Nullable="false" />
+    <Property Name="obj_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="url_referrer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_st_reserve_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="from_open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="obj_id" Type="Int32" Nullable="false" />
+    <Property Name="obj_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="url_referrer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_st_signup_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="from_open_id" />
+      <PropertyRef Name="page_url" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="add_time" />
+      <PropertyRef Name="user_ip" />
+      <PropertyRef Name="obj_id" />
+      <PropertyRef Name="obj_name" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="from_open_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="page_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="obj_id" Type="Int32" Nullable="false" />
+    <Property Name="obj_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="url_referrer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="kd_statisticsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="t_st_diymenu_click" EntityType="Self.t_st_diymenu_click" />
+    <EntitySet Name="t_st_keyword_view" EntityType="Self.t_st_keyword_view" />
+    <EntitySet Name="t_st_project_share" EntityType="Self.t_st_project_share" />
+    <EntitySet Name="t_st_project_view" EntityType="Self.t_st_project_view" />
+    <EntitySet Name="t_st_fullview_view" EntityType="Self.t_st_fullview_view" />
+    <EntitySet Name="t_st_graohic_click" EntityType="Self.t_st_graohic_click" />
+    <EntitySet Name="t_st_graphic_view" EntityType="Self.t_st_graphic_view" />
+    <EntitySet Name="t_st_quest_view" EntityType="Self.t_st_quest_view" />
+    <EntitySet Name="t_st_reserve_view" EntityType="Self.t_st_reserve_view" />
+    <EntitySet Name="t_st_signup_view" EntityType="Self.t_st_signup_view" />
+    <FunctionImport Name="p_graphi_statistics" ReturnType="Collection(kd_statisticsModel.p_graphi_statistics_Result)">
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+      <Parameter Name="wx_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="p_graphi_statistics_Result">
+    <Property Type="Int32" Name="obj_id" Nullable="false" />
+    <Property Type="String" Name="obj_name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="channel_id" Nullable="true" />
+    <Property Type="Int32" Name="view_count" Nullable="true" />
+    <Property Type="Int32" Name="share_count" Nullable="true" />
+  </ComplexType>
+</Schema>

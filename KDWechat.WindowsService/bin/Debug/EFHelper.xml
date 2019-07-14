@@ -1,0 +1,1373 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EFHelper</name>
+    </assembly>
+    <members>
+        <member name="F:Companycn.Core.DbHelper.EffentNextType.None">
+            <summary>
+            对其他语句无任何影响 
+            </summary>
+        </member>
+        <member name="F:Companycn.Core.DbHelper.EffentNextType.WhenHaveContine">
+            <summary>
+            当前语句必须为"select count(1) from .."格式，如果存在则继续执行，不存在回滚事务
+            </summary>
+        </member>
+        <member name="F:Companycn.Core.DbHelper.EffentNextType.WhenNoHaveContine">
+            <summary>
+            当前语句必须为"select count(1) from .."格式，如果不存在则继续执行，存在回滚事务
+            </summary>
+        </member>
+        <member name="F:Companycn.Core.DbHelper.EffentNextType.ExcuteEffectRows">
+            <summary>
+            当前语句影响到的行数必须大于0，否则回滚事务
+            </summary>
+        </member>
+        <member name="F:Companycn.Core.DbHelper.EffentNextType.SolicitationEvent">
+            <summary>
+            引发事件-当前语句必须为"select count(1) from .."格式，如果不存在则继续执行，存在回滚事务
+            </summary>
+        </member>
+        <member name="T:Companycn.Core.DbHelper.DbHelperSQLLogs">
+            <summary>
+            kd_logs 链接库
+            </summary>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ColumnExists(System.String,System.String)">
+            <summary>
+            判断是否存在某表的某个字段
+            </summary>
+            <param name="tableName">表名称</param>
+            <param name="columnName">列名称</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.TabExists(System.String)">
+            <summary>
+            表是否存在
+            </summary>
+            <param name="TableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSql(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Boolean)">
+            <summary>
+            2012-2-21新增重载，执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事件</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSqlTran(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行Sql和Oracle滴混合事务
+            </summary>
+            <param name="list">SQL命令行列表</param>
+            <param name="oracleCmdSqlList">Oracle命令行列表</param>
+            <returns>执行结果 0-由于SQL造成事务失败 -1 由于Oracle造成事务失败 1-整体事务执行成功</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSqlTran(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>		
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSql(System.String,System.String,System.Boolean)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSqlGet(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSqlInsertImg(System.String,System.Byte[],System.Boolean)">
+            <summary>
+            向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
+            </summary>
+            <param name="strSQL">SQL语句</param>
+            <param name="fs">图像字节,数据库的字段类型为image的情况</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.GetSingle(System.String)">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteReader(System.String,System.Boolean)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.Query(System.String)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.Query(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String)">
+            <summary>
+            2012-2-21新增重载，执行查询语句，返回DataSet
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSql(System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            2012-2-29新增重载，执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction对象</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSqlTran(System.Collections.Hashtable,System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSqlTran(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSqlTranWithIndentity(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteSqlTranWithIndentity(System.Collections.Hashtable,System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.GetSingle(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.GetSingle(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            2012-2-21新增重载，执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.ExecuteReader(System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.Query(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.Query(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            2012-2-21新增重载，执行查询语句，返回DataSet
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.RunProcedure(System.String,System.Data.IDataParameter[],System.Boolean)">
+            <summary>
+            执行存储过程，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.RunProcedure(System.String,System.Data.IDataParameter[],System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="tableName">DataSet结果中的表名</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.BuildQueryCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            构建 SqlCommand 对象(用来返回一个结果集，而不是一个整数值)
+            </summary>
+            <param name="connection">数据库连接</param>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.RunProcedure(System.String,System.Data.IDataParameter[],System.Int32@,System.Boolean)">
+            <summary>
+            执行存储过程，返回影响的行数		
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="rowsAffected">影响的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLLogs.BuildIntCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建 SqlCommand 对象实例(用来返回一个整数值)	
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand 对象实例</returns>
+        </member>
+        <member name="T:Companycn.Core.DbHelper.DbHelperSQLModule">
+            <summary>
+            kd_module 链接库
+            </summary>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ColumnExists(System.String,System.String)">
+            <summary>
+            判断是否存在某表的某个字段
+            </summary>
+            <param name="tableName">表名称</param>
+            <param name="columnName">列名称</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.TabExists(System.String)">
+            <summary>
+            表是否存在
+            </summary>
+            <param name="TableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSql(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Boolean)">
+            <summary>
+            2012-2-21新增重载，执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事件</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSqlTran(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行Sql和Oracle滴混合事务
+            </summary>
+            <param name="list">SQL命令行列表</param>
+            <param name="oracleCmdSqlList">Oracle命令行列表</param>
+            <returns>执行结果 0-由于SQL造成事务失败 -1 由于Oracle造成事务失败 1-整体事务执行成功</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSqlTran(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>		
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSql(System.String,System.String,System.Boolean)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSqlGet(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSqlInsertImg(System.String,System.Byte[],System.Boolean)">
+            <summary>
+            向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
+            </summary>
+            <param name="strSQL">SQL语句</param>
+            <param name="fs">图像字节,数据库的字段类型为image的情况</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.GetSingle(System.String)">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteReader(System.String,System.Boolean)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.Query(System.String)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.Query(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String)">
+            <summary>
+            2012-2-21新增重载，执行查询语句，返回DataSet
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSql(System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            2012-2-29新增重载，执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction对象</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSqlTran(System.Collections.Hashtable,System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSqlTran(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSqlTranWithIndentity(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteSqlTranWithIndentity(System.Collections.Hashtable,System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.GetSingle(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.GetSingle(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            2012-2-21新增重载，执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.ExecuteReader(System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.Query(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.Query(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            2012-2-21新增重载，执行查询语句，返回DataSet
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.RunProcedure(System.String,System.Data.IDataParameter[],System.Boolean)">
+            <summary>
+            执行存储过程，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.RunProcedure(System.String,System.Data.IDataParameter[],System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="tableName">DataSet结果中的表名</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.BuildQueryCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            构建 SqlCommand 对象(用来返回一个结果集，而不是一个整数值)
+            </summary>
+            <param name="connection">数据库连接</param>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.RunProcedure(System.String,System.Data.IDataParameter[],System.Int32@,System.Boolean)">
+            <summary>
+            执行存储过程，返回影响的行数		
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="rowsAffected">影响的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLModule.BuildIntCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建 SqlCommand 对象实例(用来返回一个整数值)	
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand 对象实例</returns>
+        </member>
+        <member name="T:Companycn.Core.DbHelper.DbHelperSQLStatistics">
+            <summary>
+            kd_wechats 链接库
+            </summary>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ColumnExists(System.String,System.String)">
+            <summary>
+            判断是否存在某表的某个字段
+            </summary>
+            <param name="tableName">表名称</param>
+            <param name="columnName">列名称</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.TabExists(System.String)">
+            <summary>
+            表是否存在
+            </summary>
+            <param name="TableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSql(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Boolean)">
+            <summary>
+            2012-2-21新增重载，执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事件</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSqlTran(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行Sql和Oracle滴混合事务
+            </summary>
+            <param name="list">SQL命令行列表</param>
+            <param name="oracleCmdSqlList">Oracle命令行列表</param>
+            <returns>执行结果 0-由于SQL造成事务失败 -1 由于Oracle造成事务失败 1-整体事务执行成功</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSqlTran(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>		
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSql(System.String,System.String,System.Boolean)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSqlGet(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSqlInsertImg(System.String,System.Byte[],System.Boolean)">
+            <summary>
+            向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
+            </summary>
+            <param name="strSQL">SQL语句</param>
+            <param name="fs">图像字节,数据库的字段类型为image的情况</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.GetSingle(System.String)">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteReader(System.String,System.Boolean)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.Query(System.String)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.Query(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String)">
+            <summary>
+            2012-2-21新增重载，执行查询语句，返回DataSet
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSql(System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            2012-2-29新增重载，执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction对象</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSqlTran(System.Collections.Hashtable,System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSqlTran(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSqlTranWithIndentity(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteSqlTranWithIndentity(System.Collections.Hashtable,System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.GetSingle(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.GetSingle(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            2012-2-21新增重载，执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.ExecuteReader(System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.Query(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.Query(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            2012-2-21新增重载，执行查询语句，返回DataSet
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.RunProcedure(System.String,System.Data.IDataParameter[],System.Boolean)">
+            <summary>
+            执行存储过程，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.RunProcedure(System.String,System.Data.IDataParameter[],System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="tableName">DataSet结果中的表名</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.BuildQueryCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            构建 SqlCommand 对象(用来返回一个结果集，而不是一个整数值)
+            </summary>
+            <param name="connection">数据库连接</param>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.RunProcedure(System.String,System.Data.IDataParameter[],System.Int32@,System.Boolean)">
+            <summary>
+            执行存储过程，返回影响的行数		
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="rowsAffected">影响的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLStatistics.BuildIntCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建 SqlCommand 对象实例(用来返回一个整数值)	
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand 对象实例</returns>
+        </member>
+        <member name="T:Companycn.Core.DbHelper.DbHelperSQLUsers">
+            <summary>
+            kd_users 链接库
+            </summary>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ColumnExists(System.String,System.String)">
+            <summary>
+            判断是否存在某表的某个字段
+            </summary>
+            <param name="tableName">表名称</param>
+            <param name="columnName">列名称</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.TabExists(System.String)">
+            <summary>
+            表是否存在
+            </summary>
+            <param name="TableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSql(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Boolean)">
+            <summary>
+            2012-2-21新增重载，执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事件</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSqlTran(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行Sql和Oracle滴混合事务
+            </summary>
+            <param name="list">SQL命令行列表</param>
+            <param name="oracleCmdSqlList">Oracle命令行列表</param>
+            <returns>执行结果 0-由于SQL造成事务失败 -1 由于Oracle造成事务失败 1-整体事务执行成功</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSqlTran(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>		
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSql(System.String,System.String,System.Boolean)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSqlGet(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSqlInsertImg(System.String,System.Byte[],System.Boolean)">
+            <summary>
+            向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
+            </summary>
+            <param name="strSQL">SQL语句</param>
+            <param name="fs">图像字节,数据库的字段类型为image的情况</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.GetSingle(System.String)">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteReader(System.String,System.Boolean)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.Query(System.String)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.Query(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String)">
+            <summary>
+            2012-2-21新增重载，执行查询语句，返回DataSet
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSql(System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            2012-2-29新增重载，执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction对象</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSqlTran(System.Collections.Hashtable,System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSqlTran(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSqlTranWithIndentity(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteSqlTranWithIndentity(System.Collections.Hashtable,System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.GetSingle(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.GetSingle(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            2012-2-21新增重载，执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.ExecuteReader(System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.Query(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.Query(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            2012-2-21新增重载，执行查询语句，返回DataSet
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.RunProcedure(System.String,System.Data.IDataParameter[],System.Boolean)">
+            <summary>
+            执行存储过程，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.RunProcedure(System.String,System.Data.IDataParameter[],System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="tableName">DataSet结果中的表名</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.BuildQueryCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            构建 SqlCommand 对象(用来返回一个结果集，而不是一个整数值)
+            </summary>
+            <param name="connection">数据库连接</param>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.RunProcedure(System.String,System.Data.IDataParameter[],System.Int32@,System.Boolean)">
+            <summary>
+            执行存储过程，返回影响的行数		
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="rowsAffected">影响的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLUsers.BuildIntCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建 SqlCommand 对象实例(用来返回一个整数值)	
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand 对象实例</returns>
+        </member>
+        <member name="T:Companycn.Core.DbHelper.DbHelperSQLWechats">
+            <summary>
+            kd_wechats 链接库
+            </summary>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ColumnExists(System.String,System.String)">
+            <summary>
+            判断是否存在某表的某个字段
+            </summary>
+            <param name="tableName">表名称</param>
+            <param name="columnName">列名称</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.TabExists(System.String)">
+            <summary>
+            表是否存在
+            </summary>
+            <param name="TableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSql(System.String,System.Boolean)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Boolean)">
+            <summary>
+            2012-2-21新增重载，执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事件</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSqlTran(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行Sql和Oracle滴混合事务
+            </summary>
+            <param name="list">SQL命令行列表</param>
+            <param name="oracleCmdSqlList">Oracle命令行列表</param>
+            <returns>执行结果 0-由于SQL造成事务失败 -1 由于Oracle造成事务失败 1-整体事务执行成功</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSqlTran(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>		
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSql(System.String,System.String,System.Boolean)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSqlGet(System.String,System.String)">
+            <summary>
+            执行带一个存储过程参数的的SQL语句。
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <param name="content">参数内容,比如一个字段是格式复杂的文章，有特殊符号，可以通过这个方式添加</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSqlInsertImg(System.String,System.Byte[],System.Boolean)">
+            <summary>
+            向数据库里插入图像格式的字段(和上面情况类似的另一种实例)
+            </summary>
+            <param name="strSQL">SQL语句</param>
+            <param name="fs">图像字节,数据库的字段类型为image的情况</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.GetSingle(System.String)">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteReader(System.String,System.Boolean)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.Query(System.String)">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.Query(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String)">
+            <summary>
+            2012-2-21新增重载，执行查询语句，返回DataSet
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSql(System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSql(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            2012-2-29新增重载，执行SQL语句，返回影响的记录数
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction对象</param>
+            <param name="SQLString">SQL语句</param>
+            <returns>影响的记录数</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSqlTran(System.Collections.Hashtable,System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSqlTran(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSqlTranWithIndentity(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSqlTranWithIndentity(System.Collections.Hashtable,System.Boolean)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">SQL语句的哈希表（key为sql语句，value是该语句的SqlParameter[]）</param>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.GetSingle(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.GetSingle(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            2012-2-21新增重载，执行一条计算查询结果语句，返回查询结果（object）。
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">计算查询结果语句</param>
+            <returns>查询结果（object）</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteReader(System.String,System.Data.SqlClient.SqlParameter[],System.Boolean)">
+            <summary>
+            执行查询语句，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="strSQL">查询语句</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.Query(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行查询语句，返回DataSet
+            </summary>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.Query(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            2012-2-21新增重载，执行查询语句，返回DataSet
+            </summary>
+            <param name="connection">SqlConnection对象</param>
+            <param name="trans">SqlTransaction事务</param>
+            <param name="SQLString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.RunProcedure(System.String,System.Data.IDataParameter[],System.Boolean)">
+            <summary>
+            执行存储过程，返回SqlDataReader ( 注意：调用该方法后，一定要对SqlDataReader进行Close )
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlDataReader</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.RunProcedure(System.String,System.Data.IDataParameter[],System.String)">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="tableName">DataSet结果中的表名</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.BuildQueryCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            构建 SqlCommand 对象(用来返回一个结果集，而不是一个整数值)
+            </summary>
+            <param name="connection">数据库连接</param>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.RunProcedure(System.String,System.Data.IDataParameter[],System.Int32@,System.Boolean)">
+            <summary>
+            执行存储过程，返回影响的行数		
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <param name="rowsAffected">影响的行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.BuildIntCommand(System.Data.SqlClient.SqlConnection,System.String,System.Data.IDataParameter[])">
+            <summary>
+            创建 SqlCommand 对象实例(用来返回一个整数值)	
+            </summary>
+            <param name="storedProcName">存储过程名</param>
+            <param name="parameters">存储过程参数</param>
+            <returns>SqlCommand 对象实例</returns>
+        </member>
+        <member name="M:Companycn.Core.DbHelper.DbHelperSQLWechats.ExecuteSqlTranMore(System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Collections.Generic.List{Companycn.Core.DbHelper.CommandInfo},System.Boolean)">
+            <summary>
+            跨数据库事件处理（yzl/2014-9-3）
+            </summary>
+        </member>
+        <!-- 对于成员“T:Companycn.Core.EntityFramework.EFHelper”忽略有格式错误的 XML 注释 -->
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.GetList``3(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``1,``2}},System.Int32,System.Int32,System.Int32@,System.Boolean)">
+            <summary>
+            获取列表的方法
+            </summary>
+            <typeparam name="TContext">数据上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类类型</typeparam>
+            <typeparam name="TOrderBy">orderby的类型</typeparam>
+            <param name="where">where子句</param>
+            <param name="orderBy">orderby子句</param>
+            <param name="pageSize">页大小</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="totalCount">where条件下总数</param>
+            <param name="orderByDesc">是否逆序orderby</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.GetList``3(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``1,``2}},System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            获取列表的方法
+            </summary>
+            <typeparam name="TContext">数据上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类类型</typeparam>
+            <typeparam name="TOrderBy">orderby的类型</typeparam>
+            <param name="where">where子句</param>
+            <param name="orderBy">orderby子句</param>
+            <param name="pageSize">页大小</param>
+            <param name="pageIndex">当前页码</param>
+            <param name="orderByDesc">是否逆序orderby</param>
+            <returns>List</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.GetCount``2(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}})">
+            <summary>
+            获取数量的方法
+            </summary>
+            <typeparam name="TContext">数据上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类类型</typeparam>
+            <param name="where">where子句</param>
+            <returns>数量</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.GetArray``3(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``1,``2}})">
+            <summary>
+            获取数组的方法
+            </summary>
+            <typeparam name="TContext">数据上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类类型</typeparam>
+            <typeparam name="TArray">数组类型</typeparam>
+            <param name="where">where子句</param>
+            <returns>数组</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.AddModel``2(``1,System.Boolean)">
+            <summary>
+            添加model
+            </summary>
+            <typeparam name="TContext">上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类的类型</typeparam>
+            <param name="model">实体类的实例</param>
+            <param name="filter">是否进行安全过滤（默认进行过滤）</param>
+            <returns>保存之后的实体类</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.AddModelBool``2(``1,System.Boolean)">
+            <summary>
+            添加model
+            </summary>
+            <typeparam name="TContext">上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类的类型</typeparam>
+            <param name="model">实体类类型</param>
+            <param name="filter">是否进行安全过滤（默认进行过滤）</param>
+            <returns>是否添加成功</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.UpdateModel``2(``1,System.Boolean)">
+            <summary>
+            更新一个实体
+            </summary>
+            <typeparam name="TContext">上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类的类型</typeparam>
+            <param name="model">实体类类型</param>
+            <param name="filter">是否进行安全过滤（默认进行过滤）</param>
+            <returns>是否更新成功（若新数据与原数据无变化也会返回false）</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.UpdateModel``2(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``1,``1}},System.Boolean)">
+            <summary>
+            更新指定条件的数据
+            最终转换为 update table1 set xxx=yyy where id=1
+            </summary>
+            <typeparam name="TContext">上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类的类型</typeparam>
+            <param name="where">需要更新的条件</param>
+            <param name="model">此model仅包含需要更新的字段</param>
+            <param name="filter">是否进行安全过滤（默认进行过滤）</param>
+            <returns>受影响的行数</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.GetModel``2(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}})">
+            <summary>
+            取实体
+            </summary>
+            <typeparam name="TContext">上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类的类型</typeparam>
+            <param name="where">查询条件</param>
+            <returns>数据实体</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.GetModel``3(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``1,``2}},System.Boolean)">
+            <summary>
+            取实体
+            </summary>
+            <typeparam name="TContext">上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类的类型</typeparam>
+            <typeparam name="TOrderBy">orderby的字段类型</typeparam>
+            <param name="where">查询条件</param>
+            <param name="orderBy">排序</param>
+            <param name="orderByDesc">是否逆序</param>
+            <returns>数据实体</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.DeleteModel``2(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}})">
+            <summary>
+            删除指定条件的实体
+            </summary>
+            <typeparam name="TContext">上下文的类型</typeparam>
+            <typeparam name="TEntity">实体类的类型</typeparam>
+            <param name="where">删除条件</param>
+            <returns>受影响的行数</returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.GetGroupBy``2(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``1,System.String}})">
+            <summary>
+            返回groupby count 
+            </summary>
+            <typeparam name="TContext">上下文类型</typeparam>
+            <typeparam name="TEntity">实体类类型</typeparam>
+            <param name="where">查询语句</param>
+            <param name="groupBy">groupby子句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.GetGroupBy``4(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``1,``2}},System.Linq.Expressions.Expression{System.Func{System.Linq.IGrouping{``2,``1},``3}})">
+            <summary>
+            返回groupby
+            </summary>
+            <typeparam name="TContext">上下文类型</typeparam>
+            <typeparam name="TEntity">实体类类型</typeparam>
+            <typeparam name="TGroupBy">groupBy类型</typeparam>
+            <typeparam name="TResult">返回值类型</typeparam>
+            <param name="where">查询语句</param>
+            <param name="groupBy">groupby子句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.GetGroupByArray``2(System.Linq.Expressions.Expression{System.Func{``1,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``1,System.String}})">
+            <summary>
+            返回groupby之后的字段名 
+            </summary>
+            <typeparam name="TContext">上下文类型</typeparam>
+            <typeparam name="TEntity">实体类类型</typeparam>
+            <param name="where">查询语句</param>
+            <param name="groupBy">groupby子句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.EFHelper.ReturnSecurityObject``1(``0)">
+            <summary>
+            返回安全的entity对象
+            </summary>
+            <typeparam name="T">entity对象的类型</typeparam>
+            <param name="model">entity对象</param>
+            <returns>安全的entity对象</returns>
+        </member>
+        <member name="T:Companycn.Core.EntityFramework.DynamicLinqExpressions">
+            <summary>
+            这个类用于Lambda表达式的合成
+            </summary>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.DynamicLinqExpressions.True``1">
+            <summary>
+            永真表达式
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.DynamicLinqExpressions.False``1">
+            <summary>
+            永假表达式
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Companycn.Core.EntityFramework.DynamicLinqExpressions.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            这个方法用于把两个lambda表达式合成一个||（OR）操作 -Damos
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expr1">表达式1</param>
+            <param name="expr2">表达式2</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:Companycn.Core.EntityFramework.DynamicLinqExpressions.And``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})”忽略有格式错误的 XML 注释 -->
+        <member name="T:Companycn.Core.EntityFramework.GroupByCount">
+            <summary>
+            groupby count 实体类
+            </summary>
+        </member>
+        <member name="P:Companycn.Core.EntityFramework.GroupByCount.count">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:Companycn.Core.EntityFramework.GroupByCount.key">
+            <summary>
+            字段
+            </summary>
+        </member>
+    </members>
+</doc>

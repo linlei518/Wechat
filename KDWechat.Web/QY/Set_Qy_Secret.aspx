@@ -1,0 +1,69 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Set_Qy_Secret.aspx.cs" Inherits="KDWechat.Web.QY.Set_Qy_Secret" %>
+
+<%@ Register TagName="TopControl" Src="~/UserControl/TopControl.ascx" TagPrefix="uc" %>
+
+<%@ Register TagName="MenuList" Src="~/UserControl/MenuList.ascx" TagPrefix="uc" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../scripts/html5.js"></script>
+    <!--这个JS将普通的file控件 select控件转化为JS模拟的 不影响提交表单，如果需要更新页面上的select，请更新好基础控件后调用setupSelect方法-->
+
+    <link type="text/css" href="../styles/global.css" rel="stylesheet" />
+    <!--[if lt IE 9 ]><link href="../styles/ie8Fix.css" rel="stylesheet" type="text/css"><![endif]-->
+    <!--[if lt IE 8 ]><link href="../styles/ie7Fix.css" rel="stylesheet" type="text/css"><![endif]-->
+    <!--[if lt IE 7 ]><link href="../styles/ie6Fix.css" rel="stylesheet" type="text/css"><![endif]-->
+
+</head>
+<body>
+    <uc:TopControl ID="TopControl1" runat="server" />
+    <uc:MenuList ID="MenuList1" runat="server" />
+
+    <form id="form1" runat="server">
+            <section id="main">
+                <div class="listPanel_01">
+                    <dl>
+                        <dt>
+                            appid:
+                        </dt>
+                        <dd>
+                            <asp:TextBox ID="txtAppId" CssClass="txt" runat="server"></asp:TextBox>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            appsecret:
+                        </dt>
+                        <dd>
+                            <asp:TextBox ID="txtAppSecret" CssClass="txt" runat="server"></asp:TextBox>
+                        </dd>
+                    </dl>
+
+
+
+
+                    <div class="btnPanel_01">
+                        <asp:Button ID="btnSubbmit" Visible='<%#isEdit %>' runat="server" Text="下一步" OnClick="Button1_Click" CssClass="btn btn1" />
+                        <asp:LinkButton ID="btnCancel" Name="btnCancel" runat="server" CssClass="btn btn2">取消</asp:LinkButton>
+                    </div>
+                </div>
+            </section>
+        <script src="../scripts/jquery-1.10.2.min.js"></script>
+        <script src="../scripts/controls.js"></script>
+        <script src="../Scripts/function.js"></script>
+
+    </form>
+    <script>
+        $("#btnCancel").click(function () {
+            parent.bombbox.closeBox();
+        });
+
+    </script>
+</body>
+</html>
+

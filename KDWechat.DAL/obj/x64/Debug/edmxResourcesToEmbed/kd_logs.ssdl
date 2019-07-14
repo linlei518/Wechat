@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_logsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="t_wx_fans_chats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="is_sys_auto_reply" Type="int" />
+    <Property Name="msg_type" Type="int" Nullable="false" />
+    <Property Name="from_type" Type="int" Nullable="false" />
+    <Property Name="media_id" Type="nvarchar" MaxLength="100" />
+    <Property Name="contents" Type="nvarchar" MaxLength="1000" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_fans_hisactivity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="act_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="act_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="join_time" Type="datetime" Nullable="false" />
+    <Property Name="channel_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_fans_hislocation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lng" Type="decimal" Precision="18" Scale="10" Nullable="false" />
+    <Property Name="lat" Type="decimal" Precision="18" Scale="10" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="200" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_fans_hisview">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="page_url" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="page_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="view_time" Type="datetime" Nullable="false" />
+    <Property Name="channel_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="type_id" Type="int" />
+    <Property Name="news_id" Type="int" />
+  </EntityType>
+  <EntityType Name="t_wx_logs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="contents" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="type" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_logs.dbo.view_fans_actview”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_fans_actview">
+    <Key>
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="act_name" />
+      <PropertyRef Name="channel_name" />
+    </Key>
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="act_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="channel_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="url" Type="nvarchar" MaxLength="500" />
+    <Property Name="join_count" Type="int" />
+    <Property Name="join_time" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“kd_logs.dbo.view_fans_hisview”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="view_fans_hisview">
+    <Key>
+      <PropertyRef Name="wx_id" />
+      <PropertyRef Name="wx_og_id" />
+      <PropertyRef Name="open_id" />
+      <PropertyRef Name="page_name" />
+      <PropertyRef Name="channel_name" />
+    </Key>
+    <Property Name="wx_id" Type="int" Nullable="false" />
+    <Property Name="wx_og_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="open_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="channel_id" Type="int" />
+    <Property Name="type_id" Type="int" />
+    <Property Name="news_id" Type="int" />
+    <Property Name="page_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="channel_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="url" Type="nvarchar" MaxLength="500" />
+    <Property Name="view_count" Type="int" />
+    <Property Name="view_time" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="kd_logsModelStoreContainer">
+    <EntitySet Name="t_wx_fans_chats" EntityType="Self.t_wx_fans_chats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_fans_hisactivity" EntityType="Self.t_wx_fans_hisactivity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_fans_hislocation" EntityType="Self.t_wx_fans_hislocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_fans_hisview" EntityType="Self.t_wx_fans_hisview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_wx_logs" EntityType="Self.t_wx_logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="view_fans_actview" EntityType="Self.view_fans_actview" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[view_fans_actview].[wx_id] AS [wx_id], 
+[view_fans_actview].[wx_og_id] AS [wx_og_id], 
+[view_fans_actview].[open_id] AS [open_id], 
+[view_fans_actview].[act_name] AS [act_name], 
+[view_fans_actview].[channel_name] AS [channel_name], 
+[view_fans_actview].[url] AS [url], 
+[view_fans_actview].[join_count] AS [join_count], 
+[view_fans_actview].[join_time] AS [join_time]
+FROM [dbo].[view_fans_actview] AS [view_fans_actview]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_fans_hisview" EntityType="Self.view_fans_hisview" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[view_fans_hisview].[wx_id] AS [wx_id], 
+[view_fans_hisview].[wx_og_id] AS [wx_og_id], 
+[view_fans_hisview].[open_id] AS [open_id], 
+[view_fans_hisview].[channel_id] AS [channel_id], 
+[view_fans_hisview].[type_id] AS [type_id], 
+[view_fans_hisview].[news_id] AS [news_id], 
+[view_fans_hisview].[page_name] AS [page_name], 
+[view_fans_hisview].[channel_name] AS [channel_name], 
+[view_fans_hisview].[url] AS [url], 
+[view_fans_hisview].[view_count] AS [view_count], 
+[view_fans_hisview].[view_time] AS [view_time]
+FROM [dbo].[view_fans_hisview] AS [view_fans_hisview]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

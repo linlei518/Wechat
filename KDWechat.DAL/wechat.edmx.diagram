@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="52df7959c5934bb7979adbcb91999cf6" Name="Diagram1">
+        <EntityTypeShape EntityType="creater_wxModel.t_category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_member_fans" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_member_info" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_messages" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_qy_manager" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_retrans_keyword" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_retrans_server" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_retrans_times" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_st_diymenu_click" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_st_keyword_view" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_sys_letter" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_sys_letter_receiver" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_sys_navigation" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_sys_tags" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_sys_user_manage_child_sys" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_sys_users" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_sys_users_fans" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_sys_users_power" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_tags_category" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_basic_reply" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_diy_menus" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_error_logs" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_fans" Width="1.5" PointX="12.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_fans_chats" Width="1.5" PointX="6.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_fans_groups" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_fans_hisactivity" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_fans_hislocation" Width="1.5" PointX="14.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_fans_hisview" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_fans_tags" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_group_msg_key" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_group_msg_read_percent_statistics" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_group_msgs" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_group_tags" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_jsapi_ticket" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_lbs" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_logs" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_media_materials" Width="1.5" PointX="4.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_news_materials" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_qrcode" Width="1.5" PointX="18.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_qrcode_history" Width="1.5" PointX="18.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_rule_reply" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_rules" Width="1.5" PointX="6.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_rules_keywords" Width="1.5" PointX="8.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_templates" Width="1.5" PointX="14.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_templates_wechats" Width="1.5" PointX="16.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_wx_wechats" Width="1.5" PointX="18.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_st_graohic_click" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_st_graphic_share" Width="1.5" PointX="20.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_st_graphic_view" Width="1.5" PointX="20.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_st_linnkout_view" Width="1.5" PointX="20.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="creater_wxModel.t_module_menu" Width="1.5" PointX="24.375" PointY="15.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_module_wechat" Width="1.5" PointX="24.375" PointY="19.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_module_wx_switch" Width="1.5" PointX="24.375" PointY="24.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_module_wx_user_role" Width="1.5" PointX="26.375" PointY="0.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_modules" Width="1.5" PointX="26.375" PointY="3.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_invitation" Width="1.5" PointX="7.375" PointY="23.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_product" Width="1.5" PointX="15.375" PointY="23.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_product_model" Width="1.5" PointX="25.375" PointY="8.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_product_model_dic" Width="1.5" PointX="23.375" PointY="12.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_product_type" Width="1.5" PointX="26.375" PointY="12.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_contact" Width="1.5" PointX="26.375" PointY="16.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_draw_list" Width="1.5" PointX="26.375" PointY="20.75" />
+        <EntityTypeShape EntityType="creater_wxModel.sysUser_WeChat_View" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="creater_wxModel.retrans_keyword_server_view" Width="1.5" PointX="21.375" PointY="16.75" />
+        <EntityTypeShape EntityType="creater_wxModel.retrans_times_server_view" Width="1.5" PointX="21.375" PointY="20.75" />
+        <EntityTypeShape EntityType="creater_wxModel.view_all_history_list" Width="1.5" PointX="23.375" PointY="0.75" />
+        <EntityTypeShape EntityType="creater_wxModel.view_dis_history_list" Width="1.5" PointX="3.375" PointY="23.75" />
+        <EntityTypeShape EntityType="creater_wxModel.view_fans_actview" Width="1.5" PointX="23.375" PointY="4.75" />
+        <EntityTypeShape EntityType="creater_wxModel.view_fans_hisview" Width="1.5" PointX="9.375" PointY="23.75" />
+        <EntityTypeShape EntityType="creater_wxModel.view_project_category" Width="1.5" PointX="11.375" PointY="23.75" />
+        <EntityTypeShape EntityType="creater_wxModel.wechat_groupmsg_view" Width="1.5" PointX="21.375" PointY="24.75" />
+        <EntityTypeShape EntityType="creater_wxModel.wx_tags_relation_View" Width="1.5" PointX="26.375" PointY="24.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_zh_user" Width="1.5" PointX="0.75" PointY="27.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_parking" Width="1.5" PointX="3.375" PointY="27.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_zh_report" Width="1.5" PointX="5.375" PointY="27.75" />
+        <EntityTypeShape EntityType="creater_wxModel.t_zh_advert" Width="1.5" PointX="7.375" PointY="27.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

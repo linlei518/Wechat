@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_mallModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="t_malls">
+    <Key>
+      <PropertyRef Name="mall_id" />
+    </Key>
+    <Property Name="mall_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mall_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mall_name_en" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="mall_logo_img_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="mall_start_business_time" Type="DateTime" Precision="3" />
+    <Property Name="mall_open_time" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="mall_close_time" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="mall_city_id" Type="Int32" Nullable="false" />
+    <Property Name="mall_director_id" Type="Int32" Nullable="false" />
+    <Property Name="is_delete" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="add_uid" Type="Int32" Nullable="false" />
+    <Property Name="add_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="mall_url_prefix" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="mall_install_ipaddress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="mall_install_status" Type="Int32" Nullable="false" />
+    <Property Name="mall_remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="seo_key" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="seo_description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="seo_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="MainMallEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="t_malls" EntityType="Self.t_malls" />
+  </EntityContainer>
+</Schema>

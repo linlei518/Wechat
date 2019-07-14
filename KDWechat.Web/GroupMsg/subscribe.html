@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>消息订阅列表</title>
+<link href="css/preview.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="container">
+<!--<header id="header">
+	<div class="titlePanel_01">
+		<h1>我的订阅</h1>
+	</div>
+	<div class="screenPanel_01">
+		<div class="selectField">
+			<span>
+			<select class="select" >
+				<option id="1" onchange="openurl(this.id)">全部订阅消息</option>
+				<option>7月第一期订阅</option>
+				<option>7月第二期订阅</option>
+			</select>
+			</span>
+		</div>
+		<div class="btnField">
+			<button type="button" class="btn">修改订阅类型</button>
+		</div>
+	</div>
+</header>-->
+<section id="main" style="bottom:0;">
+
+	<div class="simulatorPanel_01">
+        <h2 class="multiH2">3月5日</h2>
+		<a href="http://www.baidu.com/" class="main">
+            <div class="title">
+				<h1>彭丽媛陪外宾参观军艺看演出</h1>
+			</div>
+			<div class="img">
+				<img src="img/blank.gif" class="placeholder" alt=""><!--这张图片是固定的-->
+				<span style="background-image:url(demo/demo_content_01.jpg)"></span><!--这里的背景图才是上传的图片-->
+			</div>
+		</a>
+		<a href="http://www.bing.com/">
+			<div class="title">
+				<h1>2月26日，第21期聊遍环球来啦！快快参与！月26日，第21期聊遍环球来啦！快快参与！</h1>
+			</div>
+			<div class="img">
+				<span style="background-image:url(demo/demo_content_02.jpg)"></span><!--这里的背景图才是上传的图片-->
+			</div>
+		</a>
+		<a href="http://www.weiphone.com/">
+			<div class="title">
+				<h1>2月26日，第21期聊遍环球来啦！快快参与！</h1>
+			</div>
+			<div class="img">
+				<span style="background-image:url(demo/demo_content_03.jpg)"></span><!--这里的背景图才是上传的图片-->
+			</div>
+		</a>
+	</div>
+
+	<div class="simulatorPanel_02">
+		<a href="http://www.jandan.net/">
+			<div class="title">
+				<h1>推荐办卡积分礼享</h1>
+				<h2>3月5日</h2>
+			</div>
+			<div class="img">
+				<img src="img/blank.gif" class="placeholder" alt=""><!--这张图片是固定的-->
+				<span style="background-image:url(demo/demo_content_02.jpg)"></span><!--这里的背景图才是上传的图片-->
+			</div>
+			<div class="text">
+				<p>“三八妇女节”来临之际，入驻上海环球金融中心的10家时尚店铺，特别推出针对女性顾客的优惠活动！</p>
+			</div>
+			<div class="links">
+				<p>阅读全文</p>
+			</div>
+		</a>
+	</div>
+</section>
+<script>
+var links = document.getElementsByTagName('a');
+var container = document.getElementById('container');
+for(var i=0; i<links.length; i++){
+	links[i].addEventListener('click',linkClickHandler,false);
+}
+function linkClickHandler(e){
+	e.preventDefault();
+	container.classList.add('getURL');
+	var url = this.href;
+	setTimeout(function(){
+		window.location.href = url;
+	},300);
+}
+function openurl(obj) {
+    location.href = "www.baidu.com";
+}
+
+</script>
+</div>
+    </body>
+    </html>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="raf_activityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="t_rafflescity_activity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="cellphone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="userAgent" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="type" Type="int" />
+    <Property Name="place" Type="nvarchar" MaxLength="50" />
+    <Property Name="ddlRaffcity" Type="int" />
+    <Property Name="Channel" Type="int" />
+  </EntityType>
+  <EntityType Name="t_rafflescity_share">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="create_time" Type="datetime" Nullable="false" />
+    <Property Name="ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="userAgent" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="type" Type="int" />
+    <Property Name="link" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="raf_activityModelStoreContainer">
+    <EntitySet Name="t_rafflescity_activity" EntityType="Self.t_rafflescity_activity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="t_rafflescity_share" EntityType="Self.t_rafflescity_share" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kd_mallModelStoreContainer" CdmEntityContainer="MainMallEntities">
+    <EntitySetMapping Name="t_malls">
+      <EntityTypeMapping TypeName="kd_mallModel.t_malls">
+        <MappingFragment StoreEntitySet="t_malls">
+          <ScalarProperty Name="mall_id" ColumnName="mall_id" />
+          <ScalarProperty Name="mall_name" ColumnName="mall_name" />
+          <ScalarProperty Name="mall_name_en" ColumnName="mall_name_en" />
+          <ScalarProperty Name="mall_logo_img_url" ColumnName="mall_logo_img_url" />
+          <ScalarProperty Name="mall_start_business_time" ColumnName="mall_start_business_time" />
+          <ScalarProperty Name="mall_open_time" ColumnName="mall_open_time" />
+          <ScalarProperty Name="mall_close_time" ColumnName="mall_close_time" />
+          <ScalarProperty Name="mall_city_id" ColumnName="mall_city_id" />
+          <ScalarProperty Name="mall_director_id" ColumnName="mall_director_id" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="add_uid" ColumnName="add_uid" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="mall_url_prefix" ColumnName="mall_url_prefix" />
+          <ScalarProperty Name="mall_install_ipaddress" ColumnName="mall_install_ipaddress" />
+          <ScalarProperty Name="mall_install_status" ColumnName="mall_install_status" />
+          <ScalarProperty Name="mall_remark" ColumnName="mall_remark" />
+          <ScalarProperty Name="wx_id" ColumnName="wx_id" />
+          <ScalarProperty Name="wx_og_id" ColumnName="wx_og_id" />
+          <ScalarProperty Name="seo_key" ColumnName="seo_key" />
+          <ScalarProperty Name="seo_description" ColumnName="seo_description" />
+          <ScalarProperty Name="seo_title" ColumnName="seo_title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

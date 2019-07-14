@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kd_wechatsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="kd_wechatsEntities" annotation:LazyLoadingEnabled="false">
+    <EntitySet Name="t_wx_wechats" EntityType="kd_wechatsModel.t_wx_wechats" />
+    <EntitySet Name="t_messages" EntityType="kd_wechatsModel.t_messages" />
+    <EntitySet Name="t_modules" EntityType="kd_wechatsModel.t_modules" />
+    <EntitySet Name="t_wx_basic_reply" EntityType="kd_wechatsModel.t_wx_basic_reply" />
+    <EntitySet Name="t_wx_diy_menus" EntityType="kd_wechatsModel.t_wx_diy_menus" />
+    <EntitySet Name="t_wx_group_msgs" EntityType="kd_wechatsModel.t_wx_group_msgs" />
+    <EntitySet Name="t_wx_media_materials" EntityType="kd_wechatsModel.t_wx_media_materials" />
+    <EntitySet Name="t_wx_news_materials" EntityType="kd_wechatsModel.t_wx_news_materials" />
+    <EntitySet Name="t_wx_rule_reply" EntityType="kd_wechatsModel.t_wx_rule_reply" />
+    <EntitySet Name="t_wx_rules" EntityType="kd_wechatsModel.t_wx_rules" />
+    <EntitySet Name="t_wx_rules_keywords" EntityType="kd_wechatsModel.t_wx_rules_keywords" />
+    <EntitySet Name="t_wx_templates" EntityType="kd_wechatsModel.t_wx_templates" />
+    <EntitySet Name="t_wx_txt_materials" EntityType="kd_wechatsModel.t_wx_txt_materials" />
+    <EntitySet Name="t_wx_lbs" EntityType="kd_wechatsModel.t_wx_lbs" />
+    <EntitySet Name="wechat_groupmsg_view" EntityType="kd_wechatsModel.wechat_groupmsg_view" />
+    <EntitySet Name="t_questionnaire" EntityType="kd_wechatsModel.t_questionnaire" />
+    <EntitySet Name="t_questionnaire_topic" EntityType="kd_wechatsModel.t_questionnaire_topic" />
+    <EntitySet Name="t_statistics" EntityType="kd_wechatsModel.t_statistics" />
+    <EntitySet Name="t_subject_options" EntityType="kd_wechatsModel.t_subject_options" />
+    <EntitySet Name="t_wx_emotion" EntityType="kd_wechatsModel.t_wx_emotion" />
+    <EntitySet Name="t_module_menu" EntityType="kd_wechatsModel.t_module_menu" />
+    <EntitySet Name="t_module_wx_switch" EntityType="kd_wechatsModel.t_module_wx_switch" />
+    <EntitySet Name="t_wx_templates_wechats" EntityType="kd_wechatsModel.t_wx_templates_wechats" />
+    <EntitySet Name="t_wx_qrcode" EntityType="kd_wechatsModel.t_wx_qrcode" />
+    <EntitySet Name="t_module_wechat" EntityType="kd_wechatsModel.t_module_wechat" />
+  </EntityContainer>
+  <EntityType Name="t_wx_wechats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="type_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_pb_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="wx_og_id" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="wx_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="header_pic" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="country" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="province" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="app_id" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="app_secret" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="api_url" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="token" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="account_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="account_pwd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fans" Type="Int32" />
+    <Property Name="template_id" Type="Int32" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="wx_guid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lbs_radius" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="access_token" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_messages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="contents" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="source_id" />
+    <Property Type="Int32" Name="msg_type" Nullable="false" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_modules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="call_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="type" Nullable="false" />
+    <Property Type="String" Name="version" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="manage_url" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="is_sys" Nullable="false" />
+    <Property Type="Int32" Name="status" Nullable="false" />
+    <Property Name="check_url" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="u_id" Type="Int32" Nullable="false" />
+    <Property Name="img_url" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="allow_wechats" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="is_push" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_wx_basic_reply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="Int32" Name="reply_type" Nullable="false" />
+    <Property Type="Int32" Name="channel_id" Nullable="false" />
+    <Property Type="String" Name="contents" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="source_id" />
+    <Property Type="Int32" Name="status" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_diy_menus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="String" Name="menu_name" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="parent_id" Nullable="false" />
+    <Property Type="String" Name="menu_type" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="menu_key" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="menu_url" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="reply_type" />
+    <Property Type="String" Name="contents" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="soucre_id" />
+    <Property Type="Int32" Name="sort_id" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_wx_group_msgs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="source_id" />
+    <Property Type="String" Name="contents" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="msg_type" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="Int32" Name="send_num" Nullable="false" />
+    <Property Type="Int32" Name="err_code" />
+    <Property Type="String" Name="err_msg" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="is_send" Nullable="false" />
+    <Property Type="DateTime" Name="send_time" Precision="3" />
+    <Property Type="Int32" Name="is_timer" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="String" Name="openIDs" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_wx_media_materials">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="remark" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="group_id" />
+    <Property Type="String" Name="file_url" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="file_ext" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="file_size" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="channel_id" Nullable="false" />
+    <Property Type="Int32" Name="video_type" />
+    <Property Type="String" Name="media_id" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="hq_music_url" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="is_public" Nullable="false" />
+    <Property Type="DateTime" Name="upload_time" Precision="3" />
+    <Property Type="Int32" Name="status" Nullable="false" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_wx_news_materials">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="author" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="cover_img" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="summary" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="contents" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="link_url" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="source_url" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="group_id" />
+    <Property Type="Int32" Name="template_id" Nullable="false" />
+    <Property Type="Int32" Name="par_id" Nullable="false" />
+    <Property Type="Int32" Name="is_public" Nullable="false" />
+    <Property Type="Int32" Name="channel_id" Nullable="false" />
+    <Property Type="Int32" Name="status" Nullable="false" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+    <Property Name="push_type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="app_id" Type="Int32" />
+    <Property Name="app_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="app_link" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="app_type_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="app_type_img" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="app_table_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="multi_html" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="content_html" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_wx_rule_reply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="r_id" Nullable="false" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="contents" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="source_id" />
+    <Property Type="Int32" Name="reply_type" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_rules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="rule_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="Int32" Name="reply_type" Nullable="false" />
+    <Property Type="Int32" Name="status" Nullable="false" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="sort_id" />
+  </EntityType>
+  <EntityType Name="t_wx_rules_keywords">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="r_id" Nullable="false" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="Int32" Name="reply_type" Nullable="false" />
+    <Property Type="String" Name="key_words" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="eq_type" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_templates">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="channel_id" Nullable="false" />
+    <Property Type="Int32" Name="cate_id" Nullable="false" />
+    <Property Type="String" Name="img_url" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="file_path" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="is_default" Nullable="false" />
+    <Property Type="Int32" Name="status" Nullable="false" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="sort_id" />
+    <Property Name="contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_wx_txt_materials">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="contents" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="group_id" Nullable="false" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="Int32" Name="is_public" Nullable="false" />
+    <Property Type="Int32" Name="status" Nullable="false" />
+    <Property Type="DateTime" Name="create_time" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_wx_lbs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Province" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="County" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Contents" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ImgUrl" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="wx_og_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="wx_id" Nullable="false" />
+    <Property Type="Int32" Name="u_id" Nullable="false" />
+    <Property Type="Int32" Name="poi_id" Nullable="false" />
+    <Property Type="String" Name="tags" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="lat" Nullable="false" Precision="18" Scale="10" />
+    <Property Type="Decimal" Name="lng" Nullable="false" Precision="18" Scale="10" />
+    <Property Type="Int32" Name="baidu_id" Nullable="false" />
+    <Property Name="w_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="is_top" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wechat_groupmsg_view">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="msg_type" />
+      <PropertyRef Name="create_time" />
+      <PropertyRef Name="send_num" />
+      <PropertyRef Name="is_send" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="msg_type" Type="Int32" Nullable="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="send_num" Type="Int32" Nullable="false" />
+    <Property Name="send_time" Type="DateTime" Precision="3" />
+    <Property Name="is_send" Type="Int32" Nullable="false" />
+    <Property Name="wx_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_questionnaire">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="title" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="end_time" Precision="3" />
+    <Property Type="Int32" Name="is_look" />
+    <Property Type="Int32" Name="is_required" />
+    <Property Type="String" Name="content" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="add_time" Precision="3" />
+    <Property Name="open_id" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="wx_ogid" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="m_w_id" Type="Int32" />
+    <Property Name="start_time" Type="DateTime" Precision="3" />
+    <Property Name="end_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="end_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_questionnaire_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="q_id" />
+    <Property Type="Int32" Name="radio_choice" />
+    <Property Type="String" Name="topic_title" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="isOther" />
+    <Property Type="DateTime" Name="add_time" Precision="3" />
+    <Property Name="is_required" Type="Int32" />
+    <Property Name="sort_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_statistics">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="q_id" />
+    <Property Type="Int32" Name="t_id" />
+    <Property Type="Int32" Name="o_id" />
+    <Property Type="Int32" Name="u_id" />
+    <Property Type="String" Name="open_id" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="u_ip" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wx_guid" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wx_ogid" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="wx_area" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="isOther" />
+    <Property Type="String" Name="OtherContent" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="add_time" Precision="3" />
+    <Property Name="nick_name" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_subject_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="q_id" />
+    <Property Type="Int32" Name="t_id" />
+    <Property Type="String" Name="options_title" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="options_img_url" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="add_time" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_wx_emotion">
+    <Key>
+      <PropertyRef Name="img" />
+    </Key>
+    <Property Type="String" Name="img" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="emo" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_module_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" />
+    <Property Name="module_id" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="link_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sort" Type="Int32" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+    <Property Name="parent_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_module_wx_switch">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="module_id" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_wx_templates_wechats">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="template_id" Type="Int32" Nullable="false" />
+    <Property Name="is_default" Type="Int32" Nullable="false" />
+    <Property Name="channel_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="t_wx_qrcode">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="souce_id" Type="Int32" Nullable="false" />
+    <Property Name="q_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ticket" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_module_wechat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="channel_id" Type="Int32" />
+    <Property Name="module_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_id" Type="Int32" Nullable="false" />
+    <Property Name="wx_og_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="app_id" Type="Int32" Nullable="false" />
+    <Property Name="app_parent_id" Type="Int32" Nullable="false" />
+    <Property Name="app_table" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="app_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="app_img_url" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="app_link_url" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="app_remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="u_id" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="create_time" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>
